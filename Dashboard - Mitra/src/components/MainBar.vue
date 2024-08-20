@@ -1,61 +1,108 @@
 <template>
-  <div class="flex justify-between items-start w-full bg-white p-4 border-b border-gray-200 h-[62px] bg-topographic">
+  <div class="flex items-center justify-between w-[1118px] h-[70px] bg-white border-b border-gray-200 bg-topographic">
     <!-- Left Section: Welcome Message -->
-    <div class="text-[20px] font-sans text-blue-500 mb-[110px] mr-[800px]">Selamat Datang di <i>iMitra</i></div>
-
+    <div class="text-[20px] font-sans text-blue-500 font-medium py-5 px-4">
+      Selamat Datang di <i>iMitra</i>
+    </div>
+    
     <!-- Right Section: Notifications and User Info -->
-    <div class="flex items-center">
+    <div class="flex items-center space-x-4 pr-4">
       <!-- Notification Icon -->
-      <button class="relative p-2 rounded-full hover:bg-gray-100 mb-[350px]">
-          <img src="@/assets/image/bell.png" class="w-[24px] h-[24px]">
-        <i class="fas fa-bell"></i>
-        <!-- Notification Badge -->
-        <span class="absolute top-0 right-0 inline-block w-2 h-2 bg-red-600 rounded-full"></span>
-      </button>
+      <div class="relative">
+        <!-- Notification Button -->
+        <button @click="toggleDropdownNotification" class="relative rounded-full hover:bg-gray-100 py-2">
+          <img src="@/assets/image/bell.png" class="w-[20px] h-[20px]" />
+          <i class="fas fa-bell"></i>
+        </button>
+        <!-- Notification Dropdown -->
+        <div v-if="isOpenNotification" class="absolute right-0 mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+          <div v-if="notifications.length" class="p-4">
+            <p class="text-sm font-semibold text-gray-700">Notifications</p>
+            <ul>
+              <li v-for="(notification, index) in notifications" :key="index" class="mt-2">
+                <a href="#" class="block p-2 bg-gray-50 rounded-lg hover:bg-gray-100">
+                  <p class="text-sm text-gray-600">{{ notification.message }}</p>
+                  <span class="text-xs text-gray-400">{{ notification.time }}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div v-else class="p-4">
+            <p class="text-sm text-gray-500">No new notifications</p>
+          </div>
+        </div>
+      </div>
       
       <!-- User Info -->
-      <div class="flex items-center pr-[5px] ml-4 mb-[350px]">
+      <div class="flex items-center space-x-2">
         <!-- User Avatar -->
-        <div class="w-[24px] h-[24px] gap-[5px] bg-green-200 rounded-full text-gray-700 flex items-center justify-center">J</div>
+        <div class="w-[24px] h-[24px] bg-green-200 rounded-full text-gray-700 flex items-center justify-center">
+          J
+        </div>
         <!-- User Name -->
-        <div class="text-[16px] ml-2 text-gray-700 font-sans flex items-center">
+        <div class="text-[16px] text-[#666666] font-semibold font-sans">
           John Doe
-          <!-- Dropdown Arrow -->
-          <button class="flex items-center justify-center p-2 rounded-full bg-gray-10 hover:bg-gray-100">
+        </div>
+        <!-- Dropdown Arrow -->
+        <div class="relative">
+          <button @click="toggleDropdownArrow" class="flex items-center justify-center py-1 px-1 rounded-full hover:bg-gray-100">
             <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
+
+          <!-- Dropdown Menu -->
+          <div v-if="isOpenDropdownArrow" class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Option 1</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Option 2</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Option 3</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="flex justify-between items-start w-full h-[54px] bg-white p-4 border-b border-gray-200 ">
-  </div>
-
 </template>
 
 <script>
 export default {
-name: 'MainBar, DropdownButton',
-};
+  name: 'MainBar, DropdownButton',
+  data() {
+      return {
+        isOpenNotification: false,
+        isOpenDropdownArrow:false,
+        notifications: [
+          { message: "New Notification", time: "2 minutes ago" },
+          { message: "New Notification", time: "1 hour ago" },
+          { message: "New Notification", time: "3 days ago" },
+        ],
+      };
+    },
+    methods: {
+      toggleDropdownArrow() {
+        this.isOpenDropdownArrow = !this.isOpenDropdownArrow;
+        if (this.isOpenNotification) {
+          this.isOpenNotification = false; 
+        }
+      },
+      toggleDropdownNotification() {
+        this.isOpenNotification = !this.isOpenNotification;
+        if (this.isOpenDropdownArrow) {
+          this.isOpenDropdownArrow = false; 
+        }
+      },
+    },
+  };
 </script>
 
 <style scoped>
+.relative .absolute {
+  right: 0;
+  top: 100%; /* Makes the dropdown appear directly below the button */
+  margin-top: 8px; /* Adjust spacing between button and dropdown */
+}
 .bg-topographic {
   background-image: url('../assets/image/topographic.png');
   background-size: cover;
   background-position: center;
-}
-.dashboard-container {
-  text-align: center; 
-}
-.dashboard-text {
-  font-size: 24px; 
-  font-weight: bold; 
-}
-.partnership-text {
-  font-size: 18px; 
-  color: #555; 
 }
 </style>

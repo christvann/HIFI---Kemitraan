@@ -1,89 +1,22 @@
 <template>
   <div>
-    <div class=" w-[1118px] h-[54px] rounded-lg bg-[#FFFFFF] border-collapse"></div>
+    <div class="flex w-[1118px] h-[54px] rounded-lg bg-[#FFFFFF] border-collapse">
+        <h1 class="w-[51px] h-[22px] font-sans text-[#7F7F80] text-[14px] font-semibold ml-6 mt-4 mb-4">Masuk</h1>
+    </div>
   </div>
   <div class="px-4 py-3">
-    <div class="h-[1260px] w-[1086px] rounded-lg bg-[#FFFFFF] border-collapse">
+    <div class="h-[712px] w-[1086px] rounded-lg bg-[#FFFFFF] border-collapse">
         <div class="flex">
           <img src="../assets/image/Rectangle.png" class="ml-4 mt-[10px] h-[28px]">
-          <h1 class="font-sans text-[20px] text-[#333333] mt-2 ml-[5px] font-semibold">Dashboard</h1>
+          <h1 class="font-sans text-[20px] text-[#333333] mt-2 ml-[5px] font-semibold">Masuk</h1>
         </div>
-        <h1 class="items-start justify-center px-2 ml-2 text-[#9C9C9C]">Dashboard Kemitraan</h1>
-        <div class="blue-box mt-3 ml-4 w-[1046px] h-[100px] relative">
-          <div class="flex items-start">
-            <div>
-              <div class="flex items-center">
-                <img src="../assets/image/Avatar.png" class="w-[12.75px] h-[16.13px] top-[0.94px] left-[2.63px] mb-1">
-                <h1 class="ml-2 mb-1 text-white text-[15px] font-sans font-semibold">
-                  OFFICER KEMITRAAN BISNIS
-                </h1>
-              </div>
-              <span class="flex text-white font-sans font-normal text-[20px] px-5">
-                Staff Sub Bidang Kemitraan Bisnis Konektivitas dan Infrastruktur
-              </span>
-            </div>
-            <img src="../assets/image/design.png" class="design absolute right-0 top-0 w-auto h-[100px] rounded-md" alt="Design Element"/>
-          </div>
-        </div>
-        <div>
-          <div class="flex">
-            <div class="w-[676px] h-[416px] border-collapse rounded-lg bg-[#FFFFFF] border-[#E5E7E9] border-[1px] ml-4 mt-6">
-              <div class="flex items-center">
-                <h1 class="text-[20px] font-sans font-semibold text-[#000000] ml-6 mt-6">Progress Kemitraan</h1>
-                <span class="text-[16px] font-sans font-normal text-[#000000] ml-2 mt-6">(per Tahun)</span>
-                <div class="relative">
-                  <div class="w-[96px] h-[40px] border-collapse rounded-lg bg-[#FFFFFF] border-[#E5E7E9] border-[1px] ml-[246px] mt-4">
-                    <div @click="toggleDatePicker" class="flex items-center text-[14px] w-[40px] h-[22px] font-sans font-light text-[#9C9C9C] mt-[9px] mb-[9px] ml-4 mr-10 cursor-pointer">
-                      2024
-                      <img src="../assets/image/Calendar.png" class="w-[13.33px] h-[13.33px] ml-4 mt-1 mb-1 mr-4">
-                    </div>
-                  </div>
-                  <!-- Date -->
-                  <input 
-                    v-if="showDatePicker" 
-                    type="date" 
-                    class="absolute top-[52px] mt-2 left-[246px] border border-[#E5E7E9] font-sans text-[10px] text-[#9C9C9C] rounded-lg p-2 w-[96px]"
-                    @change="updateDate"
-                    @blur="hideDatePicker"
-                  />
-                </div>
-              </div>
-                <div class="items-center w-[124px] h-[60px] ml-6 mt-2 border-dashed rounded-lg bg-[#E7F1FD] border-[1px] border-[#91BEF7]">
-                  <h1 class="text-[12px] font-sans font-light text-[#9CA2AD] ml-[22px] mr-4 mt-2">Total Pengajuan</h1>
-                  <span class="text-[16px] font-sans font-bold text-[#071631] w-[92px] h-[24px] ml-[50px] mr-4 mt-7 mb-2">30</span>
-                </div>
-                <div>
-                  <img src="../assets/image/Line.png" class="ml-6 mr-6 mt-4">
-                </div>
-            </div>
-            <div class="flex flex-col justify-start w-[346px] h-[137px] ml-6 mt-6 mr-6 border-collapse rounded-lg bg-[#FFFFFF] border-[#E5E7E9] border-[1px] bg-wave">
-              <div class="flex items-start p-6">
-                <h1 class="font-sans text-[20px] font-semibold text-[#FFFFFF]">
-                  <span class="block">Total Dokumen</span>
-                  <span class="block">Kemitraan</span>
-                </h1>
-              </div>
-              <div class="flex flex-col items-start w-[282px] h-[60px] mt-[50px]">
-                <h1 class="font-sans font-extralight text-[16px] text-[#7F7F80] ml-[30px]">Total NDA</h1>
-                <span class="text-[24px] font-sans font-bold text-[#333333] ml-[30px]">20</span>
-              </div>
-              <div class="flex flex-col items-start w-[282px] h-[60px] mt-6">
-                <h1 class="font-sans font-extralight text-[16px] text-[#7F7F80] ml-[30px]">Total MoU</h1>
-                <span class="text-[24px] font-sans font-bold text-[#333333] ml-[30px]">10</span>
-              </div>
-              <div class="flex flex-col items-start w-[282px] h-[60px] mt-6">
-                <h1 class="font-sans font-extralight text-[16px] text-[#7F7F80] ml-[30px]">Total PKS</h1>
-                <span class="text-[24px] font-sans font-bold text-[#333333] ml-[30px]">15</span>
-              </div>
-            </div>
-          </div>
-          <div class="flex items-start">
+        <h1 class="items-start justify-center px-2 ml-2 text-[#9C9C9C]">Surat Masuk Pengajuan Mitra</h1>
+        <div class="flex items-start">
             <div class="w-[320px] h-[40px] rounded-lg bg-[#FFFFFF] border border-[#E5E7E9] mt-6 ml-4 flex justify-between items-center">
               <input 
                 type="text" 
                 placeholder="Cari sesuatu disini ..." 
-                class="font-sans text-[14px] text-[#7F7F80] font-extralight ml-4 outline-none w-full"
-              />
+                class="font-sans text-[14px] text-[#7F7F80] font-extralight ml-4 outline-none w-full"/>
               <button class="bg-[#2671D9] w-[40px] h-full flex items-center justify-center rounded-r-lg">
                 <img src="../assets/image/IconSearch.png" class="w-[13.33px] h-[13.33px]">
               </button>
@@ -102,8 +35,8 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="flex">
+        <div>
+            <div class="flex">
           <div class="flex w-[1046px] h-[480px] rounded-lg bg-[#FFFFFF] border-[1px] border-[#E5E7E9] mt-4 ml-4 overflow-auto">
             <table class="table-auto w-full text-left border-collapse border border-[#E5E7E9]">
               <thead>
@@ -116,25 +49,31 @@
                   </th>
                   <th class="p-2 border border-[#E5E7E9]">
                     <div class="flex items-center justify-between">
-                      <span>PIC Kemitraan</span>
+                      <span>Judul</span>
                       <img src="../assets/image/arrow.png" alt="arrow" class="ml-2 w-[14px] h-[10px]">
                     </div>
                   </th>
                   <th class="p-2 border border-[#E5E7E9]">
                     <div class="flex items-center justify-between">
-                      <span>Jumlah Pengajuan</span>
+                      <span>No</span>
                       <img src="../assets/image/arrow.png" alt="arrow" class="ml-2 w-[14px] h-[10px]">
                     </div>
                   </th>
                   <th class="p-2 border border-[#E5E7E9]">
                     <div class="flex items-center justify-between">
-                      <span>Total Selesai</span>
+                      <span>Tipe</span>
                       <img src="../assets/image/arrow.png" alt="arrow" class="ml-2 w-[14px] h-[10px]">
                     </div>
                   </th>
                   <th class="p-2 border border-[#E5E7E9]">
                     <div class="flex items-center justify-between">
-                      <span>Total Diproses</span>
+                      <span>Pelaksana</span>
+                      <img src="../assets/image/arrow.png" alt="arrow" class="ml-2 w-[14px] h-[10px]">
+                    </div>
+                  </th>
+                  <th class="p-2 border border-[#E5E7E9]">
+                    <div class="flex items-center justify-between">
+                      <span>Status</span>
                       <img src="../assets/image/arrow.png" alt="arrow" class="ml-2 w-[14px] h-[10px]">
                     </div>
                   </th>
@@ -143,10 +82,15 @@
               <tbody>
                 <tr v-for="(item, index) in tableData" :key="index" class="bg-[#FFFFFF] border border-[#E5E7E9] text-[12px] text-[#4D5E80] font-sans font-semibold">
                   <td class="p-2 border border-[#E5E7E9]">{{ index + 1 }}</td>
-                  <td class="p-2 border border-[#E5E7E9]">{{ item.pic }}</td>
-                  <td class="p-2 border border-[#E5E7E9]">{{ item.jumlahPengajuan }}</td>
-                  <td class="p-2 border border-[#E5E7E9]">{{ item.totalSelesai }}</td>
-                  <td class="p-2 border border-[#E5E7E9]">{{ item.totalDiproses }}</td>
+                  <td class="p-2 border border-[#E5E7E9]">{{ item.judul }}</td>
+                  <td class="p-2 border border-[#E5E7E9]">{{ item.nomor }}</td>
+                  <td class="p-2 border border-[#E5E7E9]">{{ item.tipe }}</td>
+                  <td class="p-2 border border-[#E5E7E9]">{{ item.pelaksana }}</td>
+                  <td class="p-2 border border-[#E5E7E9]">
+                    <span class="w-[55px] h-[24px] px-4 py-1 rounded-full font-sans text-[12px] text-[#0EA976] bg-[#E2FCF3] border-[1px] border-[#8ADFC3]">
+                        {{ item.status }}
+                    </span>
+                   </td>
                 </tr>
               </tbody>
             </table>
@@ -170,13 +114,15 @@
             <button class="pagination-btn" :disabled="currentPage === totalPages" @click="nextPage">›</button>
           </div>
         </div>
-      </div>
+        </div>
+        <img src="../assets/image/Line.png" class="w-[1046px] ml-4 mb-6">
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-  data() {
+    data() {
     return {
       showDatePicker: false,
 
@@ -190,14 +136,14 @@ export default {
       displayOptions: [7, 10, 15, 20],
 
       tableData: [
-        { pic: 'Cameron Murray', jumlahPengajuan: 30, totalSelesai: 20, totalDiproses: 10 },
-        { pic: 'Melba Skiles', jumlahPengajuan: 30, totalSelesai: 20, totalDiproses: 10 },
-        { pic: 'Ernestine Stark', jumlahPengajuan: 30, totalSelesai: 20, totalDiproses: 10 },
-        { pic: 'Luther Connelly', jumlahPengajuan: 30, totalSelesai: 20, totalDiproses: 10 },
-        { pic: 'Elsie Mosciski', jumlahPengajuan: 30, totalSelesai: 20, totalDiproses: 10 },
-        { pic: 'Courtney Schmidt', jumlahPengajuan: 30, totalSelesai: 20, totalDiproses: 10 },
-        { pic: 'Salvador Pfannerstill', jumlahPengajuan: 30, totalSelesai: 20, totalDiproses: 10 },
-        { pic: 'Hattie Marvin', jumlahPengajuan: 30, totalSelesai: 20, totalDiproses: 10 }
+        { judul: 'Cameron Murray', nomor: 30, tipe: 20, pelaksana: 10, status: 'Masuk'},
+        { judul: 'Melba Skiles', nomor: 30, tipe: 20, pelaksana: 10, status: 'Masuk'},
+        { judul: 'Ernestine Stark', nomor: 30, tipe: 20, pelaksana: 10, status: 'Masuk'},
+        { judul: 'Luther Connelly', nomor: 30, tipe: 20, pelaksana: 10, status: 'Masuk'},
+        { judul: 'Elsie Mosciski', nomor: 30, tipe: 20, pelaksana: 10, status: 'Masuk'},
+        { judul: 'Courtney Schmidt', nomor: 30, tipe: 20, pelaksana: 10, status: 'Masuk'},
+        { judul: 'Salvador Pfannerstill', nomor: 30, tipe: 20, pelaksana: 10, status: 'Masuk'},
+        { judul: 'Hattie Marvin', nomor: 30, tipe: 20, pelaksana: 10, status: 'Masuk'}
       ]
     }
   },
@@ -239,34 +185,11 @@ export default {
         this.currentPage++;
       }
     }
+  }
 }
-};
 </script>
 
 <style>
-  .blue-box {
-  background-color: #4285f4;
-  padding: 20px;
-  border-radius: 10px;
-  position: relative;}
-.bg-wave {
-  width: 346px;
-  height: 416px;
-  gap: 0px;
-  background-image: url('../assets/image/Wave.png');
-  background-repeat: no-repeat;  /* Agar gambar tidak berulang */
-  background-position: top;   /* Memusatkan gambar pada elemen */
-}
-.filter-button {
-  position: relative;
-}
-.dropdown-options {
-  position: absolute;
-  z-index: 10; /* Ensure dropdown is above other content */
-}
-.table-container {
-  margin: 20px;
-}
 th, td {
   text-align: left;
   border-left: none; /* Menghapus garis vertikal di sebelah kiri */

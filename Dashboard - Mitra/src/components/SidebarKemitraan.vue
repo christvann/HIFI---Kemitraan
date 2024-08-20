@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-col items-start p-4 w-[248px] h-screen bg-white border-r border-neutral-stroke">
+  <div class="flex flex-col items-start p-4 w-[248px] h-[1416px] bg-white border-r border-neutral-stroke">
     <!-- Logo Section -->
     <div class="flex justify-between items-center w-[216px] h-[27px] mb-6 mt-4">
       <img src="@/assets/image/pln.png" alt="PLN Icon Plus" class="h-full" />
-      <div class="text-[19.29px] font-sans leading-[27px] text-[#2671D9]">iMitra</div>
+      <div class="text-[19.29px] font-sans font-medium leading-[27px] text-[#2671D9]">iMitra</div>
     </div>
 
     <!-- Line -->
@@ -14,9 +14,9 @@
       
       <!-- Dashboard -->
       <button 
-        :class="['flex text-[14px] ml-[5px] font-sans items-center justify p-2 rounded-lg transition-colors', 
-                selectedMenu === 'Dashboard' ? 'bg-blue-500 text-white' : 'bg-white-500 text-black hover:bg-blue-300']" 
-        @click="selectedMenu = 'Dashboard'">
+        :class="['flex text-[14px] ml-[5px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', 
+                selectedMenu === 'Dashboard' ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-blue-100']" 
+        @click="navigateTo('Dashboard')">
         <img 
           :class="[selectedMenu === 'Dashboard' ? 'filter-white' : '']" 
           src="@/assets/image/IconDashboard.png" class="mr-[1px] pl-[1px] pr-[12px]" />Dashboard
@@ -24,19 +24,20 @@
 
       <!-- Masuk -->
       <button 
-        :class="['flex text-[14px] font-sans items-center justify p-2 rounded-lg transition-colors', 
-                selectedMenu === 'Masuk' ? 'bg-blue-500 text-white' : 'bg-white-500 text-black hover:bg-blue-300']" 
-        @click="selectedMenu = 'Masuk'">
+        :class="['flex text-[14px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', 
+                selectedMenu === 'MasukManager' ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-blue-100']" 
+        @click="navigateTo('MasukManager')">
         <img 
-          :class="[selectedMenu === 'Masuk' ? 'filter-white' : '']" 
+          :class="[selectedMenu === 'MasukManager' ? 'filter-white' : '']" 
           src="@/assets/image/IconMasuk.png" class="ml-1 pl-1 pr-[15px]" />Masuk
       </button>
 
+
       <!-- Approval -->
       <button 
-        :class="['flex text-[14px] font-sans items-center justify p-2 rounded-lg transition-colors', 
-                selectedMenu === 'Approval' ? 'bg-blue-500 text-white' : 'bg-white-500 text-black hover:bg-blue-300']" 
-        @click="selectedMenu = 'Approval'">
+        :class="['flex text-[14px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', 
+                selectedMenu === 'Approval' ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-blue-100']" 
+        @click="navigateTo('Approval')">
         <img 
           :class="[selectedMenu === 'Approval' ? 'filter-white' : '']" 
           src="@/assets/image/IconApproval.png" class="ml-1 pl-[2px] pr-[13px]" />Approval
@@ -44,9 +45,9 @@
 
       <!-- Proses -->
       <button 
-        :class="['flex text-[14px] font-sans items-center justify p-2 rounded-lg transition-colors', 
-                selectedMenu === 'Proses' ? 'bg-blue-500 text-white' : 'bg-white-500 text-black hover:bg-blue-300']" 
-        @click="selectedMenu = 'Proses'">
+        :class="['flex text-[14px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', 
+                selectedMenu === 'Proses' ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-blue-100']" 
+        @click="navigateTo('Proses')">
         <img 
           :class="[selectedMenu === 'Proses' ? 'filter-white' : '']" 
           src="@/assets/image/IconProses.png" class="ml-1 pr-4 pl-[2px]"/>Proses
@@ -54,9 +55,9 @@
 
       <!-- Selesai -->
       <button 
-        :class="['flex text-[14px] font-sans items-center justify p-2 rounded-lg transition-colors', 
-                selectedMenu === 'Selesai' ? 'bg-blue-500 text-white' : 'bg-white-500 text-black hover:bg-blue-300']" 
-        @click="selectedMenu = 'Selesai'">
+        :class="['flex text-[14px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', 
+                selectedMenu === 'Selesai' ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-blue-100']" 
+        @click="navigateTo('Selesai')">
         <img 
           :class="[selectedMenu === 'Selesai' ? 'filter-white' : '']" 
           src="@/assets/image/IconSelesai.png" class="ml-1 pl-[1px] pr-[15px]" />Selesai
@@ -73,7 +74,31 @@ export default {
       selectedMenu: 'Dashboard', 
     };
   },
-};
+  methods: {
+    navigateTo(menu) {
+      this.selectedMenu = menu;
+      switch (menu) {
+        case 'Dashboard':
+          this.$router.push('/dashboard');
+          break;
+        case 'MasukManager':
+          this.$router.push('/masukmanager');
+          break;
+        case 'Approval':
+          // Add navigation logic for Approval here
+          break;
+        case 'Proses':
+          // Add navigation logic for Proses here
+          break;
+        case 'Selesai':
+          // Add navigation logic for Selesai here
+          break;
+        default:
+          break;
+      }
+    }
+  }
+}
 </script>
 
 <style scoped>

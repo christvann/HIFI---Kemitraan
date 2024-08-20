@@ -5,7 +5,7 @@
         <SidebarKemitraan/>
         <div class="flex-grow"> 
           <MainBar/> 
-          <DashBoardMitra/>
+          <MasukManager/>
         </div>
       </div>
     </div>
@@ -16,15 +16,15 @@
 
 import MainBar from '@/components/MainBar.vue';
 import SidebarKemitraan from '@/components/SidebarKemitraan.vue';
-import DashBoardMitra from '@/components/DashBoardMitra.vue';
+import MasukManager from '@/components/MasukManager.vue';
 
 export default {
-  components: {
+    components: {
     SidebarKemitraan,
-    DashBoardMitra,
     MainBar,
+    MasukManager,
   }
-};
+}
 </script>
 
 <style>

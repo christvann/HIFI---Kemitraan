@@ -1,29 +1,29 @@
 <template>
-  <div class="">
-    <div class="background">
-      <div class="flex">
-        <SidebarKemitraan/>
-        <div class="flex-grow"> 
-          <MainBar/> 
-          <DashBoardMitra/>
+    <div class="">
+      <div class="background">
+        <div class="flex">
+          <SidebarKemitraan/>
+          <div class="flex-grow"> 
+            <MainBar/> 
+            <DetailPengajuan/>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</template>
+  </template>
 
 <script>
 
 import MainBar from '@/components/MainBar.vue';
 import SidebarKemitraan from '@/components/SidebarKemitraan.vue';
-import DashBoardMitra from '@/components/DashBoardMitra.vue';
+import DetailPengajuan from '@/components/DetailPengajuan.vue';
 
 export default {
-  components: {
+    components: {
     SidebarKemitraan,
-    DashBoardMitra,
     MainBar,
-  }
+    DetailPengajuan,
+    }
 };
 </script>
 

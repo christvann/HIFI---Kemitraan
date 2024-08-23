@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class=" w-[1118px] h-[54px] rounded-lg bg-[#FFFFFF] border-collapse"></div>
+    <div class="w-[1132px] h-[54px] rounded-lg bg-[#FFFFFF] border-collapse"></div>
   </div>
   <div class="px-4 py-3">
-    <div class="h-[1260px] w-[1086px] rounded-lg bg-[#FFFFFF] border-collapse">
+    <div class="h-[1260px] w-auto rounded-lg bg-[#FFFFFF] border-collapse">
         <div class="flex">
           <img src="../assets/image/Rectangle.png" class="ml-4 mt-[10px] h-[28px]">
           <h1 class="font-sans text-[20px] text-[#333333] mt-2 ml-[5px] font-semibold">Dashboard</h1>
@@ -31,18 +31,20 @@
               <div class="flex items-center">
                 <h1 class="text-[20px] font-sans font-semibold text-[#000000] ml-6 mt-6">Progress Kemitraan</h1>
                 <span class="text-[16px] font-sans font-normal text-[#000000] ml-2 mt-6">(per Tahun)</span>
+                <!--Date-->
                 <div class="relative">
-                  <div class="w-[96px] h-[40px] border-collapse rounded-lg bg-[#FFFFFF] border-[#E5E7E9] border-[1px] ml-[246px] mt-4">
-                    <div @click="toggleDatePicker" class="flex items-center text-[14px] w-[40px] h-[22px] font-sans font-light text-[#9C9C9C] mt-[9px] mb-[9px] ml-4 mr-10 cursor-pointer">
-                      2024
-                      <img src="../assets/image/Calendar.png" class="w-[13.33px] h-[13.33px] ml-4 mt-1 mb-1 mr-4">
-                    </div>
+                  <div class="w-[120px] h-[40px] border rounded-lg bg-white border-[#E5E7E9] ml-[246px] mt-4 flex items-center justify-between px-4 cursor-pointer" @click="toggleDatePicker">
+                    <span class="text-[14px] font-sans font-light text-[#9C9C9C]">
+                      {{ selectedDate ? formatDate(selectedDate) : '2024' }}
+                    </span>
+                    <img src="../assets/image/Calendar.png" class="w-[16px] h-[16px]" />
                   </div>
-                  <!-- Date -->
+
+                  <!-- Date Picker -->
                   <input 
                     v-if="showDatePicker" 
                     type="date" 
-                    class="absolute top-[52px] mt-2 left-[246px] border border-[#E5E7E9] font-sans text-[10px] text-[#9C9C9C] rounded-lg p-2 w-[96px]"
+                    class="custom-date-picker absolute top-[52px] mt-2 left-[246px] border border-[#E5E7E9] font-sans text-[10px] text-[#9C9C9C] rounded-lg p-2 w-[120px]"
                     @change="updateDate"
                     @blur="hideDatePicker"
                   />
@@ -179,16 +181,17 @@ export default {
   data() {
     return {
       showDatePicker: false,
+      selectedDate: null,
 
       showDropdown: false,
       filterOptions: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
 
-      selectedValue: 7,
+      selectedValue: 8,
       totalData: 25,
       currentPage: 1,
       totalPages: 10,
-      displayOptions: [7, 10, 15, 20],
-
+      displayOptions: [8, 10, 15],
+      actionDropdownIndex: null,
       tableData: [
         { pic: 'Cameron Murray', jumlahPengajuan: 30, totalSelesai: 20, totalDiproses: 10 },
         { pic: 'Melba Skiles', jumlahPengajuan: 30, totalSelesai: 20, totalDiproses: 10 },
@@ -214,8 +217,14 @@ export default {
     toggleDatePicker() {
       this.showDatePicker = !this.showDatePicker;
     },
+    formatDate(date) {
+      const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+      return new Date(date).toLocaleDateString('en-GB', options);
+    },
     updateDate(event) {
       //Untuk handle date
+      this.selectedDate = event.target.value; // Update with the selected date
+      this.hideDatePicker(); // Hide the date picker after selecting the date
       const selectedDate = event.target.value;
       console.log(selectedDate);
       this.showDatePicker = false;
@@ -256,6 +265,17 @@ export default {
   background-image: url('../assets/image/Wave.png');
   background-repeat: no-repeat;  /* Agar gambar tidak berulang */
   background-position: top;   /* Memusatkan gambar pada elemen */
+}
+.custom-date-picker {
+  appearance: none; /* Remove default styling */
+  -webkit-appearance: none; /* Remove default styling for WebKit browsers */
+  background-image: url('../assets/image/Calendar.png'); /* Use the same calendar icon */
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Position it like the icon in the button */
+  background-size: 16px 16px; /* Make sure the icon size matches */
+}
+.custom-date-picker::-webkit-calendar-picker-indicator {
+  opacity: 0; /* Hide the default calendar icon */
 }
 .filter-button {
   position: relative;

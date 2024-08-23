@@ -1,23 +1,22 @@
 <template>
-  <div class="flex items-center justify-between w-[1118px] h-[70px] bg-white border-b border-gray-200 bg-topographic">
+  <div class="flex items-center justify-between w-[1132px] h-[70px] bg-[#FFFFFF] border-b border-[#E5E7E9] bg-topographic">
     <!-- Left Section: Welcome Message -->
-    <div class="text-[20px] font-sans text-blue-500 font-medium py-5 px-4">
-      Selamat Datang di <i>iMitra</i>
+    <div class="text-[20px] font-sans text-[#2671D9] font-medium py-5 px-4">
+      Selamat Datang di DIAMOND
     </div>
-    
     <!-- Right Section: Notifications and User Info -->
     <div class="flex items-center space-x-4 pr-4">
       <!-- Notification Icon -->
       <div class="relative">
         <!-- Notification Button -->
-        <button @click="toggleDropdownNotification" class="relative rounded-full hover:bg-gray-100 py-2">
+        <button @click="toggleDropdownNotification" class="relative rounded-full hover:bg-[#E5E7E9] py-2">
           <img src="@/assets/image/bell.png" class="w-[20px] h-[20px]" />
           <i class="fas fa-bell"></i>
         </button>
         <!-- Notification Dropdown -->
-        <div v-if="isOpenNotification" class="absolute right-0 mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+        <div v-if="isOpenNotification" class="absolute right-0 mt-2 w-80 bg-[#FFFFFF] border border-[#E5E7E9] rounded-lg shadow-lg z-50">
           <div v-if="notifications.length" class="p-4">
-            <p class="text-sm font-semibold text-gray-700">Notifications</p>
+            <p class="text-base font-semibold text-[#666666]">Notifications</p>
             <ul>
               <li v-for="(notification, index) in notifications" :key="index" class="mt-2">
                 <a href="#" class="block p-2 bg-gray-50 rounded-lg hover:bg-gray-100">
@@ -36,7 +35,7 @@
       <!-- User Info -->
       <div class="flex items-center space-x-2">
         <!-- User Avatar -->
-        <div class="w-[24px] h-[24px] bg-green-200 rounded-full text-gray-700 flex items-center justify-center">
+        <div class="w-[24px] h-[24px] bg-[#C7E5D7] text-[10px] font-sans rounded-full font-bold text-[#333333] flex items-center justify-center">
           J
         </div>
         <!-- User Name -->

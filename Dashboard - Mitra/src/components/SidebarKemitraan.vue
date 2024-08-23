@@ -2,8 +2,7 @@
   <div class="flex flex-col items-start p-4 w-[248px] h-[1416px] bg-white border-r border-neutral-stroke">
     <!-- Logo Section -->
     <div class="flex justify-between items-center w-[216px] h-[27px] mb-6 mt-4">
-      <img src="@/assets/image/pln.png" alt="PLN Icon Plus" class="h-full" />
-      <div class="text-[19.29px] font-sans font-medium leading-[27px] text-[#2671D9]">iMitra</div>
+      <img src="../assets/image/Diamond.png" alt="Diamond Icon" class="w-[60px] h-[10.5px]"/>
     </div>
 
     <!-- Line -->
@@ -15,20 +14,20 @@
       <!-- Dashboard -->
       <button 
         :class="['flex text-[14px] ml-[5px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', 
-                selectedMenu === 'Dashboard' ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-blue-100']" 
+                isActive('Dashboard') ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-[#DBEAFE]']" 
         @click="navigateTo('Dashboard')">
         <img 
-          :class="[selectedMenu === 'Dashboard' ? 'filter-white' : '']" 
+          :class="[isActive('Dashboard') ? 'filter-white' : '']" 
           src="@/assets/image/IconDashboard.png" class="mr-[1px] pl-[1px] pr-[12px]" />Dashboard
       </button>
 
       <!-- Masuk -->
       <button 
         :class="['flex text-[14px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', 
-                selectedMenu === 'MasukManager' ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-blue-100']" 
+                isActive('MasukManager') ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-[#DBEAFE]']" 
         @click="navigateTo('MasukManager')">
         <img 
-          :class="[selectedMenu === 'MasukManager' ? 'filter-white' : '']" 
+          :class="[isActive('MasukManager') ? 'filter-white' : '']" 
           src="@/assets/image/IconMasuk.png" class="ml-1 pl-1 pr-[15px]" />Masuk
       </button>
 
@@ -36,30 +35,30 @@
       <!-- Approval -->
       <button 
         :class="['flex text-[14px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', 
-                selectedMenu === 'Approval' ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-blue-100']" 
+                isActive('Approval') ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-[#DBEAFE]']" 
         @click="navigateTo('Approval')">
         <img 
-          :class="[selectedMenu === 'Approval' ? 'filter-white' : '']" 
+          :class="[isActive('Approval') ? 'filter-white' : '']" 
           src="@/assets/image/IconApproval.png" class="ml-1 pl-[2px] pr-[13px]" />Approval
       </button>
 
       <!-- Proses -->
       <button 
         :class="['flex text-[14px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', 
-                selectedMenu === 'Proses' ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-blue-100']" 
+                isActive('Proses') ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-[#DBEAFE]']" 
         @click="navigateTo('Proses')">
         <img 
-          :class="[selectedMenu === 'Proses' ? 'filter-white' : '']" 
+          :class="[isActive('Proses') ? 'filter-white' : '']" 
           src="@/assets/image/IconProses.png" class="ml-1 pr-4 pl-[2px]"/>Proses
       </button>
 
       <!-- Selesai -->
       <button 
         :class="['flex text-[14px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', 
-                selectedMenu === 'Selesai' ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-blue-100']" 
+                isActive('Selesai') ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-[#DBEAFE]']" 
         @click="navigateTo('Selesai')">
         <img 
-          :class="[selectedMenu === 'Selesai' ? 'filter-white' : '']" 
+          :class="[isActive('Selesai') ? 'filter-white' : '']" 
           src="@/assets/image/IconSelesai.png" class="ml-1 pl-[1px] pr-[15px]" />Selesai
       </button>
     </div>
@@ -85,16 +84,34 @@ export default {
           this.$router.push('/masukmanager');
           break;
         case 'Approval':
-          // Add navigation logic for Approval here
+          this.$router.push('/approval'); // Adjusted logic for routing
           break;
         case 'Proses':
-          // Add navigation logic for Proses here
+          this.$router.push('/proses'); // Adjusted logic for routing
           break;
         case 'Selesai':
-          // Add navigation logic for Selesai here
+          this.$router.push('/selesai'); // Adjusted logic for routing
           break;
         default:
           break;
+      }
+    },
+    isActive(menu) {
+      const routePath = this.$route.path;
+
+      switch (menu) {
+        case 'Dashboard':
+          return routePath === '/dashboard';
+        case 'MasukManager':
+          return routePath.startsWith('/masukmanager');
+        case 'Approval':
+          return routePath.startsWith('/approval');
+        case 'Proses':
+          return routePath.startsWith('/proses');
+        case 'Selesai':
+          return routePath.startsWith('/selesai');
+        default:
+          return false;
       }
     }
   }

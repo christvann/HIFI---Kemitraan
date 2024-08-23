@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import DashboardView from '../pages/dashboard-view.vue';
 import MasukManager from '../pages/masuk-manager.vue';
-import DetailPengajuan from '../pages/detail-pengajuan.vue';
+import DetailPengajuanManager from '../pages/detail-pengajuan-manager.vue';
 
 const routes = [
   {
@@ -15,9 +15,9 @@ const routes = [
     component: MasukManager
   },
   {
-    name: 'DetailPengajuan',
-    path: '/detailpengajuan',
-    component: DetailPengajuan
+    name: 'DetailPengajuanManager',
+    path: '/masukmanager/detailpengajuanmanager',
+    component: DetailPengajuanManager
   },
 ];
 

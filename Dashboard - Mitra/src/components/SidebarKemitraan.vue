@@ -13,12 +13,12 @@
       
       <!-- Dashboard -->
       <button 
-        :class="['flex text-[14px] ml-[5px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', 
+        :class="['flex text-[14px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', 
                 isActive('Dashboard') ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-[#DBEAFE]']" 
         @click="navigateTo('Dashboard')">
         <img 
           :class="[isActive('Dashboard') ? 'filter-white' : '']" 
-          src="@/assets/image/IconDashboard.png" class="mr-[1px] pl-[1px] pr-[12px]" />Dashboard
+          src="@/assets/image/IconDashboard.png" class="ml-[5px] mr-[1px] pl-[1px] pr-[12px]" />Dashboard
       </button>
 
       <!-- Masuk -->

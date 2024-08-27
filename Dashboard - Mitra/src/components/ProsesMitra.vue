@@ -1,26 +1,16 @@
 <template>
     <div>
       <div class="flex w-auto h-[54px] rounded-lg bg-[#FFFFFF] border-collapse">
-          <h1 class="w-[51px] h-[22px] font-sans text-[#7F7F80] text-[14px] font-semibold ml-6 mt-4 mb-4">Selesai</h1>
+          <h1 class="w-[51px] h-[22px] font-sans text-[#7F7F80] text-[14px] font-semibold ml-6 mt-4 mb-4">Proses</h1>
       </div>
     </div>
     <div class="px-4 py-3">
-      <div class="h-[776px] w-auto rounded-lg bg-[#FFFFFF] border-collapse">
+      <div class="h-[712px] w-auto rounded-lg bg-[#FFFFFF] border-collapse">
           <div class="flex">
             <img src="../assets/image/Rectangle.png" class="ml-4 mt-[10px] h-[28px]">
-            <h1 class="font-sans text-[20px] text-[#333333] mt-2 ml-[5px] font-semibold">Selesai</h1>
+            <h1 class="font-sans text-[20px] text-[#333333] mt-2 ml-[5px] font-semibold">Proses</h1>
           </div>
           <h1 class="items-start justify-center px-2 ml-2 text-[#9C9C9C]">Surat Masuk Pengajuan Mitra</h1>
-          <button class='flex-grow w-[56px] h-[24px] font-sans text-[16px] font-semibold mt-7 ml-8 mr-4 text-[#2671D9]'
-            @click="navigateToSelesai">Selesai
-            <img 
-              src="@/assets/image/LineBlue.png" class="w-[129px] h-[4px] mt-2">
-          </button>
-          <button 
-            :class="['flex-grow w-[56px] h-[24px] font-sans text-[16px] font-semibold mt-7 ml-4 mr-4',
-                selectedTable === 'ApprovalDitolak' ? 'text-[#2671D9]' : 'text-[#333333]']"
-            @click="navigateToDitolak">Ditolak
-          </button>
           <div class="flex items-start">
               <div class="w-[320px] h-[40px] rounded-lg bg-[#FFFFFF] border border-[#E5E7E9] mt-6 ml-4 flex justify-between items-center">
                 <input 
@@ -44,9 +34,9 @@
                   </div>
                 </div>
               </div>
-          </div>
-          <div class="ApprovalSelesai">
-          <div class="flex">
+            </div>
+            <div>
+              <div class="flex">
             <div class="flex w-[1046px] h-[480px] rounded-lg bg-[#FFFFFF] border-[1px] border-[#E5E7E9] mt-4 ml-4 overflow-auto">
               <table class="table-auto w-full text-left border-collapse border border-[#E5E7E9]">
                 <thead>
@@ -65,7 +55,7 @@
                     </th>
                     <th class="p-2 border border-[#E5E7E9]">
                       <div class="flex items-center justify-between">
-                        <span>No</span>
+                        <span>No. Permintaan</span>
                         <img src="../assets/image/arrow.png" alt="arrow" class="ml-2 w-[14px] h-[10px]">
                       </div>
                     </th>
@@ -77,37 +67,25 @@
                     </th>
                     <th class="p-2 border border-[#E5E7E9]">
                       <div class="flex items-center justify-between">
-                        <span>Pelaksana</span>
+                        <span>User</span>
                         <img src="../assets/image/arrow.png" alt="arrow" class="ml-2 w-[14px] h-[10px]">
                       </div>
                     </th>
                     <th class="p-2 border border-[#E5E7E9]">
                       <div class="flex items-center justify-between">
-                        <span>Tanggal Selesai</span>
+                        <span>Due Date</span>
                         <img src="../assets/image/arrow.png" alt="arrow" class="ml-2 w-[14px] h-[10px]">
                       </div>
                     </th>
                     <th class="p-2 border border-[#E5E7E9]">
                       <div class="flex items-center justify-between">
-                        <span>Pejabat yang Bertanda Tangan</span>
+                        <span>PIC Kemitraan</span>
                         <img src="../assets/image/arrow.png" alt="arrow" class="ml-2 w-[14px] h-[10px]">
                       </div>
                     </th>
                     <th class="p-2 border border-[#E5E7E9]">
                       <div class="flex items-center justify-between">
-                        <span>Hari Menuju Selesai</span>
-                        <img src="../assets/image/arrow.png" alt="arrow" class="ml-2 w-[14px] h-[10px]">
-                      </div>
-                    </th>
-                    <th class="p-2 border border-[#E5E7E9]">
-                      <div class="flex items-center justify-between">
-                        <span>Status Perjanjian</span>
-                        <img src="../assets/image/arrow.png" alt="arrow" class="ml-2 w-[14px] h-[10px]">
-                      </div>
-                    </th>
-                    <th class="p-2 border border-[#E5E7E9]">
-                      <div class="flex items-center justify-between">
-                        <span>Status</span>
+                        <span>Progress Kemitraan</span>
                         <img src="../assets/image/arrow.png" alt="arrow" class="ml-2 w-[14px] h-[10px]">
                       </div>
                     </th>
@@ -119,22 +97,23 @@
                     <td class="p-2 border border-[#E5E7E9]">{{ item.judul }}</td>
                     <td class="p-2 border border-[#E5E7E9]">{{ item.nomor }}</td>
                     <td class="p-2 border border-[#E5E7E9]">{{ item.tipe }}</td>
-                    <td class="p-2 border border-[#E5E7E9]">{{ item.pelaksana }}</td>
-                    <td class="p-2 border border-[#E5E7E9]">{{ item.tanggal }}</td>
-                    <td class="p-2 border border-[#E5E7E9]">{{ item.pejabat }}</td>
-                    <td class="p-2 border border-[#E5E7E9] text-[#FF5656]">{{ item.hari }}</td>
+                    <td class="p-2 border border-[#E5E7E9]">{{ item.user }}</td>
                     <td class="p-2 border border-[#E5E7E9]">
                       <span
-                            :class="[
-                                'w-[55px] h-[24px] px-4 py-1 rounded-full font-sans text-[12px] font-semibold border-[1px]',
-                                item.statusperjanjian === 'Aktif' ? 'bg-[#E7F1FD] border-[1px] border-[#91BEF7] text-[#4791F2]' : '',
-                                item.statusperjanjian === 'Tidak Aktif' ? 'bg-[#F5F5F5] border-[1px] border-[#9C9C9C] text-[#9C9C9C]' : '',
-                            ]">{{ item.statusperjanjian }}
+                              :class="[
+                                  'w-[55px] h-[24px] font-sans text-[12px] font-semibold',
+                                  item.date === '15 Hari' ? 'text-[#0EA976]' : '',
+                                  item.date === '7 Hari' ? 'text-[#F08800]' : '',
+                                  item.date === 'Stop Clock' ? 'text-[#2671D9]' : '',
+                                  item.date === '0 Hari' ? 'text-[#FF5656]' : '',
+                                  item.date === '30 Hari' ? 'text-[#0EA976]' : '',
+                              ]">{{ item.date }}
                       </span>
                     </td>
+                    <td class="p-2 border border-[#E5E7E9]">{{ item.pic }}</td>
                     <td class="p-2 border border-[#E5E7E9]">
-                      <span class="w-[55px] h-[24px] px-4 py-1 rounded-full font-sans font-semibold text-[12px] text-[#0EA976] bg-[#E2FCF3] border-[1px] border-[#8ADFC3]">
-                          {{ item.status }}
+                      <span class="w-[55px] h-[24px] px-4 py-1 rounded-full font-sans text-[12px] text-[#4791F2] bg-[#E7F1FD] border-[1px] border-[#91BEF7]">
+                          {{ item.progress }}
                       </span>
                      </td>
                   </tr>
@@ -142,7 +121,6 @@
               </table>
             </div>
           </div>
-      </div>
           <div class="flex items-center justify-between p-4">
             <div class="flex items-center text-[14px] font-sans font-normal">
               <span>Menampilkan</span>
@@ -161,6 +139,7 @@
               <button class="pagination-btn" :disabled="currentPage === totalPages" @click="nextPage">›</button>
             </div>
           </div>
+          </div>
           <img src="../assets/image/Line.png" class="w-[1046px] ml-4 mb-6">
       </div>
     </div>
@@ -168,28 +147,28 @@
   
   <script>
   export default {
-    data() {
-    return {
-      showDatePicker: false,
+      data() {
+      return {
+        showDatePicker: false,
   
-      showDropdown: false,
-      filterOptions: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+        showDropdown: false,
+        filterOptions: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
   
-      selectedValue: 7,
-      totalData: 25,
-      currentPage: 1,
-      totalPages: 10,
-      displayOptions: [7, 10, 15, 20],
+        selectedValue: 7,
+        totalData: 25,
+        currentPage: 1,
+        totalPages: 10,
+        displayOptions: [7, 10, 15, 20],
   
-      tableData: [
-          { judul: 'Lorem ipsum dolor', nomor: 90224, tipe: 'MoU', pelaksana: 'Pusat', tanggal: '17/08/2024', pejabat: 'Bonnie Beier', hari: 'H-5', statusperjanjian: 'Aktif', status: 'Selesai'},
-          { judul: 'Lorem ipsum dolor', nomor: 90224, tipe: 'MoU', pelaksana: 'Pusat', tanggal: '17/08/2024', pejabat: 'Victor Ullrich', hari: 'H-5', statusperjanjian: 'Tidak Aktif', status: 'Selesai'},
-          { judul: 'Lorem ipsum dolor', nomor: 90224, tipe: 'PKS', pelaksana: 'Pusat', tanggal: '17/08/2024', pejabat: 'Maryann Sawayn', hari: 'H-5', statusperjanjian: 'Aktif', status: 'Selesai'},
-          { judul: 'Lorem ipsum dolor', nomor: 90224, tipe: 'PKS', pelaksana: 'Pusat', tanggal: '17/08/2024', pejabat: 'Susan Nienaw', hari: 'H-5', statusperjanjian: 'Aktif', status: 'Selesai'},
-          { judul: 'Lorem ipsum dolor', nomor: 90224, tipe: 'MoU', pelaksana: 'Pusat', tanggal: '17/08/2024', pejabat: 'Mathew Yundt', hari: 'H-5', statusperjanjian: 'Aktif', status: 'Selesai'},
-          { judul: 'Lorem ipsum dolor', nomor: 90224, tipe: 'PKS', pelaksana: 'Pusat', tanggal: '17/08/2024', pejabat: 'Debbie Wunsch', hari: 'H-5', statusperjanjian: 'Tidak Aktif', status: 'Selesai'},
-          { judul: 'Lorem ipsum dolor', nomor: 90224, tipe: 'MoU', pelaksana: 'Pusat', tanggal: '17/08/2024', pejabat: 'Boyd Hahn', hari: 'H-5', statusperjanjian: 'Tidak Aktif', status: 'Selesai'},
-          { judul: 'Lorem ipsum dolor', nomor: 90224, tipe: 'PKS', pelaksana: 'Pusat', tanggal: '17/08/2024', pejabat: 'Rebecca Conn', hari: 'H-5', statusperjanjian: 'Tidak Aktif', status: 'Selesai'}
+        tableData: [
+          { judul: 'lorem ipsum', nomor: 90224, tipe: 'MoU', user: 'pusat', date: '15 Hari', pic: 'Farhan', progress: 'Surat Penawaran'},
+          { judul: 'lorem ipsum', nomor: 90224, tipe: 'MoU', user: 'pusat', date: '15 Hari', pic: 'Nathan', progress: 'Proposal'},
+          { judul: 'lorem ipsum', nomor: 90224, tipe: 'PKS', user: 'pusat', date: '7 Hari', pic: 'Budi', progress: 'Evaluasi'},
+          { judul: 'lorem ipsum', nomor: 90224, tipe: 'PKS', user: 'pusat', date: 'Stop Clock', pic: 'Farhan', progress: 'Surat Pesanan'},
+          { judul: 'lorem ipsum', nomor: 90224, tipe: 'MoU', user: 'pusat', date: '7 Hari', pic: 'Nathan', progress: 'BAK Pemilihan Mitra'},
+          { judul: 'lorem ipsum', nomor: 90224, tipe: 'pks', user: 'pusat', date: '15 Hari', pic: 'Budi', progress: 'Negosiasi'},
+          { judul: 'lorem ipsum', nomor: 90224, tipe: 'MoU', user: 'pusat', date: '0 Hari', pic: 'Farhan', progress: 'PKS'},
+          { judul: 'lorem ipsum', nomor: 90224, tipe: 'pks', user: 'pusat', date: '30 Hari', pic: 'Nathan', progress: 'PKS'}
         ]
       }
     },
@@ -203,12 +182,6 @@
       }
     },
     methods: {
-      navigateToSelesai() {
-        this.$router.push('/selesai');
-      },
-      navigateToDitolak() {
-        this.$router.push('/selesai/ditolak');
-      },
       toggleDatePicker() {
         this.showDatePicker = !this.showDatePicker;
       },
@@ -242,10 +215,5 @@
   </script>
   
   <style>
-  button {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    transition: background-color 0,3s;
-  }
+  
   </style>

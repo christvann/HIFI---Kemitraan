@@ -100,7 +100,7 @@ export default {
   margin-top: 8px; /* Adjust spacing between button and dropdown */
 }
 .bg-topographic {
-  background-image: url('../assets/image/topographic.png');
+  background-image: url('/src/assets/image/topographic.png');
   background-size: cover;
   background-position: center;
 }

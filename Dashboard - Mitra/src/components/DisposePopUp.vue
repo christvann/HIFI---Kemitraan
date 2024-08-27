@@ -3,7 +3,7 @@
       <div class="bg-[#FFFFFF] rounded-lg shadow-lg w-[400px] p-6">
         <div class="flex justify-between items-center">
           <h2 class="text-[20px] font-sans font-semibold text-[#000000]">Dispose Pengajuan</h2>
-          <button @click="closePopup" class="text-[#4B5563]">&times;</button>
+          <button @click="closePopup" class="text-[#4B5563] text-[20px]">&times;</button>
         </div>
         <div class="mt-4">
           <p class="text-[16px] font-sans text-[#333333] font-normal">Silakan pilih nama staff kemitraan untuk dispose pengajuan.</p>

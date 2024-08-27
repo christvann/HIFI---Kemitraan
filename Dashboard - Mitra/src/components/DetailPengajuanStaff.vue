@@ -2,22 +2,19 @@
     <div>
       <div class="flex w-auto h-[54px] rounded-lg bg-[#FFFFFF] border-collapse">
         <button @click="navigateToDetail">
-          <h1 class="w-[51px] h-[22px] font-sans text-[#2671D9] text-[14px] font-semibold ml-6 mr-1 mt-4 mb-4">Approval</h1>
+          <h1 class="w-[51px] h-[22px] font-sans text-[#2671D9] text-[14px] font-semibold ml-6 mt-4 mb-4">Masuk</h1>
         </button>
-          <img src="../assets/image/NextIcon.png" class="w-[16px] h-[16px] mt-[19px] ml-1">
+          <img src="../assets/image/NextIcon.png" class="w-[16px] h-[16px] mt-[19px] mr-1">
           <span class="w-[119px] h-[22px] font-sans text-[#7F7F80] text-[14px] font-semibold mt-4">Detail Pengajuan</span>
       </div>
       <div class="px-4 py-3">
-        <div class="relative h-[2024px] w-[1086px] rounded-lg bg-[#FFFFFF] border-collapse">
+        <div class="relative h-[2000px] w-[1086px] rounded-lg bg-[#FFFFFF] border-collapse">
           <div class="flex">
             <img src="../assets/image/Rectangle.png" class="ml-4 mt-[10px] h-[28px]">
             <h1 class="font-sans text-[20px] text-[#333333] mt-2 ml-[5px] font-semibold">Detail Pengajuan</h1>
           </div>
           <h1 class="items-start justify-center px-2 ml-2 text-[#9C9C9C]">#no_pengajuan</h1>
-          <div class="flex items-center w-[1046px] h-[55px] rounded-lg border-[#4791F2] border-[1px] bg-[#e7f1fd] ml-4 mt-4 mb-4">
-            <h1 class="text-[16px] font-semibold text-[#2671D9] font-sans ml-4 mt-4 mb-5">Info Approval :</h1>
-            <span class="text-[16px] text-[#333333] font-sans ml-1 mt-4 mb-5">Pengajuan ini memerlukan approval untuk menyelesaikan proses kemitraan</span>
-          </div>
+          <PengajuanDiterima :isVisible="showPopup" @close="showPopup = false" />
   
           <div class="flex items-center mt-4 ml-4 w-[1046px] h-[48px] rounded-lg bg-[#FFFFFF] border-[#E5E7E9] border-[1px]">
             <div class="w-[30px] h-[48px] bg-[#4791F2] rounded-tl-md rounded-bl-md  "></div>
@@ -295,8 +292,8 @@
                 </div>
             </div>
         </div>
-          <!-- KKR -->
-          <div class="flex flex-col w-[316.6px]">
+            <!-- KKR -->
+            <div class="flex flex-col w-[316.6px]">
             <div class="flex items-center">
                 <h1 class="font-sans text-[#4D5E80] text-[16px] font-semibold">KKR</h1>
                 <span class="text-[#FF5656] font-bold ml-1">*</span>
@@ -343,8 +340,8 @@
                 </div>
             </div>
         </div>
-          <!-- KKF -->
-          <div class="flex flex-col w-[316.6px]">
+            <!-- KKF -->
+            <div class="flex flex-col w-[316.6px]">
             <div class="flex items-center">
                 <h1 class="font-sans text-[#4D5E80] text-[16px] font-semibold">KKF</h1>
                 <span class="text-[#FF5656] font-bold ml-1">*</span>
@@ -391,8 +388,8 @@
                 </div>
             </div>
         </div>
-          <!-- KKO -->
-          <div class="flex flex-col w-[316.6px]">
+            <!-- KKO -->
+            <div class="flex flex-col w-[316.6px]">
             <div class="flex items-center">
                 <h1 class="font-sans text-[#4D5E80] text-[16px] font-semibold">KKO</h1>
                 <span class="text-[#FF5656] font-bold ml-1">*</span>
@@ -439,8 +436,8 @@
                 </div>
             </div>
         </div>
-          <!-- Proposal Mitra -->
-          <div class="flex flex-col w-[316.6px]">
+            <!-- Proposal Mitra -->
+            <div class="flex flex-col w-[316.6px]">
             <div class="flex items-center">
                 <h1 class="font-sans text-[#4D5E80] text-[16px] font-semibold">Proposal Mitra</h1>
                 <span class="text-[#B3B3B3] font-sans text-[12px] font-light mt-1 ml-1">(Opsional)</span>
@@ -487,8 +484,8 @@
                 </div>
             </div>
         </div>
-          <!-- Dokumen Surat Menyurat (Opsional) -->
-          <div class="flex flex-col w-[316.6px]">
+            <!-- Dokumen Surat Menyurat (Opsional) -->
+            <div class="flex flex-col w-[316.6px]">
             <div class="flex items-center">
                 <h1 class="font-sans text-[#4D5E80] text-[16px] font-semibold">Dokumen Surat Menyurat</h1>
                 <span class="text-[#B3B3B3] font-sans text-[12px] font-light mt-1 ml-1">(Opsional)</span>
@@ -535,8 +532,8 @@
                 </div>
             </div>
         </div>
-          <!-- Dokumen Lainnya (Opsional) -->
-          <div class="flex flex-col w-[316.6px]">
+            <!-- Dokumen Lainnya (Opsional) -->
+            <div class="flex flex-col w-[316.6px]">
             <div class="flex items-center">
                 <h1 class="font-sans text-[#4D5E80] text-[16px] font-semibold">Dokumen Lainnya</h1>
                 <span class="text-[#B3B3B3] font-sans text-[12px] font-light mt-1 ml-1">(Opsional)</span>
@@ -583,7 +580,7 @@
                 </div>
             </div>
         </div>
-    </div>
+          </div>
           <div class="flex flex-row w-[1046px] h-auto mt-4 ml-4">
             <div class="flex flex-col w-[511px] h-auto">
               <div class="flex items-center">
@@ -592,45 +589,56 @@
               <div class="w-full h-[88px] bg-[#E0E0E0] border-[#E5E7E9] border-[1px] rounded-lg mt-2 flex items-start justify-start">
                 <div class="flex p-4">
                   <div class="ml-4">
-                    <span class="block text-[#333333] font-sans text-[14px]">Lorem ipsum dolor sit amet consectetur. Tincidunt convallis sit quisque.</span>
+                    <span class="block text-[#4D5E80] font-sans text-[14px] font-semibold">Lorem ipsum dolor sit amet consectetur. Tincidunt convallis sit quisque.</span>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="flex flex-col w-[520px] h-auto ml-4">
+            <div class="flex flex-col w-[511px] h-auto ml-4">
               <div class="flex items-center">
-                <h1 class="font-sans text-[#4D5E80] text-[16px] font-semibold">Catatan Approval</h1>
+                <h1 class="font-sans text-[#4D5E80] text-[16px] font-semibold">Approval</h1>
               </div>
-              <textarea 
-                type="text"
-                placeholder="Masukkan catatan approval" 
-                class="w-full h-[88px] text-[#000000] font-sans text-[14px] focus:border-[#9C9C9C] focus:outline-none border-[1px] border-[#E5E7E9] rounded-lg p-2 mt-2 bg-[#FFFFFF]">
-              </textarea>
+              <div class="w-full h-[88px] bg-[#E0E0E0] border-[#E5E7E9] border-[1px] rounded-lg mt-2 flex items-start justify-start">
+                <div class="flex p-4">
+                  <div class="ml-4">
+                    <span class="block text-[#4D5E80] font-sans text-[14px] font-semibold">Lorem ipsum dolor sit amet consectetur. Tincidunt convallis sit quisque.</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <button class="absolute bottom-[12px] right-[123px] mt-4 flex">
-            <div class="flex items-center justify-center w-[69px] h-[40px] rounded-lg bg-[#FFFFFF] border-[#C53830] border-[1px]">
-                <span class="text-[14px] font-sans text-[#C53830] ml-3 mt-[9px] mr-3 mb-[9px]">Reject</span>
+          <button class="absolute bottom-[12px] right-[391px] flex">
+            <div class="flex items-center justify-center w-[114px] h-[40px] rounded-lg bg-[#FFFFFF] border-[#2671D9] border-[1px]">
+                <span class="text-[14px] font-sans text-[#2671D9] ml-3 mt-[9px] mr-3 mb-[9px]">Revisi Mayor</span>
+            </div>
+          </button>
+          <button class="absolute bottom-[12px] right-[253px] flex">
+            <div class="flex items-center justify-center w-[114px] h-[40px] rounded-lg bg-[#FFFFFF] border-[#2671D9] border-[1px]">
+                <span class="text-[14px] font-sans text-[#2671D9] ml-3 mt-[9px] mr-3 mb-[9px]">Revisi Minor</span>
+            </div>
+          </button>
+          <button class="absolute bottom-[12px] right-[124px] flex">
+            <div class="flex items-center justify-center w-[114px] h-[40px] rounded-lg bg-[#FFFFFF] border-[#C53830] border-[1px]">
+                <span class="text-[14px] font-sans text-[#C53830] ml-3 mt-[9px] mr-3 mb-[9px]">Reject ke User</span>
             </div>
           </button>
           <button @click="showPopup = true" class="absolute bottom-[12px] right-[24px] flex">
-            <div class="flex items-center justify-center w-[83px] h-[40px] rounded-lg bg-[#2671D9] border-[#FFFFFF] border-[1px]">
-                <span class="text-[14px] font-sans text-[#FFFFFF] ml-3 mt-[9px] mr-3 mb-[9px]">Approve</span>
+            <div class="flex items-center justify-center w-[72px] h-[40px] rounded-lg bg-[#2671D9] border-[#FFFFFF] border-[1px]">
+                <span class="text-[14px] font-sans text-[#FFFFFF] ml-3 mt-[9px] mr-3 mb-[9px]">Terima</span>
             </div>
           </button>
-          <ApprovalPengajuanPopup :isVisible="showPopup" @close="showPopup = false" />
         </div>
       </div>
     </div>
   </template>
   
   <script>
-
-  import ApprovalPengajuanPopup from '../components/ApprovalPengajuanPopup.vue';
+  
+import PengajuanDiterima from './PengajuanDiterimaPopup.vue';
   
   export default {
     components: {
-      ApprovalPengajuanPopup,
+      PengajuanDiterima,
     },
       data() {
       return {
@@ -651,12 +659,12 @@
     },
     methods: {
       navigateToDetail() {
-        this.$router.push('/approval');
+        this.$router.push('/masukstaff');
       },
       removeFile(type) {
       this.fileDetails[type] = { fileName: '', fileSize: '' };
       this.$refs[`fileInput${type}`].value = ''; // Clear the file input
-    },
+      },
       openFileDialog(section) {
         const inputElement = this.$refs[`fileInput${section}`];
         if (inputElement) {

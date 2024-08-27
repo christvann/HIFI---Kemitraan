@@ -1,12 +1,12 @@
 <template>
   <div class="flex flex-col items-start p-4 w-[248px] h-[1416px] bg-white border-r border-neutral-stroke">
     <!-- Logo Section -->
-    <div class="flex justify-between items-center w-[216px] h-[27px] mb-6 mt-4">
+    <div class="flex justify-between items-center w-[216px] h-[27px] mt-4">
       <img src="../assets/image/Diamond.png" alt="Diamond Icon" class="w-[60px] h-[10.5px]"/>
     </div>
 
     <!-- Line -->
-    <div class="w-[216px] h-0 border items-center border-[#E5E7E9] mt-[10px] mb-6"></div>
+    <div class="w-[216px] h-0 border items-center border-[#E5E7E9] mt-[23px] mb-6"></div>
 
     <!-- Menu Items -->
     <div class="flex flex-col w-full gap-[8px]">
@@ -30,7 +30,6 @@
           :class="[isActive('MasukManager') ? 'filter-white' : '']" 
           src="@/assets/image/IconMasuk.png" class="ml-1 pl-1 pr-[15px]" />Masuk
       </button>
-
 
       <!-- Approval -->
       <button 
@@ -84,13 +83,13 @@ export default {
           this.$router.push('/masukmanager');
           break;
         case 'Approval':
-          this.$router.push('/approval'); // Adjusted logic for routing
+          this.$router.push('/approval'); 
           break;
         case 'Proses':
-          this.$router.push('/proses'); // Adjusted logic for routing
+          this.$router.push('/proses'); 
           break;
         case 'Selesai':
-          this.$router.push('/selesai'); // Adjusted logic for routing
+          this.$router.push('/selesai'); 
           break;
         default:
           break;

@@ -1,57 +1,49 @@
 <template>
     <div>
-      <div class="flex w-auto h-[54px] rounded-lg bg-[#FFFFFF] border-collapse">
-          <h1 class="w-[51px] h-[22px] font-sans text-[#7F7F80] text-[14px] font-semibold ml-6 mt-4 mb-4">Approval</h1>
+      <div class="flex w-[1132px] h-[54px] rounded-lg bg-[#FFFFFF] border-collapse">
+        <h1 class="w-[51px] h-[22px] font-sans text-[#7F7F80] text-[14px] font-semibold ml-6 mt-4 mb-4">Masuk</h1>
       </div>
     </div>
     <div class="px-4 py-3">
-      <div class="h-[776px] w-auto rounded-lg bg-[#FFFFFF] border-collapse">
-          <div class="flex">
-            <img src="../assets/image/Rectangle.png" class="ml-4 mt-[10px] h-[28px]">
-            <h1 class="font-sans text-[20px] text-[#333333] mt-2 ml-[5px] font-semibold">Approval</h1>
+      <div class="h-[712px] w-auto rounded-lg bg-[#FFFFFF] border-collapse">
+        <div class="flex">
+          <img src="../assets/image/Rectangle.png" class="ml-4 mt-[10px] h-[28px]">
+          <h1 class="font-sans text-[20px] text-[#333333] mt-2 ml-[5px] font-semibold">Masuk</h1>
+        </div>
+        <h1 class="items-start justify-center px-2 ml-2 text-[#9C9C9C]">Surat Masuk Pengajuan Mitra</h1>
+        <div class="flex items-start">
+          <div class="w-[320px] h-[40px] rounded-lg bg-[#FFFFFF] border border-[#E5E7E9] mt-6 ml-4 flex justify-between items-center">
+            <input 
+              type="text" 
+              placeholder="Cari sesuatu disini ..." 
+              class="font-sans text-[14px] text-[#7F7F80] font-extralight ml-4 outline-none w-full"/>
+            <button class="bg-[#2671D9] w-[40px] h-full flex items-center justify-center rounded-r-lg">
+              <img src="../assets/image/IconSearch.png" class="w-[13.33px] h-[13.33px]">
+            </button>
           </div>
-          <h1 class="items-start justify-center px-2 ml-2 text-[#9C9C9C]">Persetujuan Pengajuan Mitra</h1>
-          <button class='flex-grow w-[129px] h-[24px] font-sans text-[16px] font-semibold mt-7 ml-8 mr-4 text-[#2671D9]'
-              @click="navigateToApprovalSelesai">Approval Selesai
-              <img 
-                src="@/assets/image/LineBlue.png" class="w-[129px] h-[4px] mt-2">
-          </button>
-          <button class='flex-grow w-[158px] h-[24px] font-sans text-[16px] font-semibold mt-7 ml-8 mr-4'
-              @click="navigateToApprovalStopclock">Approval Stop Clock
-          </button>
-          <div class="flex items-start">
-              <div class="w-[320px] h-[40px] rounded-lg bg-[#FFFFFF] border border-[#E5E7E9] mt-6 ml-4 flex justify-between items-center">
-                <input 
-                  type="text" 
-                  placeholder="Cari sesuatu disini ..." 
-                  class="font-sans text-[14px] text-[#7F7F80] font-extralight ml-4 outline-none w-full"/>
-                <button class="bg-[#2671D9] w-[40px] h-full flex items-center justify-center rounded-r-lg">
-                  <img src="../assets/image/IconSearch.png" class="w-[13.33px] h-[13.33px]">
-                </button>
+          <div class="filter-button">
+            <button @click="toggleDropdown" class="flex">
+              <div class="flex items-center justify-center w-[90px] h-[40px] rounded-lg bg-[#FFFFFF] border border-[#E5E7E9] ml-2 mt-6">
+                <img src="../assets/image/Filter.png" class="w-[16px] h-[16px] mr-2">
+                <span class="text-[14px] font-sans font-medium text-[#333333]">Filter</span>
               </div>
-              <div class="filter-button">
-                <button @click="toggleDropdown" class="flex">
-                  <div class="flex items-center justify-center w-[90px] h-[40px] rounded-lg bg-[#FFFFFF] border border-[#E5E7E9] ml-2 mt-6">
-                    <img src="../assets/image/Filter.png" class="w-[16px] h-[16px] mr-2">
-                    <span class="text-[14px] font-sans font-medium text-[#333333]">Filter</span>
-                  </div>
-                </button>
-                <div v-if="showDropdown" class="dropdown-options bg-[#FFFFFF] ml-2 border border-[#E5E7E9] rounded-lg mt-2 p-[10px] font-thin text-[14px]">
-                  <div v-for="(option, index) in filterOptions" :key="index" class="option-item p-2 hover:bg-gray-100 cursor-pointer">
-                    {{ option }}
-                  </div>
-                </div>
+            </button>
+            <div v-if="showDropdown" class="dropdown-options bg-[#FFFFFF] ml-2 border border-[#E5E7E9] rounded-lg mt-2 p-[10px] font-thin text-[14px]">
+              <div v-for="(option, index) in filterOptions" :key="index" class="option-item p-2 hover:bg-gray-100 cursor-pointer">
+                {{ option }}
               </div>
+            </div>
           </div>
-          <div class="ApprovalSelesai">
+        </div>
+        <div>
           <div class="flex">
             <div class="flex w-[1046px] h-[480px] rounded-lg bg-[#FFFFFF] border-[1px] border-[#E5E7E9] mt-4 ml-4 overflow-auto">
-              <table class="table-auto w-full text-left border-collapse border border-[#E5E7E9]">
+              <table class="table-auto w-full h-auto text-left border-collapse border border-[#E5E7E9]">
                 <thead>
                   <tr class="bg-[#FFFFFF] text-[12px] font-sans text-[#4D5E80] font-semibold">
                     <th class="p-2 border border-[#E5E7E9]">
                       <div class="flex items-center justify-between">
-                        <span>No.</span>
+                        <span>No</span>
                         <img src="../assets/image/arrow.png" alt="arrow" class="ml-2 w-[14px] h-[10px]">
                       </div>
                     </th>
@@ -85,6 +77,7 @@
                         <img src="../assets/image/arrow.png" alt="arrow" class="ml-2 w-[14px] h-[10px]">
                       </div>
                     </th>
+                    <th class="p-2 border border-[#E5E7E9]"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -95,11 +88,21 @@
                     <td class="p-2 border border-[#E5E7E9]">{{ item.tipe }}</td>
                     <td class="p-2 border border-[#E5E7E9]">{{ item.pelaksana }}</td>
                     <td class="p-2 border border-[#E5E7E9]">
-                      <span class="w-[55px] h-[24px] px-4 py-1 rounded-full font-sans text-[12px] text-[#FF8000] bg-[#FFF3E6] border-[1px] border-[#FFD6AD]">
-                          {{ item.status }}
-                      </span>
-                     </td>
-                     <td class="p-2 border border-[#E5E7E9] relative">
+                        <span
+                            :class="[
+                                'w-[55px] h-[24px] px-4 py-1 rounded-full font-sans text-[12px] font-semibold border-[1px]',
+                                item.status === 'Masuk' ? 'bg-[#E2FCF3] border-[1px] border-[#8ADFC3]' : '',
+                                item.status === 'Masuk' ? 'bg-[#E2FCF3] border-[1px] border-[#8ADFC3]' : '',
+                                item.status === 'Masuk' ? 'bg-[#E2FCF3] border-[1px] border-[#8ADFC3]' : '',
+                                item.status === 'Revisi Minor' ? 'bg-[#FFF3E6] text-[#FF8000] border-[#FFD6AD]' : '',
+                                item.status === 'Revisi Mayor' ? 'bg-[#FFF8E1] text-[#E1BC37] border-[#F1D230]' : '',
+                                item.status === 'Reject ke User' ? 'bg-[#FFE5E6] text-[#FF5656] border-[#FD8A8A]' : ''
+                            ]"
+                            >
+                            {{ item.status }}
+                        </span>
+                    </td>
+                    <td class="p-2 border border-[#E5E7E9] relative">
                       <button @click="toggleActionDropdown(index)" class="flex items-center justify-center w-[24px] h-[24px] rounded-lg bg-[#E5E7E9]">
                         <img src="../assets/image/threedot.png" alt="More Options" class="w-[10px] h-[10px]">
                       </button>
@@ -115,7 +118,6 @@
               </table>
             </div>
           </div>
-      </div>
           <div class="flex items-center justify-between p-4">
             <div class="flex items-center text-[14px] font-sans font-normal">
               <span>Menampilkan</span>
@@ -131,10 +133,11 @@
                       @click="setPage(page)">
                 {{ page }}
               </button>
-              <button class="pagination-btn" :disabled="currentPage === totalPages" @click="nextPage">›</button>
+              <button class="pagination-btn font-sans font-normal" :disabled="currentPage === totalPages" @click="nextPage">›</button>
             </div>
           </div>
-          <img src="../assets/image/Line.png" class="w-[1046px] ml-4 mb-6">
+        </div>
+        <img src="../assets/image/Line.png" class=" justify-center w-[1046px] ml-4 mb-6">
       </div>
     </div>
   </template>
@@ -147,22 +150,20 @@
   
         showDropdown: false,
         filterOptions: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
-  
-        selectedValue: 7,
+        
+        selectedValue: 6,
         totalData: 25,
         currentPage: 1,
         totalPages: 10,
-        displayOptions: [7, 10, 15, 20],
-        actionDropdownIndex: null,
+        displayOptions: [6, 10, 15, 20],
+        actionDropdownIndex: null, // Untuk menandai dropdown yang sedang terbuka
         tableData: [
-          { judul: 'Lorem ipsum dolor', nomor: 90224, tipe: 'MoU', pelaksana: 'Pusat', status: 'Approval Selesai' },
-          { judul: 'Lorem ipsum dolor', nomor: 90224, tipe: 'MoU', pelaksana: 'Pusat', status: 'Approval Selesai' },
-          { judul: 'Lorem ipsum dolor', nomor: 90224, tipe: 'PKS', pelaksana: 'Pusat', status: 'Approval Selesai' },
-          { judul: 'Lorem ipsum dolor', nomor: 90224, tipe: 'PKS', pelaksana: 'Pusat', status: 'Approval Selesai' },
-          { judul: 'Lorem ipsum dolor', nomor: 90224, tipe: 'MoU', pelaksana: 'Pusat', status: 'Approval Selesai' },
-          { judul: 'Lorem ipsum dolor', nomor: 90224, tipe: 'PKS', pelaksana: 'Pusat', status: 'Approval Selesai' },
-          { judul: 'Lorem ipsum dolor', nomor: 90224, tipe: 'MoU', pelaksana: 'Pusat', status: 'Approval Selesai' },
-          { judul: 'Lorem ipsum dolor', nomor: 90224, tipe: 'PKS', pelaksana: 'Pusat', status: 'Approval Selesai' }
+          { judul: 'Lorem ipsum dolor sit amet', nomor: 90224, tipe: 'MoU', pelaksana: 'Lorem Ipsum', status: 'Masuk'},
+          { judul: 'Lorem ipsum dolor sit amet', nomor: 90224, tipe: 'PKS', pelaksana: 'Lorem Ipsum', status: 'Masuk'},
+          { judul: 'Lorem ipsum dolor sit amet', nomor: 90224, tipe: 'MoU', pelaksana: 'Lorem Ipsum', status: 'Masuk'},
+          { judul: 'Lorem ipsum dolor sit amet', nomor: 90224, tipe: 'PKS', pelaksana: 'Lorem Ipsum', status: 'Revisi Minor'},
+          { judul: 'Lorem ipsum dolor sit amet', nomor: 90224, tipe: 'MoU', pelaksana: 'Lorem Ipsum', status: 'Revisi Mayor'},
+          { judul: 'Lorem ipsum dolor sit amet', nomor: 90224, tipe: 'MoU', pelaksana: 'Lorem Ipsum', status: 'Reject ke User'},
         ]
       };
     },
@@ -173,25 +174,7 @@
     },
     methods: {
       navigateToDetail() {
-        this.$router.push('/approval/detailpengajuanapproval');
-      },
-      navigateToApprovalSelesai() {
-        this.$router.push('/approval')
-      },
-      navigateToApprovalStopclock() {
-        this.$router.push('/approval/approvalstopclock')
-      },
-      toggleDatePicker() {
-        this.showDatePicker = !this.showDatePicker;
-      },
-      updateDate(event) {
-        //Untuk handle date
-        const selectedDate = event.target.value;
-        console.log(selectedDate);
-        this.showDatePicker = false;
-      },
-      hideDatePicker() {
-        this.showDatePicker = false;
+        this.$router.push('/masukstaff/detailpengajuanstaff');
       },
       toggleDropdown() {
         this.showDropdown = !this.showDropdown;
@@ -257,10 +240,5 @@
     opacity: 0.5;
   }
   
-  button {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    transition: background-color 0.3s;
-  }
   </style>
+  

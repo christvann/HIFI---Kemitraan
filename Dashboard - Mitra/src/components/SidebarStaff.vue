@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-start p-4 w-[248px] h-[1416px] bg-white border-r border-neutral-stroke">
-    <!-- Logo -->
+    <!-- Logo Section -->
     <div @click="navigateToDetail" class="flex justify-between items-center w-[216px] h-[27px] mt-4 cursor-pointer">
       <svg width="77" height="13" viewBox="0 0 77 13" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <rect width="77" height="13" fill="url(#pattern0_1974_2101)" />
@@ -17,9 +17,7 @@
         </defs>
       </svg>
     </div>
-    <!-- Line -->
     <div class="w-[216px] h-0 border items-center border-[#E5E7E9] mt-[23px] mb-6"></div>
-    <!-- Menu Items -->
     <div class="flex flex-col w-full gap-[8px]">
       <!-- Dashboard -->
       <button
@@ -38,42 +36,27 @@
       </button>
       <!-- Masuk -->
       <button
-        :class="['flex text-[14px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', isActive('MasukManager') ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-[#DBEAFE]']"
-        @click="navigateTo('MasukManager')"
+        :class="['flex text-[14px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', isActive('MasukStaff') ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-[#DBEAFE]']"
+        @click="navigateTo('MasukStaff')"
       >
         <svg class="ml-[8px] mr-[14px]" width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
             d="M4 2.75C4 1.92157 4.67157 1.25 5.5 1.25H7C7.82843 1.25 8.5 1.92157 8.5 2.75C8.5 3.57843 7.82843 4.25 7 4.25H5.5C4.67157 4.25 4 3.57843 4 2.75Z"
-            :fill="isActive('MasukManager') ? '#FFFFFF' : '#2671D9'"
+            :fill="isActive('MasukStaff') ? '#FFFFFF' : '#2671D9'"
           />
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
             d="M4 2.75H2.5C1.67157 2.75 1 3.42157 1 4.25V13.25C1 14.0784 1.67157 14.75 2.5 14.75H10C10.8284 14.75 11.5 14.0784 11.5 13.25V12.875M4 2.75C4 3.57843 4.67157 4.25 5.5 4.25H7C7.82843 4.25 8.5 3.57843 8.5 2.75M4 2.75C4 1.92157 4.67157 1.25 5.5 1.25H7C7.82843 1.25 8.5 1.92157 8.5 2.75M8.5 2.75H10C10.8284 2.75 11.5 3.42157 11.5 4.25V5.75M6.25 9.5H12.928M12.928 9.5L10.9377 7.4375M12.928 9.5L10.9377 11.375"
-            :stroke="isActive('MasukManager') ? '#FFFFFF' : '#2671D9'"
+            :stroke="isActive('MasukStaff') ? '#FFFFFF' : '#2671D9'"
             stroke-width="1.3"
             stroke-linecap="round"
             stroke-linejoin="round"
           />
         </svg>
         Masuk
-      </button>
-      <!-- Approval -->
-      <button
-        :class="['flex text-[14px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', isActive('Approval') ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-[#DBEAFE]']"
-        @click="navigateTo('Approval')"
-      >
-        <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg" :class="['ml-[5px] mr-[14px]', isActive('Approval') ? 'filter-white' : '']">
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M6.46875 2C5.48499 2 4.6875 2.79749 4.6875 3.78125C4.6875 4.76501 5.48499 5.5625 6.46875 5.5625C7.45251 5.5625 8.25 4.76501 8.25 3.78125C8.25 2.79749 7.45251 2 6.46875 2ZM3.1875 3.78125C3.1875 1.96907 4.65657 0.5 6.46875 0.5C8.28093 0.5 9.75 1.96907 9.75 3.78125C9.75 5.59343 8.28093 7.0625 6.46875 7.0625C4.65657 7.0625 3.1875 5.59343 3.1875 3.78125ZM13.2188 4.25C12.5457 4.25 12 4.79565 12 5.46875C12 6.14185 12.5457 6.6875 13.2188 6.6875C13.8918 6.6875 14.4375 6.14185 14.4375 5.46875C14.4375 4.79565 13.8918 4.25 13.2188 4.25ZM10.5 5.46875C10.5 3.96723 11.7172 2.75 13.2188 2.75C14.7203 2.75 15.9375 3.96723 15.9375 5.46875C15.9375 6.97027 14.7203 8.1875 13.2188 8.1875C11.7172 8.1875 10.5 6.97027 10.5 5.46875ZM2.45217 12.9974C3.64857 13.6371 5.01535 14 6.46875 14C7.92216 14 9.28896 13.6371 10.4854 12.9974C10.4365 12.4223 10.2672 11.8829 10.0031 11.4031C9.31627 10.1553 7.9904 9.3125 6.46875 9.3125C4.35903 9.3125 2.62783 10.9331 2.45217 12.9974ZM11.4559 14.1743C9.98628 15.0178 8.28277 15.5 6.46875 15.5C4.58005 15.5 2.81113 14.9773 1.30133 14.0683C1.07983 13.9349 0.942643 13.6969 0.938296 13.4383C0.937768 13.4069 0.9375 13.3754 0.9375 13.3438C0.9375 10.2889 3.41392 7.8125 6.46875 7.8125C8.19355 7.8125 9.73319 8.60216 10.7469 9.83768C11.4148 9.27642 12.2771 8.9375 13.2187 8.9375C15.3416 8.9375 17.0625 10.6584 17.0625 12.7812C17.0625 12.835 17.0614 12.8885 17.0592 12.9417C17.0478 13.2166 16.8869 13.4632 16.6399 13.5843C15.6065 14.0909 14.4447 14.375 13.2187 14.375C12.6131 14.375 12.0229 14.3057 11.4559 14.1743ZM11.9685 12.7507C12.3721 12.8322 12.7901 12.875 13.2187 12.875C14.0386 12.875 14.8204 12.7183 15.5369 12.4336C15.3689 11.304 14.395 10.4375 13.2187 10.4375C12.5631 10.4375 11.9701 10.7063 11.544 11.1415C11.7623 11.6439 11.9081 12.1849 11.9685 12.7507Z"
-            :fill="isActive('Approval') ? '#FFFFFF' : '#2671D9'"
-          />
-        </svg>
-        Approval
       </button>
       <!-- Proses -->
       <button
@@ -134,11 +117,8 @@ export default {
         case "Dashboard":
           this.$router.push("/dashboard");
           break;
-        case "MasukManager":
-          this.$router.push("/masukmanager");
-          break;
-        case "Approval":
-          this.$router.push("/approval");
+        case "MasukStaff":
+          this.$router.push("/masukstaff");
           break;
         case "Proses":
           this.$router.push("/proses");
@@ -156,10 +136,8 @@ export default {
       switch (menu) {
         case "Dashboard":
           return routePath === "/dashboard";
-        case "MasukManager":
-          return routePath.startsWith("/masukmanager");
-        case "Approval":
-          return routePath.startsWith("/approval");
+        case "MasukStaff":
+          return routePath.startsWith("/masukstaff");
         case "Proses":
           return routePath.startsWith("/proses");
         case "Selesai":

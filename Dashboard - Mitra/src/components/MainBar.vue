@@ -1,12 +1,8 @@
 <template>
   <div class="flex items-center justify-between w-[1132px] h-[70px] bg-[#FFFFFF] border-b border-[#E5E7E9] bg-topographic">
-    <!-- Left Section: Welcome Message -->
-    <div class="text-[20px] font-sans text-[#2671D9] font-medium py-5 px-4">
-      Selamat Datang di DIAMOND
-    </div>
+    <div class="text-[20px] font-sans text-[#2671D9] font-medium py-5 px-4">Selamat Datang di DIAMOND</div>
     <!-- Right Section: Notifications and User Info -->
     <div class="flex items-center space-x-4 pr-4">
-      <!-- Notification Icon -->
       <div class="relative">
         <!-- Notification Button -->
         <button @click="toggleDropdownNotification" class="relative rounded-full hover:bg-[#E5E7E9] py-2">
@@ -31,17 +27,11 @@
           </div>
         </div>
       </div>
-      
-      <!-- User Info -->
       <div class="flex items-center space-x-2">
         <!-- User Avatar -->
-        <div class="w-[24px] h-[24px] bg-[#C7E5D7] text-[10px] font-sans rounded-full font-bold text-[#333333] flex items-center justify-center">
-          J
-        </div>
+        <div class="w-[24px] h-[24px] bg-[#C7E5D7] text-[10px] font-sans rounded-full font-bold text-[#333333] flex items-center justify-center">J</div>
         <!-- User Name -->
-        <div class="text-[16px] text-[#666666] font-semibold font-sans">
-          John Doe
-        </div>
+        <div class="text-[16px] text-[#666666] font-semibold font-sans">John Doe</div>
         <!-- Dropdown Arrow -->
         <div class="relative">
           <button @click="toggleDropdownArrow" class="flex items-center justify-center py-1 px-1 rounded-full hover:bg-gray-100">
@@ -49,9 +39,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
-
           <!-- Dropdown Menu -->
-          <div v-if="isOpenDropdownArrow" class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+          <div v-if="isOpenDropdownArrow" class="absolute right-0 mt-2 w-48 bg-[#FFFFFF] border border-gray-200 rounded-lg shadow-lg z-50">
             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Option 1</a>
             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Option 2</a>
             <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Option 3</a>
@@ -64,33 +53,33 @@
 
 <script>
 export default {
-  name: 'MainBar, DropdownButton',
+  name: "MainBar, DropdownButton",
   data() {
-      return {
-        isOpenNotification: false,
-        isOpenDropdownArrow:false,
-        notifications: [
-          { message: "New Notification", time: "2 minutes ago" },
-          { message: "New Notification", time: "1 hour ago" },
-          { message: "New Notification", time: "3 days ago" },
-        ],
-      };
+    return {
+      isOpenNotification: false,
+      isOpenDropdownArrow: false,
+      notifications: [
+        { message: "New Notification", time: "2 minutes ago" },
+        { message: "New Notification", time: "1 hour ago" },
+        { message: "New Notification", time: "3 days ago" },
+      ],
+    };
+  },
+  methods: {
+    toggleDropdownArrow() {
+      this.isOpenDropdownArrow = !this.isOpenDropdownArrow;
+      if (this.isOpenNotification) {
+        this.isOpenNotification = false;
+      }
     },
-    methods: {
-      toggleDropdownArrow() {
-        this.isOpenDropdownArrow = !this.isOpenDropdownArrow;
-        if (this.isOpenNotification) {
-          this.isOpenNotification = false; 
-        }
-      },
-      toggleDropdownNotification() {
-        this.isOpenNotification = !this.isOpenNotification;
-        if (this.isOpenDropdownArrow) {
-          this.isOpenDropdownArrow = false; 
-        }
-      },
+    toggleDropdownNotification() {
+      this.isOpenNotification = !this.isOpenNotification;
+      if (this.isOpenDropdownArrow) {
+        this.isOpenDropdownArrow = false;
+      }
     },
-  };
+  },
+};
 </script>
 
 <style scoped>
@@ -100,7 +89,7 @@ export default {
   margin-top: 8px; /* Adjust spacing between button and dropdown */
 }
 .bg-topographic {
-  background-image: url('/src/assets/image/topographic.png');
+  background-image: url("/src/assets/image/topographic.png");
   background-size: cover;
   background-position: center;
 }

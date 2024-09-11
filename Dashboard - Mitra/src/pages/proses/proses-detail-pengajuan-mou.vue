@@ -15,7 +15,7 @@
 <script>
 import MainBar from "@/components/MainBar.vue";
 import SidebarKemitraan from "@/components/SidebarKemitraan.vue";
-import DetailPengajuanMoUNDA from "@/components/DetailPengajuanMoU-NDA.vue";
+import DetailPengajuanMoUNDA from "@/components/DetailPengajuanMoU.vue";
 
 export default {
   components: {
@@ -28,8 +28,8 @@ export default {
 
 <style>
 .background {
-  width: Fixed (1, 366px) px;
-  height: Hug (1, 416px) px;
+  width: Fixed (1,366px) px;
+  height: Hug (1,416px) px;
   left: 3733px;
   gap: 0px;
   opacity: 0px;

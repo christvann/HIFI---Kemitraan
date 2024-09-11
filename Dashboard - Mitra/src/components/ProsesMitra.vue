@@ -234,7 +234,7 @@
                           fill="#2671D9"
                         />
                       </svg>
-                      <button @click="navigateToDetail" class="block flex-grow px-4 py-2 text-[14px] font-sans font-normal text-[#333333] text-left">View</button>
+                      <button @click="navigateToDetail(item.tipe)" class="block flex-grow px-4 py-2 text-[14px] font-sans font-normal text-[#333333] text-left">View</button>
                     </div>
                   </td>
                 </tr>
@@ -269,7 +269,6 @@ export default {
   data() {
     return {
       showDatePicker: false,
-
       showDropdown: false,
       filterOptions: ["Option 1", "Option 2", "Option 3", "Option 4"],
 
@@ -286,32 +285,33 @@ export default {
         { judul: "lorem ipsum", nomor: 90224, tipe: "PKS", user: "pusat", date: "7 Hari", pic: "Budi", progress: "Evaluasi" },
         { judul: "lorem ipsum", nomor: 90224, tipe: "PKS", user: "pusat", date: "Stop Clock", pic: "Farhan", progress: "Surat Pesanan" },
         { judul: "lorem ipsum", nomor: 90224, tipe: "MoU", user: "pusat", date: "7 Hari", pic: "Nathan", progress: "BAK Pemilihan Mitra" },
-        { judul: "lorem ipsum", nomor: 90224, tipe: "pks", user: "pusat", date: "15 Hari", pic: "Budi", progress: "Negosiasi" },
+        { judul: "lorem ipsum", nomor: 90224, tipe: "PKS", user: "pusat", date: "15 Hari", pic: "Budi", progress: "Negosiasi" },
         { judul: "lorem ipsum", nomor: 90224, tipe: "MoU", user: "pusat", date: "0 Hari", pic: "Farhan", progress: "PKS" },
-        { judul: "lorem ipsum", nomor: 90224, tipe: "pks", user: "pusat", date: "30 Hari", pic: "Nathan", progress: "PKS" },
+        { judul: "lorem ipsum", nomor: 90224, tipe: "PKS", user: "pusat", date: "30 Hari", pic: "Nathan", progress: "PKS" },
       ],
     };
   },
+
   computed: {
     pages() {
-      let pagesArray = [];
-      for (let i = 1; i <= this.totalPages; i++) {
-        pagesArray.push(i);
-      }
-      return pagesArray;
+      return Array.from({ length: this.totalPages }, (v, i) => i + 1);
     },
   },
+
   methods: {
-    navigateToDetail() {
-      this.$router.push("/proses/detailpengajuanpks");
+    navigateToDetail(tipe) {
+      if (tipe.toUpperCase() === "PKS") {
+        this.$router.push({ name: "DetailPengajuanPKS" });
+      } else if (tipe.toUpperCase() === "MOU") {
+        this.$router.push({ name: "DetailPengajuanMoU" });
+      }
     },
     toggleDatePicker() {
       this.showDatePicker = !this.showDatePicker;
     },
     updateDate(event) {
-      //Untuk handle date
       const selectedDate = event.target.value;
-      console.log(selectedDate);
+      console.log("Selected date:", selectedDate);
       this.showDatePicker = false;
     },
     hideDatePicker() {
@@ -324,14 +324,9 @@ export default {
       this.$router.push("/progresspkspopup");
     },
     toggleActionDropdown(index) {
-      if (this.actionDropdownIndex === index) {
-        this.actionDropdownIndex = null; // Menutup dropdown jika sudah dibuka
-      } else {
-        this.actionDropdownIndex = index; // Membuka dropdown secara spesifik
-      }
+      this.actionDropdownIndex = this.actionDropdownIndex === index ? null : index;
     },
     viewItem(item) {
-      // Handle the "view" action here
       console.log("Viewing item:", item);
     },
     setPage(page) {

@@ -1,7 +1,7 @@
 <template>
   <div v-if="isVisible" class="fixed inset-0 flex items-center justify-center bg-[#1F2937] bg-opacity-50">
     <div class="bg-[#FFFFFF] re rounded-lg shadow-lg w-[1040.84px] h-[650px] border-collapse">
-      <button @click="closePopup" class="text-[#2671D9] w-[14px] h-[14px] absolute right-[185px] mt-[20px] mr-2 text-[20px]">&times;</button>
+      <button @click="closePopup" class="text-[#2671D9] w-[14px] h-[14px] absolute mt-[30px] ml-[990px] text-[20px]">&times;</button>
       <div class="flex mt-[20px]">
         <img src="../assets/image/Rectangle.png" class="ml-4 mt-[10px] h-[28px]" />
         <h1 class="font-sans text-[20px] text-[#333333] mt-2 ml-[5px] font-semibold">Progress Kemitraan</h1>
@@ -35,10 +35,10 @@
                 <div class="font-sans text-[#333333] text-[12px] font-normal">Dokumen Surat Penawaran</div>
                 <div class="mt-[12px] ml-[38px]">
                   <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">{{ fileName1 }}</p>
-                  <p class="w-[30px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize1 }} MB</p>
+                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize1 }} MB</p>
                 </div>
               </div>
-              <svg class="w-[30px] h-[30px] absolute left-[205px] mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="w-[30px] h-[30px] absolute ml-[2px] mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="15" cy="15" r="14.5652" class="fill-[#E2FCF3]" />
                 <g transform="translate(9, 8)">
                   <path
@@ -47,23 +47,26 @@
                   />
                 </g>
               </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" class="text-[#0EA976] bg-[#E2FCF3] rounded-full w-[15px] h-[15px] absolute top-[165px] left-[450px]" viewBox="0 0 21 19" fill="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-[#0EA976] bg-[#E2FCF3] rounded-full w-[15px] h-[15px] absolute mb-[35px] ml-[240px]" viewBox="0 0 21 19" fill="currentColor">
                 <path fill-rule="evenodd" d="M16.707 4.293a1 1 0 00-1.414 0L8 11.586 4.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd" />
               </svg>
             </div>
           </div>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-[33px] h-[28px] absolute top-[175px] left-[495px]" viewBox="0 0 33 28" fill="none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-[33px] h-[28px] absolute ml-[325px] mt-[90px]" viewBox="0 0 33 28" fill="none">
           <path d="M24.75 6.91797L31.8317 13.9996L24.75 21.0813" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M1 14H30.64" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-        <div :class="boxClass2" class="flex flex-col w-[289px] h-[130px] rounded-lg mt-6 ml-[64px] border-[1px] border-[#DEDEDE]">
-          <div :class="headerClass2" class="w-[289px] h-[40px] p-4 flex justify-between items-center rounded-t-lg">
-            <div class="font-sans text-[14px] font-semibold text-white">{{ fileUploaded2 ? "Proposal" : "Proposal" }}</div>
+        <div :class="[!fileUploaded1 ? 'bg-[#FFFFFF]' : boxClass2]" class="flex flex-col w-[289px] h-[130px] rounded-lg mt-6 ml-[370px] absolute border-[1px] border-[#DEDEDE]">
+          <div :class="!fileUploaded1 ? 'bg-[#E0E0E0]' : headerClass2" class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg">
+            <div class="font-sans text-[14px] font-semibold text-[#FFFFFF]">{{ fileUploaded2 ? "Proposal" : "Proposal" }}</div>
           </div>
           <div v-if="!fileUploaded2" class="flex flex-col ml-4 mt-[10px]">
-            <p class="font-sans text-[#333333] text-[12px] font-normal">Dokumen Proposal</p>
-            <label class="bg-[#2671D9] text-white w-[73px] h-[25px] rounded mt-[12px] cursor-pointer inline-flex items-center justify-center text-[8.75px] font-sans font-semibold">
+            <p class="font-sans text-[#333333] text-[12px] font-normal">Proposal</p>
+            <label
+              :class="[!fileUploaded1 ? 'cursor-not-allowed opacity-50' : 'cursor-pointer']"
+              class="bg-[#2671D9] text-[#FFFFFF] w-[73px] h-[25px] rounded mt-[12px] inline-flex items-center justify-center text-[8.75px] font-sans font-semibold"
+            >
               <div class="flex items-center">
                 <svg class="mr-1" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -75,19 +78,19 @@
                 </svg>
                 <span>Upload</span>
               </div>
-              <input type="file" @change="handleFileUpload2" class="hidden" />
+              <input type="file" @change="handleFileUpload2" class="hidden" :disabled="!fileUploaded1" />
             </label>
           </div>
           <div v-else class="flex items-center ml-4 mt-[10px]">
             <div class="flex items-center">
               <div>
-                <div class="font-sans text-[#333333] text-[12px] font-normal">Dokumen Proposal</div>
+                <div class="font-sans text-[#333333] text-[12px] font-normal">Proposal</div>
                 <div class="mt-[12px] ml-[38px]">
                   <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">{{ fileName2 }}</p>
-                  <p class="w-[30px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize2 }} MB</p>
+                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize2 }} MB</p>
                 </div>
               </div>
-              <svg class="w-[30px] h-[30px] absolute left-[560px] mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="w-[30px] h-[30px] absolute mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="15" cy="15" r="14.5652" class="fill-[#E2FCF3]" />
                 <g transform="translate(9, 8)">
                   <path
@@ -96,23 +99,26 @@
                   />
                 </g>
               </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" class="text-[#0EA976] bg-[#E2FCF3] rounded-full w-[15px] h-[15px] absolute top-[165px] left-[800px]" viewBox="0 0 21 19" fill="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-[#0EA976] bg-[#E2FCF3] rounded-full w-[15px] h-[15px] absolute top-[53.5px] left-[255px]" viewBox="0 0 21 19" fill="currentColor">
                 <path fill-rule="evenodd" d="M16.707 4.293a1 1 0 00-1.414 0L8 11.586 4.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd" />
               </svg>
             </div>
           </div>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-[33px] h-[28px] absolute top-[175px] right-[500px]" viewBox="0 0 33 28" fill="none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-[33px] h-[28px] absolute ml-[670px] mt-[90px]" viewBox="0 0 33 28" fill="none">
           <path d="M24.75 6.91797L31.8317 13.9996L24.75 21.0813" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M1 14H30.64" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-        <div :class="boxClass3" class="flex flex-col w-[289px] h-[130px] rounded-lg mt-6 ml-[64px] border-[1px] border-[#DEDEDE]">
-          <div :class="headerClass3" class="w-[289px] h-[40px] p-4 flex justify-between items-center rounded-t-lg">
-            <div class="font-sans text-[14px] font-semibold text-white">{{ fileUploaded3 ? "Evaluasi" : "Evaluasi" }}</div>
+        <div :class="[!fileUploaded2 ? 'bg-[#FFFFFF]' : boxClass3]" class="absolute flex flex-col w-[289px] h-[130px] rounded-lg mt-[24px] ml-[710px] border-[1px] border-[#DEDEDE]">
+          <div :class="!fileUploaded2 ? 'bg-[#E0E0E0]' : headerClass3" class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg">
+            <div class="font-sans text-[14px] font-semibold text-[#FFFFFF]">{{ fileUploaded3 ? "Evaluasi" : "Evaluasi" }}</div>
           </div>
           <div v-if="!fileUploaded3" class="flex flex-col ml-4 mt-[10px]">
             <p class="font-sans text-[#333333] text-[12px] font-normal">Dokumen Evaluasi</p>
-            <label class="bg-[#2671D9] text-white w-[73px] h-[25px] rounded mt-[12px] cursor-pointer inline-flex items-center justify-center text-[8.75px] font-sans font-semibold">
+            <label
+              :class="[!fileUploaded2 ? 'cursor-not-allowed opacity-50' : 'cursor-pointer']"
+              class="bg-[#2671D9] text-[#FFFFFF] w-[73px] h-[25px] rounded mt-[12px] inline-flex items-center justify-center text-[8.75px] font-sans font-semibold"
+            >
               <div class="flex items-center">
                 <svg class="mr-1" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -124,7 +130,7 @@
                 </svg>
                 <span>Upload</span>
               </div>
-              <input type="file" @change="handleFileUpload3" class="hidden" />
+              <input type="file" @change="handleFileUpload3" class="hidden" :disabled="!fileUploaded2" />
             </label>
           </div>
           <div v-else class="flex items-center ml-4 mt-[10px]">
@@ -133,10 +139,10 @@
                 <div class="font-sans text-[#333333] text-[12px] font-normal">Dokumen Evaluasi</div>
                 <div class="mt-[12px] ml-[38px]">
                   <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">{{ fileName3 }}</p>
-                  <p class="w-[30px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize3 }} MB</p>
+                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize3 }} MB</p>
                 </div>
               </div>
-              <svg class="w-[30px] h-[30px] absolute right-[440px] mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="w-[30px] h-[30px] absolute mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="15" cy="15" r="14.5652" class="fill-[#E2FCF3]" />
                 <g transform="translate(9, 8)">
                   <path
@@ -145,23 +151,26 @@
                   />
                 </g>
               </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" class="text-[#0EA976] bg-[#E2FCF3] rounded-full w-[15px] h-[15px] absolute top-[165px] right-[212px]" viewBox="0 0 21 19" fill="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-[#0EA976] bg-[#E2FCF3] rounded-full w-[15px] h-[15px] absolute top-[53.5px] left-[255px]" viewBox="0 0 21 19" fill="currentColor">
                 <path fill-rule="evenodd" d="M16.707 4.293a1 1 0 00-1.414 0L8 11.586 4.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd" />
               </svg>
             </div>
           </div>
         </div>
-        <svg width="28" height="33" class="w-[33px] h-[28px] absolute top-[260px] right-[320px]" viewBox="0 0 28 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M21.1221 24.75L14.3405 31.8317L7.55898 24.75" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M14.3408 1L14.3408 30.64" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <svg width="33" height="29" class="w-[33px] h-[28px] absolute ml-[670px] mt-[280px]" viewBox="0 0 33 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.09082 7.83984L1.00915 14.9215L8.09082 22.0032" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M31.8408 14.9209H2.20082" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-        <div :class="boxClass4" class="flex flex-col w-[289px] h-[130px] absolute top-[280px] right-[196px] rounded-lg mt-6 ml-[64px] border-[1px] border-[#DEDEDE]">
-          <div :class="headerClass4" class="w-[289px] h-[40px] p-4 flex justify-between items-center rounded-t-lg">
-            <div class="font-sans text-[14px] font-semibold text-white">{{ fileUploaded4 ? "Negosiasi" : "Negosiasi" }}</div>
+        <div :class="[!fileUploaded3 ? 'bg-[#FFFFFF]' : boxClass4]" class="absolute flex flex-col w-[289px] h-[130px] rounded-lg mt-[215px] ml-[710px] border-[1px] border-[#DEDEDE]">
+          <div :class="!fileUploaded3 ? 'bg-[#E0E0E0]' : headerClass4" class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg">
+            <div class="font-sans text-[14px] font-semibold text-[#FFFFFF]">{{ fileUploaded3 ? "Negosiasi" : "Negosiasi" }}</div>
           </div>
           <div v-if="!fileUploaded4" class="flex flex-col ml-4 mt-[10px]">
             <p class="font-sans text-[#333333] text-[12px] font-normal">Dokumen Negosiasi</p>
-            <label class="bg-[#2671D9] text-white w-[73px] h-[25px] rounded mt-[12px] cursor-pointer inline-flex items-center justify-center text-[8.75px] font-sans font-semibold">
+            <label
+              :class="[!fileUploaded3 ? 'cursor-not-allowed opacity-50' : 'cursor-pointer']"
+              class="bg-[#2671D9] text-[#FFFFFF] w-[73px] h-[25px] rounded mt-[12px] inline-flex items-center justify-center text-[8.75px] font-sans font-semibold"
+            >
               <div class="flex items-center">
                 <svg class="mr-1" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -173,7 +182,7 @@
                 </svg>
                 <span>Upload</span>
               </div>
-              <input type="file" @change="handleFileUpload4" class="hidden" />
+              <input type="file" @change="handleFileUpload4" class="hidden" :disabled="!fileUploaded3" />
             </label>
           </div>
           <div v-else class="flex items-center ml-4 mt-[10px]">
@@ -182,10 +191,10 @@
                 <div class="font-sans text-[#333333] text-[12px] font-normal">Dokumen Negosiasi</div>
                 <div class="mt-[12px] ml-[38px]">
                   <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">{{ fileName4 }}</p>
-                  <p class="w-[30px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize4 }} MB</p>
+                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize4 }} MB</p>
                 </div>
               </div>
-              <svg class="w-[30px] h-[30px] absolute right-[240px] mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="w-[30px] h-[30px] absolute mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="15" cy="15" r="14.5652" class="fill-[#E2FCF3]" />
                 <g transform="translate(9, 8)">
                   <path
@@ -194,23 +203,26 @@
                   />
                 </g>
               </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" class="text-[#0EA976] bg-[#E2FCF3] rounded-full w-[15px] h-[15px] absolute top-[52px] right-[10px]" viewBox="0 0 21 19" fill="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-[#0EA976] bg-[#E2FCF3] rounded-full w-[15px] h-[15px] absolute top-[53.5px] left-[255px]" viewBox="0 0 21 19" fill="currentColor">
                 <path fill-rule="evenodd" d="M16.707 4.293a1 1 0 00-1.414 0L8 11.586 4.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd" />
               </svg>
             </div>
           </div>
         </div>
-        <svg width="33" height="29" class="w-[33px] h-[28px] absolute bottom-[270px] right-[500px]" viewBox="0 0 33 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8.09082 7.83984L1.00915 14.9215L8.09082 22.0032" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M31.8408 14.9209H2.20082" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-[33px] h-[32px] absolute mt-[170px] ml-[840px]" viewBox="0 0 32 33" fill="none">
+          <path d="M20.2017 24.75L13.4201 31.8317L6.63857 24.75" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M13.4204 1L13.4204 30.64" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-        <div :class="boxClass5" class="flex flex-col absolute bottom-[229px] left-[480px] w-[289px] h-[130px] rounded-lg mt-6 ml-[64px] border-[1px] border-[#DEDEDE]">
-          <div :class="headerClass5" class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg">
-            <div class="font-sans text-[14px] font-semibold text-white">{{ fileUploaded5 ? "BAK Pemilihan Mitra" : "BAK Pemilihan Mitra" }}</div>
+        <div :class="[!fileUploaded4 ? 'bg-[#FFFFFF]' : boxClass5]" class="flex flex-col w-[289px] h-[130px] rounded-lg mt-[215px] ml-[370px] absolute border-[1px] border-[#DEDEDE]">
+          <div :class="!fileUploaded4 ? 'bg-[#E0E0E0]' : headerClass5" class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg">
+            <div class="font-sans text-[14px] font-semibold text-[#FFFFFF]">{{ fileUploaded4 ? "BAK Pemilihan Mitra" : "BAK Pemilihan Mitra" }}</div>
           </div>
           <div v-if="!fileUploaded5" class="flex flex-col ml-4 mt-[10px]">
             <p class="font-sans text-[#333333] text-[12px] font-normal">Dokumen BAK Pemilihan Mitra</p>
-            <label class="bg-[#2671D9] text-white w-[73px] h-[25px] rounded mt-[12px] cursor-pointer inline-flex items-center justify-center text-[8.75px] font-sans font-semibold">
+            <label
+              :class="[!fileUploaded4 ? 'cursor-not-allowed opacity-50' : 'cursor-pointer']"
+              class="bg-[#2671D9] text-[#FFFFFF] w-[73px] h-[25px] rounded mt-[12px] inline-flex items-center justify-center text-[8.75px] font-sans font-semibold"
+            >
               <div class="flex items-center">
                 <svg class="mr-1" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -222,7 +234,7 @@
                 </svg>
                 <span>Upload</span>
               </div>
-              <input type="file" @change="handleFileUpload5" class="hidden" />
+              <input type="file" @change="handleFileUpload5" class="hidden" :disabled="!fileUploaded4" />
             </label>
           </div>
           <div v-else class="flex items-center ml-4 mt-[10px]">
@@ -231,10 +243,10 @@
                 <div class="font-sans text-[#333333] text-[12px] font-normal">Dokumen BAK Pemilihan Mitra</div>
                 <div class="mt-[12px] ml-[38px]">
                   <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">{{ fileName5 }}</p>
-                  <p class="w-[30px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize5 }} MB</p>
+                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize5 }} MB</p>
                 </div>
               </div>
-              <svg class="w-[30px] h-[30px] absolute right-[240px] mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="w-[30px] h-[30px] absolute mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="15" cy="15" r="14.5652" class="fill-[#E2FCF3]" />
                 <g transform="translate(9, 8)">
                   <path
@@ -243,23 +255,26 @@
                   />
                 </g>
               </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" class="text-[#0EA976] bg-[#E2FCF3] rounded-full w-[15px] h-[15px] absolute top-[52px] right-[10px]" viewBox="0 0 21 19" fill="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-[#0EA976] bg-[#E2FCF3] rounded-full w-[15px] h-[15px] absolute top-[53.5px] left-[255px]" viewBox="0 0 21 19" fill="currentColor">
                 <path fill-rule="evenodd" d="M16.707 4.293a1 1 0 00-1.414 0L8 11.586 4.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd" />
               </svg>
             </div>
           </div>
         </div>
-        <svg width="33" height="29" class="w-[33px] h-[28px] absolute bottom-[270px] left-[500px]" viewBox="0 0 33 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="33" height="29" class="w-[33px] h-[28px] absolute mt-[280px] ml-[325px]" viewBox="0 0 33 29" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M8.09082 7.83984L1.00915 14.9215L8.09082 22.0032" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M31.8408 14.9209H2.20082" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-        <div :class="boxClass6" class="flex flex-col absolute bottom-[229px] left-[127px] w-[289px] h-[130px] rounded-lg mt-6 ml-[64px] border-[1px] border-[#DEDEDE]">
-          <div :class="headerClass6" class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg">
-            <div class="font-sans text-[14px] font-semibold text-white">{{ fileUploaded6 ? "Surat Pesanan" : "Surat Pesanan" }}</div>
+        <div :class="[!fileUploaded5 ? 'bg-[#FFFFFF]' : boxClass6]" class="flex flex-col w-[289px] h-[130px] rounded-lg mt-[215px] ml-5 absolute border-[1px] border-[#DEDEDE]">
+          <div :class="!fileUploaded5 ? 'bg-[#E0E0E0]' : headerClass6" class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg">
+            <div class="font-sans text-[14px] font-semibold text-[#FFFFFF]">{{ fileUploaded5 ? "Surat Pesanan" : "Surat Pesanan" }}</div>
           </div>
           <div v-if="!fileUploaded6" class="flex flex-col ml-4 mt-[10px]">
             <p class="font-sans text-[#333333] text-[12px] font-normal">Dokumen Surat Pesanan</p>
-            <label class="bg-[#2671D9] text-white w-[73px] h-[25px] rounded mt-[12px] cursor-pointer inline-flex items-center justify-center text-[8.75px] font-sans font-semibold">
+            <label
+              :class="[!fileUploaded5 ? 'cursor-not-allowed opacity-50' : 'cursor-pointer']"
+              class="bg-[#2671D9] text-[#FFFFFF] w-[73px] h-[25px] rounded mt-[12px] inline-flex items-center justify-center text-[8.75px] font-sans font-semibold"
+            >
               <div class="flex items-center">
                 <svg class="mr-1" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -271,7 +286,7 @@
                 </svg>
                 <span>Upload</span>
               </div>
-              <input type="file" @change="handleFileUpload6" class="hidden" />
+              <input type="file" @change="handleFileUpload6" class="hidden" :disabled="!fileUploaded5" />
             </label>
           </div>
           <div v-else class="flex items-center ml-4 mt-[10px]">
@@ -280,10 +295,10 @@
                 <div class="font-sans text-[#333333] text-[12px] font-normal">Dokumen Surat Pesanan</div>
                 <div class="mt-[12px] ml-[38px]">
                   <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">{{ fileName6 }}</p>
-                  <p class="w-[30px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize6 }} MB</p>
+                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize6 }} MB</p>
                 </div>
               </div>
-              <svg class="w-[30px] h-[30px] absolute right-[240px] mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="w-[30px] h-[30px] absolute mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="15" cy="15" r="14.5652" class="fill-[#E2FCF3]" />
                 <g transform="translate(9, 8)">
                   <path
@@ -292,23 +307,26 @@
                   />
                 </g>
               </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" class="text-[#0EA976] bg-[#E2FCF3] rounded-full w-[15px] h-[15px] absolute top-[52px] right-[10px]" viewBox="0 0 21 19" fill="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-[#0EA976] bg-[#E2FCF3] rounded-full w-[15px] h-[15px] absolute top-[53.5px] left-[255px]" viewBox="0 0 21 19" fill="currentColor">
                 <path fill-rule="evenodd" d="M16.707 4.293a1 1 0 00-1.414 0L8 11.586 4.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd" />
               </svg>
             </div>
           </div>
         </div>
-        <svg width="28" height="33" class="w-[33px] h-[28px] absolute bottom-[185px] left-[320px]" viewBox="0 0 28 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="28" height="33" class="w-[33px] h-[28px] absolute mt-[360px] ml-[150px]" viewBox="0 0 28 33" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M21.1221 24.75L14.3405 31.8317L7.55898 24.75" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M14.3408 1L14.3408 30.64" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-        <div :class="boxClass7" class="flex flex-col absolute bottom-[30px] left-[128px] w-[289px] h-[130px] rounded-lg mt-6 ml-[64px] border-[1px] border-[#DEDEDE]">
-          <div :class="headerClass7" class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg">
-            <div class="font-sans text-[14px] font-semibold text-white">{{ fileUploaded7 ? "PKS" : "PKS" }}</div>
+        <div :class="[!fileUploaded6 ? 'bg-[#FFFFFF]' : boxClass7]" class="flex flex-col w-[289px] h-[130px] rounded-lg mt-[400px] ml-5 absolute border-[1px] border-[#DEDEDE]">
+          <div :class="!fileUploaded6 ? 'bg-[#E0E0E0]' : headerClass7" class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg">
+            <div class="font-sans text-[14px] font-semibold text-[#FFFFFF]">{{ fileUploaded6 ? "PKS" : "PKS" }}</div>
           </div>
           <div v-if="!fileUploaded7" class="flex flex-col ml-4 mt-[10px]">
             <p class="font-sans text-[#333333] text-[12px] font-normal">Dokumen PKS</p>
-            <label class="bg-[#2671D9] text-white w-[73px] h-[25px] rounded mt-[12px] cursor-pointer inline-flex items-center justify-center text-[8.75px] font-sans font-semibold">
+            <label
+              :class="[!fileUploaded6 ? 'cursor-not-allowed opacity-50' : 'cursor-pointer']"
+              class="bg-[#2671D9] text-[#FFFFFF] w-[73px] h-[25px] rounded mt-[12px] inline-flex items-center justify-center text-[8.75px] font-sans font-semibold"
+            >
               <div class="flex items-center">
                 <svg class="mr-1" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -320,7 +338,7 @@
                 </svg>
                 <span>Upload</span>
               </div>
-              <input type="file" @change="handleFileUpload7" class="hidden" />
+              <input type="file" @change="handleFileUpload7" class="hidden" :disabled="!fileUploaded6" />
             </label>
           </div>
           <div v-else class="flex items-center ml-4 mt-[10px]">
@@ -329,10 +347,10 @@
                 <div class="font-sans text-[#333333] text-[12px] font-normal">Dokumen PKS</div>
                 <div class="mt-[12px] ml-[38px]">
                   <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">{{ fileName7 }}</p>
-                  <p class="w-[30px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize7 }} MB</p>
+                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize7 }} MB</p>
                 </div>
               </div>
-              <svg class="w-[30px] h-[30px] absolute right-[240px] mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="w-[30px] h-[30px] absolute mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="15" cy="15" r="14.5652" class="fill-[#E2FCF3]" />
                 <g transform="translate(9, 8)">
                   <path
@@ -341,7 +359,7 @@
                   />
                 </g>
               </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" class="text-[#0EA976] bg-[#E2FCF3] rounded-full w-[15px] h-[15px] absolute top-[52px] right-[10px]" viewBox="0 0 21 19" fill="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="text-[#0EA976] bg-[#E2FCF3] rounded-full w-[15px] h-[15px] absolute top-[53.5px] left-[255px]" viewBox="0 0 21 19" fill="currentColor">
                 <path fill-rule="evenodd" d="M16.707 4.293a1 1 0 00-1.414 0L8 11.586 4.707 8.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd" />
               </svg>
             </div>

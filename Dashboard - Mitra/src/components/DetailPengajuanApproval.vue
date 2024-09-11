@@ -617,7 +617,7 @@
         <!-- Popup pertama (ApprovalPengajuanPopup) -->
         <div v-if="showApprovalPopup" class="fixed inset-0 flex items-center justify-center bg-[#1F2937] bg-opacity-50">
           <div class="bg-[#FFFFFF] rounded-lg shadow-lg w-[360px] h-[500px]">
-            <button @click="closeApprovalPopup" class="text-[#4B5563] absolute right-[520px] mt-2 mr-2 text-[20px]">&times;</button>
+            <button @click="closeApprovalPopup" class="text-[#4B5563] absolute mt-2 ml-[330px] text-[20px]">&times;</button>
             <div class="flex flex-col justify-center items-center mt-14 ml-8 mr-8 mb-14">
               <img src="../assets/image/Pengajuan.png" class="w-[200px] h-[160px] mb-4" />
               <h2 class="text-[20px] font-sans font-semibold text-[#333333] mb-2">Setujui Pengajuan</h2>

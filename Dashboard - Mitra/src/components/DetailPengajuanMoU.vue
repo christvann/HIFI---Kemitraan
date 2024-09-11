@@ -62,7 +62,7 @@
                   </defs>
                 </svg>
               </button>
-              <ProgressPKSPopup :isVisible="showPopup" @close="showPopup = false" />
+              <ProgressMoUPopup :isVisible="showPopup" @close="showPopup = false" />
             </div>
           </div>
         </div>
@@ -878,11 +878,11 @@
 </template>
 
 <script>
-import ProgressPKSPopup from "./ProgressPKSPopup.vue";
+import ProgressMoUPopup from "./ProgressMoUPopup.vue";
 
 export default {
   components: {
-    ProgressPKSPopup,
+    ProgressMoUPopup,
   },
   data() {
     return {

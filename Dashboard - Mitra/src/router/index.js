@@ -13,7 +13,8 @@ import DetailPengajuanApprovalStopclock from '@/pages/approval/detail-pengajuan-
 import ProsesMitra from '@/pages/proses/proses-view.vue';
 import SelesaiMitra from '@/pages/selesai/selesai-view.vue';
 import SelesaiDitolak from '@/pages/selesai/selesai-ditolak.vue';
-import DetailPengajuanPKS from '@/pages/proses/proses-detail-pengajuan-pks.vue';
+import DetailPengajuanPKS from '@/pages/proses/proses-detail-pengajuan-pks.vue';  
+import DetailPengajuanMoU from '@/pages/proses/proses-detail-pengajuan-mou.vue';
 
 const routes = [
   {
@@ -99,6 +100,11 @@ const routes = [
     name: 'DetailPengajuanPKS',
     path: '/proses/detailpengajuanpks',
     component: DetailPengajuanPKS
+  },
+  {
+    name: 'DetailPengajuanMoU',
+    path: '/proses/detailpengajuanmou',
+    component: DetailPengajuanMoU
   },
 ];
 

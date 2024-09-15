@@ -2,40 +2,23 @@
   <div v-if="isVisible" class="fixed inset-0 flex items-center justify-center bg-[#1F2937] bg-opacity-50">
     <div class="bg-[#FFFFFF] re rounded-lg shadow-lg w-[1040.84px] h-[650px] border-collapse">
       <button @click="closePopup" class="text-[#2671D9] w-[14px] h-[14px] absolute mt-[30px] ml-[990px] text-[20px]">&times;</button>
-      <div class="flex mt-[20px]">
+      <div class="flex mt-[8px]">
         <img src="../assets/image/Rectangle.png" class="ml-4 mt-[10px] h-[28px]" />
         <h1 class="font-sans text-[20px] text-[#333333] mt-2 ml-[5px] font-semibold">Progress Kemitraan</h1>
       </div>
       <h1 class="items-start justify-center px-2 ml-2 text-[#9C9C9C]">$judul_pengajuan</h1>
       <div class="flex">
-        <div :class="boxClass1" class="flex flex-col w-[289px] h-[130px] rounded-lg mt-6 ml-5 border-[1px] border-[#DEDEDE]">
-          <div :class="headerClass1" class="w-[289px] h-[40px] p-4 flex justify-between items-center rounded-t-lg">
-            <div class="font-sans text-[14px] font-semibold text-white">{{ fileUploaded1 ? "Surat Penawaran" : "Surat Penawaran" }}</div>
+        <div class="flex flex-col w-[289px] h-[130px] rounded-lg mt-6 ml-5 border-[1px] border-[#E5E7E9]">
+          <div class="w-[289px] h-[40px] p-4 flex justify-between items-center rounded-t-lg bg-[#0EA976]">
+            <div class="font-sans text-[14px] font-semibold text-white">Surat Penawaran</div>
           </div>
-          <div v-if="!fileUploaded1" class="flex flex-col ml-4 mt-[10px]">
-            <p class="font-sans text-[#333333] text-[12px] font-normal">Dokumen Surat Penawaran</p>
-            <label class="bg-[#2671D9] text-white w-[73px] h-[25px] rounded mt-[12px] cursor-pointer inline-flex items-center justify-center text-[8.75px] font-sans font-semibold">
-              <div class="flex items-center">
-                <svg class="mr-1" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M3.87337 1.13053C3.01762 1.13053 2.32389 1.82426 2.32389 2.68001C2.32389 2.77881 2.33309 2.87512 2.35059 2.96824C2.38432 3.14782 2.27992 3.32463 2.10638 3.38182C1.59703 3.54968 1.23014 4.02951 1.23014 4.59407C1.23014 5.29881 1.80145 5.87012 2.50618 5.87012H6.60775C7.16147 5.87012 7.61035 5.42124 7.61035 4.86751C7.61035 4.43975 7.3423 4.07368 6.96375 3.92985C6.77894 3.85963 6.68377 3.65491 6.74921 3.46836C6.77555 3.39326 6.79004 3.31216 6.79004 3.22689C6.79004 2.82418 6.46358 2.49772 6.06087 2.49772C5.98167 2.49772 5.9061 2.51022 5.83562 2.53308C5.74043 2.56395 5.63673 2.55433 5.54884 2.50649C5.46095 2.45864 5.39658 2.37677 5.37084 2.28007C5.19455 1.61791 4.59041 1.13053 3.87337 1.13053ZM1.59473 2.68001C1.59473 1.42155 2.61491 0.401367 3.87337 0.401367C4.80935 0.401367 5.61285 0.965434 5.96369 1.77176C5.99584 1.76963 6.02825 1.76855 6.06087 1.76855C6.86629 1.76855 7.51921 2.42147 7.51921 3.22689C7.51921 3.28171 7.51616 3.33591 7.51023 3.3893C8.00728 3.69338 8.33952 4.24132 8.33952 4.86751C8.33952 5.82394 7.56418 6.59928 6.60775 6.59928H2.50618C1.39874 6.59928 0.500977 5.70152 0.500977 4.59407C0.500977 3.81305 0.947312 3.13701 1.59815 2.80588C1.59588 2.76418 1.59473 2.72222 1.59473 2.68001ZM4.16245 2.42221C4.30483 2.27983 4.53567 2.27983 4.67805 2.42221L5.7718 3.51596C5.91418 3.65834 5.91418 3.88918 5.7718 4.03156C5.62942 4.17394 5.39858 4.17394 5.2562 4.03156L4.78483 3.56019L4.78483 5.14095C4.78483 5.3423 4.6216 5.50553 4.42025 5.50553C4.21889 5.50553 4.05566 5.3423 4.05566 5.14095L4.05566 3.56019L3.5843 4.03156C3.44192 4.17394 3.21108 4.17394 3.0687 4.03156C2.92632 3.88918 2.92632 3.65834 3.0687 3.51596L4.16245 2.42221Z"
-                    fill="white"
-                  />
-                </svg>
-                <span>Upload</span>
-              </div>
-              <input type="file" @change="handleFileUpload1" class="hidden" />
-            </label>
-          </div>
-          <div v-else class="flex items-center ml-4 mt-[10px]">
+          <div class="flex flex-col ml-4 mt-[10px]">
             <div class="flex items-center">
               <div>
                 <div class="font-sans text-[#333333] text-[12px] font-normal">Dokumen Surat Penawaran</div>
                 <div class="mt-[12px] ml-[38px]">
-                  <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">{{ fileName1 }}</p>
-                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize1 }} MB</p>
+                  <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">suratpenawaran.pdf</p>
+                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">2 MB</p>
                 </div>
               </div>
               <svg class="w-[30px] h-[30px] absolute ml-[2px] mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,37 +40,17 @@
           <path d="M24.75 6.91797L31.8317 13.9996L24.75 21.0813" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M1 14H30.64" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-        <div :class="[!fileUploaded1 ? 'bg-[#FFFFFF]' : boxClass2]" class="flex flex-col w-[289px] h-[130px] rounded-lg mt-6 ml-[370px] absolute border-[1px] border-[#DEDEDE]">
-          <div :class="!fileUploaded1 ? 'bg-[#E0E0E0]' : headerClass2" class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg">
-            <div :class="!fileUploaded1 ? 'text-[#333333]' : 'text-[#FFFFFF]'" class="font-sans text-[14px] font-semibold">{{ fileUploaded3 ? "Proposal" : "Proposal" }}</div>
+        <div class="flex flex-col w-[289px] h-[130px] rounded-lg mt-6 ml-[370px] absolute border-[1px] border-[#DEDEDE]">
+          <div class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg bg-[#0EA976]">
+            <div class="font-sans text-[14px] font-semibold text-white">Proposal</div>
           </div>
-          <div v-if="!fileUploaded2" class="flex flex-col ml-4 mt-[10px]">
-            <p :class="!fileUploaded1 ? 'text-[#7F7F80]' : 'text-[#333333]'" class="font-sans text-[12px] font-normal">Dokumen Proposal</p>
-            <label
-              :class="[!fileUploaded1 ? 'cursor-not-allowed bg-[#E6E6E6] text-[#7F7F80]' : 'cursor-pointer bg-[#2671D9] text-[#FFFFFF]']"
-              class="w-[73px] h-[25px] rounded mt-[12px] inline-flex items-center justify-center text-[8.75px] font-sans font-semibold"
-            >
-              <div class="flex items-center">
-                <svg class="mr-1" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    :fill="!fileUploaded1 ? '#7F7F80' : '#FFFFFF'"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M3.87337 1.13053C3.01762 1.13053 2.32389 1.82426 2.32389 2.68001C2.32389 2.77881 2.33309 2.87512 2.35059 2.96824C2.38432 3.14782 2.27992 3.32463 2.10638 3.38182C1.59703 3.54968 1.23014 4.02951 1.23014 4.59407C1.23014 5.29881 1.80145 5.87012 2.50618 5.87012H6.60775C7.16147 5.87012 7.61035 5.42124 7.61035 4.86751C7.61035 4.43975 7.3423 4.07368 6.96375 3.92985C6.77894 3.85963 6.68377 3.65491 6.74921 3.46836C6.77555 3.39326 6.79004 3.31216 6.79004 3.22689C6.79004 2.82418 6.46358 2.49772 6.06087 2.49772C5.98167 2.49772 5.9061 2.51022 5.83562 2.53308C5.74043 2.56395 5.63673 2.55433 5.54884 2.50649C5.46095 2.45864 5.39658 2.37677 5.37084 2.28007C5.19455 1.61791 4.59041 1.13053 3.87337 1.13053ZM1.59473 2.68001C1.59473 1.42155 2.61491 0.401367 3.87337 0.401367C4.80935 0.401367 5.61285 0.965434 5.96369 1.77176C5.99584 1.76963 6.02825 1.76855 6.06087 1.76855C6.86629 1.76855 7.51921 2.42147 7.51921 3.22689C7.51921 3.28171 7.51616 3.33591 7.51023 3.3893C8.00728 3.69338 8.33952 4.24132 8.33952 4.86751C8.33952 5.82394 7.56418 6.59928 6.60775 6.59928H2.50618C1.39874 6.59928 0.500977 5.70152 0.500977 4.59407C0.500977 3.81305 0.947312 3.13701 1.59815 2.80588C1.59588 2.76418 1.59473 2.72222 1.59473 2.68001ZM4.16245 2.42221C4.30483 2.27983 4.53567 2.27983 4.67805 2.42221L5.7718 3.51596C5.91418 3.65834 5.91418 3.88918 5.7718 4.03156C5.62942 4.17394 5.39858 4.17394 5.2562 4.03156L4.78483 3.56019L4.78483 5.14095C4.78483 5.3423 4.6216 5.50553 4.42025 5.50553C4.21889 5.50553 4.05566 5.3423 4.05566 5.14095L4.05566 3.56019L3.5843 4.03156C3.44192 4.17394 3.21108 4.17394 3.0687 4.03156C2.92632 3.88918 2.92632 3.65834 3.0687 3.51596L4.16245 2.42221Z"
-                  />
-                </svg>
-                <span>Upload</span>
-              </div>
-              <input type="file" @change="handleFileUpload2" class="hidden" :disabled="!fileUploaded1" />
-            </label>
-          </div>
-          <div v-else class="flex items-center ml-4 mt-[10px]">
+          <div class="flex flex-col ml-4 mt-[10px]">
             <div class="flex items-center">
               <div>
                 <div class="font-sans text-[#333333] text-[12px] font-normal">Dokumen Proposal</div>
                 <div class="mt-[12px] ml-[38px]">
-                  <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">{{ fileName2 }}</p>
-                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize2 }} MB</p>
+                  <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">proposal.pdf</p>
+                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">2 MB</p>
                 </div>
               </div>
               <svg class="w-[30px] h-[30px] absolute mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -109,37 +72,17 @@
           <path d="M24.75 6.91797L31.8317 13.9996L24.75 21.0813" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M1 14H30.64" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-        <div :class="[!fileUploaded2 ? 'bg-[#FFFFFF]' : boxClass3]" class="absolute flex flex-col w-[289px] h-[130px] rounded-lg mt-[24px] ml-[710px] border-[1px] border-[#DEDEDE]">
-          <div :class="!fileUploaded2 ? 'bg-[#E0E0E0]' : headerClass3" class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg">
-            <div :class="!fileUploaded2 ? 'text-[#333333]' : 'text-[#FFFFFF]'" class="font-sans text-[14px] font-semibold">{{ fileUploaded3 ? "Evaluasi" : "Evaluasi" }}</div>
+        <div class="absolute flex flex-col w-[289px] h-[130px] rounded-lg mt-[24px] ml-[710px] border-[1px] border-[#DEDEDE]">
+          <div class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg bg-[#0EA976]">
+            <div class="font-sans text-[14px] font-semibold text-white">Evaluasi</div>
           </div>
-          <div v-if="!fileUploaded3" class="flex flex-col ml-4 mt-[10px]">
-            <p :class="!fileUploaded2 ? 'text-[#7F7F80]' : 'text-[#333333]'" class="font-sans text-[12px] font-normal">Dokumen Evaluasi</p>
-            <label
-              :class="[!fileUploaded2 ? 'cursor-not-allowed bg-[#E6E6E6] text-[#7F7F80]' : 'cursor-pointer bg-[#2671D9] text-[#FFFFFF]']"
-              class="w-[73px] h-[25px] rounded mt-[12px] inline-flex items-center justify-center text-[8.75px] font-sans font-semibold"
-            >
-              <div class="flex items-center">
-                <svg class="mr-1" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    :fill="!fileUploaded2 ? '#7F7F80' : '#FFFFFF'"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M3.87337 1.13053C3.01762 1.13053 2.32389 1.82426 2.32389 2.68001C2.32389 2.77881 2.33309 2.87512 2.35059 2.96824C2.38432 3.14782 2.27992 3.32463 2.10638 3.38182C1.59703 3.54968 1.23014 4.02951 1.23014 4.59407C1.23014 5.29881 1.80145 5.87012 2.50618 5.87012H6.60775C7.16147 5.87012 7.61035 5.42124 7.61035 4.86751C7.61035 4.43975 7.3423 4.07368 6.96375 3.92985C6.77894 3.85963 6.68377 3.65491 6.74921 3.46836C6.77555 3.39326 6.79004 3.31216 6.79004 3.22689C6.79004 2.82418 6.46358 2.49772 6.06087 2.49772C5.98167 2.49772 5.9061 2.51022 5.83562 2.53308C5.74043 2.56395 5.63673 2.55433 5.54884 2.50649C5.46095 2.45864 5.39658 2.37677 5.37084 2.28007C5.19455 1.61791 4.59041 1.13053 3.87337 1.13053ZM1.59473 2.68001C1.59473 1.42155 2.61491 0.401367 3.87337 0.401367C4.80935 0.401367 5.61285 0.965434 5.96369 1.77176C5.99584 1.76963 6.02825 1.76855 6.06087 1.76855C6.86629 1.76855 7.51921 2.42147 7.51921 3.22689C7.51921 3.28171 7.51616 3.33591 7.51023 3.3893C8.00728 3.69338 8.33952 4.24132 8.33952 4.86751C8.33952 5.82394 7.56418 6.59928 6.60775 6.59928H2.50618C1.39874 6.59928 0.500977 5.70152 0.500977 4.59407C0.500977 3.81305 0.947312 3.13701 1.59815 2.80588C1.59588 2.76418 1.59473 2.72222 1.59473 2.68001ZM4.16245 2.42221C4.30483 2.27983 4.53567 2.27983 4.67805 2.42221L5.7718 3.51596C5.91418 3.65834 5.91418 3.88918 5.7718 4.03156C5.62942 4.17394 5.39858 4.17394 5.2562 4.03156L4.78483 3.56019L4.78483 5.14095C4.78483 5.3423 4.6216 5.50553 4.42025 5.50553C4.21889 5.50553 4.05566 5.3423 4.05566 5.14095L4.05566 3.56019L3.5843 4.03156C3.44192 4.17394 3.21108 4.17394 3.0687 4.03156C2.92632 3.88918 2.92632 3.65834 3.0687 3.51596L4.16245 2.42221Z"
-                  />
-                </svg>
-                <span>Upload</span>
-              </div>
-              <input type="file" @change="handleFileUpload3" class="hidden" :disabled="!fileUploaded2" />
-            </label>
-          </div>
-          <div v-else class="flex items-center ml-4 mt-[10px]">
+          <div class="flex flex-col ml-4 mt-[10px]">
             <div class="flex items-center">
               <div>
                 <div class="font-sans text-[#333333] text-[12px] font-normal">Dokumen Evaluasi</div>
                 <div class="mt-[12px] ml-[38px]">
-                  <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">{{ fileName3 }}</p>
-                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize3 }} MB</p>
+                  <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">evaluasi.pdf</p>
+                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">2 MB</p>
                 </div>
               </div>
               <svg class="w-[30px] h-[30px] absolute mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -161,37 +104,17 @@
           <path d="M8.09082 7.83984L1.00915 14.9215L8.09082 22.0032" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M31.8408 14.9209H2.20082" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-        <div :class="[!fileUploaded3 ? 'bg-[#FFFFFF]' : boxClass4]" class="absolute flex flex-col w-[289px] h-[130px] rounded-lg mt-[215px] ml-[710px] border-[1px] border-[#DEDEDE]">
-          <div :class="!fileUploaded3 ? 'bg-[#E0E0E0]' : headerClass4" class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg">
-            <div :class="!fileUploaded3 ? 'text-[#333333]' : 'text-[#FFFFFF]'" class="font-sans text-[14px] font-semibold">{{ fileUploaded4 ? "Negosiasi" : "Negosiasi" }}</div>
+        <div class="absolute flex flex-col w-[289px] h-[130px] rounded-lg mt-[215px] ml-[710px] border-[1px] border-[#DEDEDE]">
+          <div class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg bg-[#0EA976]">
+            <div class="font-sans text-[14px] font-semibold text-white">Negosiasi</div>
           </div>
-          <div v-if="!fileUploaded4" class="flex flex-col ml-4 mt-[10px]">
-            <p :class="!fileUploaded3 ? 'text-[#7F7F80]' : 'text-[#333333]'" class="font-sans text-[12px] font-normal">Dokumen Negosiasi</p>
-            <label
-              :class="[!fileUploaded3 ? 'cursor-not-allowed bg-[#E6E6E6] text-[#7F7F80]' : 'cursor-pointer bg-[#2671D9] text-[#FFFFFF]']"
-              class="w-[73px] h-[25px] rounded mt-[12px] inline-flex items-center justify-center text-[8.75px] font-sans font-semibold"
-            >
-              <div class="flex items-center">
-                <svg class="mr-1" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    :fill="!fileUploaded3 ? '#7F7F80' : '#FFFFFF'"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M3.87337 1.13053C3.01762 1.13053 2.32389 1.82426 2.32389 2.68001C2.32389 2.77881 2.33309 2.87512 2.35059 2.96824C2.38432 3.14782 2.27992 3.32463 2.10638 3.38182C1.59703 3.54968 1.23014 4.02951 1.23014 4.59407C1.23014 5.29881 1.80145 5.87012 2.50618 5.87012H6.60775C7.16147 5.87012 7.61035 5.42124 7.61035 4.86751C7.61035 4.43975 7.3423 4.07368 6.96375 3.92985C6.77894 3.85963 6.68377 3.65491 6.74921 3.46836C6.77555 3.39326 6.79004 3.31216 6.79004 3.22689C6.79004 2.82418 6.46358 2.49772 6.06087 2.49772C5.98167 2.49772 5.9061 2.51022 5.83562 2.53308C5.74043 2.56395 5.63673 2.55433 5.54884 2.50649C5.46095 2.45864 5.39658 2.37677 5.37084 2.28007C5.19455 1.61791 4.59041 1.13053 3.87337 1.13053ZM1.59473 2.68001C1.59473 1.42155 2.61491 0.401367 3.87337 0.401367C4.80935 0.401367 5.61285 0.965434 5.96369 1.77176C5.99584 1.76963 6.02825 1.76855 6.06087 1.76855C6.86629 1.76855 7.51921 2.42147 7.51921 3.22689C7.51921 3.28171 7.51616 3.33591 7.51023 3.3893C8.00728 3.69338 8.33952 4.24132 8.33952 4.86751C8.33952 5.82394 7.56418 6.59928 6.60775 6.59928H2.50618C1.39874 6.59928 0.500977 5.70152 0.500977 4.59407C0.500977 3.81305 0.947312 3.13701 1.59815 2.80588C1.59588 2.76418 1.59473 2.72222 1.59473 2.68001ZM4.16245 2.42221C4.30483 2.27983 4.53567 2.27983 4.67805 2.42221L5.7718 3.51596C5.91418 3.65834 5.91418 3.88918 5.7718 4.03156C5.62942 4.17394 5.39858 4.17394 5.2562 4.03156L4.78483 3.56019L4.78483 5.14095C4.78483 5.3423 4.6216 5.50553 4.42025 5.50553C4.21889 5.50553 4.05566 5.3423 4.05566 5.14095L4.05566 3.56019L3.5843 4.03156C3.44192 4.17394 3.21108 4.17394 3.0687 4.03156C2.92632 3.88918 2.92632 3.65834 3.0687 3.51596L4.16245 2.42221Z"
-                  />
-                </svg>
-                <span>Upload</span>
-              </div>
-              <input type="file" @change="handleFileUpload4" class="hidden" :disabled="!fileUploaded3" />
-            </label>
-          </div>
-          <div v-else class="flex items-center ml-4 mt-[10px]">
+          <div class="flex flex-col ml-4 mt-[10px]">
             <div class="flex items-center">
               <div>
                 <div class="font-sans text-[#333333] text-[12px] font-normal">Dokumen Negosiasi</div>
                 <div class="mt-[12px] ml-[38px]">
-                  <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">{{ fileName4 }}</p>
-                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize4 }} MB</p>
+                  <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">dokumennegosiasi.pdf</p>
+                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">2 MB</p>
                 </div>
               </div>
               <svg class="w-[30px] h-[30px] absolute mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -213,37 +136,17 @@
           <path d="M20.2017 24.75L13.4201 31.8317L6.63857 24.75" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M13.4204 1L13.4204 30.64" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-        <div :class="[!fileUploaded4 ? 'bg-[#FFFFFF]' : boxClass5]" class="flex flex-col w-[289px] h-[130px] rounded-lg mt-[215px] ml-[370px] absolute border-[1px] border-[#DEDEDE]">
-          <div :class="!fileUploaded4 ? 'bg-[#E0E0E0]' : headerClass5" class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg">
-            <div :class="!fileUploaded4 ? 'text-[#333333]' : 'text-[#FFFFFF]'" class="font-sans text-[14px] font-semibold">{{ fileUploaded5 ? "BAK Pemilihan Mitra" : "BAK Pemilihan Mitra" }}</div>
+        <div class="flex flex-col w-[289px] h-[130px] rounded-lg mt-[215px] ml-[370px] absolute border-[1px] border-[#DEDEDE]">
+          <div class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg bg-[#0EA976]">
+            <div class="font-sans text-[14px] font-semibold text-white">BAK Pemilihan Mitra</div>
           </div>
-          <div v-if="!fileUploaded5" class="flex flex-col ml-4 mt-[10px]">
-            <p :class="!fileUploaded4 ? 'text-[#7F7F80]' : 'text-[#333333]'" class="font-sans text-[12px] font-normal">Dokumen BAK Pemilihan Mitra</p>
-            <label
-              :class="[!fileUploaded4 ? 'cursor-not-allowed bg-[#E6E6E6] text-[#7F7F80]' : 'cursor-pointer bg-[#2671D9] text-[#FFFFFF]']"
-              class="w-[73px] h-[25px] rounded mt-[12px] inline-flex items-center justify-center text-[8.75px] font-sans font-semibold"
-            >
-              <div class="flex items-center">
-                <svg class="mr-1" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    :fill="!fileUploaded4 ? '#7F7F80' : '#FFFFFF'"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M3.87337 1.13053C3.01762 1.13053 2.32389 1.82426 2.32389 2.68001C2.32389 2.77881 2.33309 2.87512 2.35059 2.96824C2.38432 3.14782 2.27992 3.32463 2.10638 3.38182C1.59703 3.54968 1.23014 4.02951 1.23014 4.59407C1.23014 5.29881 1.80145 5.87012 2.50618 5.87012H6.60775C7.16147 5.87012 7.61035 5.42124 7.61035 4.86751C7.61035 4.43975 7.3423 4.07368 6.96375 3.92985C6.77894 3.85963 6.68377 3.65491 6.74921 3.46836C6.77555 3.39326 6.79004 3.31216 6.79004 3.22689C6.79004 2.82418 6.46358 2.49772 6.06087 2.49772C5.98167 2.49772 5.9061 2.51022 5.83562 2.53308C5.74043 2.56395 5.63673 2.55433 5.54884 2.50649C5.46095 2.45864 5.39658 2.37677 5.37084 2.28007C5.19455 1.61791 4.59041 1.13053 3.87337 1.13053ZM1.59473 2.68001C1.59473 1.42155 2.61491 0.401367 3.87337 0.401367C4.80935 0.401367 5.61285 0.965434 5.96369 1.77176C5.99584 1.76963 6.02825 1.76855 6.06087 1.76855C6.86629 1.76855 7.51921 2.42147 7.51921 3.22689C7.51921 3.28171 7.51616 3.33591 7.51023 3.3893C8.00728 3.69338 8.33952 4.24132 8.33952 4.86751C8.33952 5.82394 7.56418 6.59928 6.60775 6.59928H2.50618C1.39874 6.59928 0.500977 5.70152 0.500977 4.59407C0.500977 3.81305 0.947312 3.13701 1.59815 2.80588C1.59588 2.76418 1.59473 2.72222 1.59473 2.68001ZM4.16245 2.42221C4.30483 2.27983 4.53567 2.27983 4.67805 2.42221L5.7718 3.51596C5.91418 3.65834 5.91418 3.88918 5.7718 4.03156C5.62942 4.17394 5.39858 4.17394 5.2562 4.03156L4.78483 3.56019L4.78483 5.14095C4.78483 5.3423 4.6216 5.50553 4.42025 5.50553C4.21889 5.50553 4.05566 5.3423 4.05566 5.14095L4.05566 3.56019L3.5843 4.03156C3.44192 4.17394 3.21108 4.17394 3.0687 4.03156C2.92632 3.88918 2.92632 3.65834 3.0687 3.51596L4.16245 2.42221Z"
-                  />
-                </svg>
-                <span>Upload</span>
-              </div>
-              <input type="file" @change="handleFileUpload5" class="hidden" :disabled="!fileUploaded4" />
-            </label>
-          </div>
-          <div v-else class="flex items-center ml-4 mt-[10px]">
+          <div class="flex flex-col ml-4 mt-[10px]">
             <div class="flex items-center">
               <div>
                 <div class="font-sans text-[#333333] text-[12px] font-normal">Dokumen BAK Pemilihan Mitra</div>
                 <div class="mt-[12px] ml-[38px]">
-                  <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">{{ fileName5 }}</p>
-                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize5 }} MB</p>
+                  <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">bakpemilihan.pdf</p>
+                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">2 MB</p>
                 </div>
               </div>
               <svg class="w-[30px] h-[30px] absolute mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -265,37 +168,17 @@
           <path d="M8.09082 7.83984L1.00915 14.9215L8.09082 22.0032" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M31.8408 14.9209H2.20082" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-        <div :class="[!fileUploaded5 ? 'bg-[#FFFFFF]' : boxClass6]" class="flex flex-col w-[289px] h-[130px] rounded-lg mt-[215px] ml-5 absolute border-[1px] border-[#DEDEDE]">
-          <div :class="!fileUploaded5 ? 'bg-[#E0E0E0]' : headerClass6" class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg">
-            <div :class="!fileUploaded5 ? 'text-[#333333]' : 'text-[#FFFFFF]'" class="font-sans text-[14px] font-semibold">{{ fileUploaded6 ? "Surat Pesanan" : "Surat Pesanan" }}</div>
+        <div class="flex flex-col w-[289px] h-[130px] rounded-lg mt-[215px] ml-5 absolute border-[1px] border-[#DEDEDE]">
+          <div class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg bg-[#0EA976]">
+            <div class="font-sans text-[14px] font-semibold text-white">Surat Pesanan</div>
           </div>
-          <div v-if="!fileUploaded6" class="flex flex-col ml-4 mt-[10px]">
-            <p :class="!fileUploaded5 ? 'text-[#7F7F80]' : 'text-[#333333]'" class="font-sans text-[12px] font-normal">Dokumen Surat Pesanan</p>
-            <label
-              :class="[!fileUploaded5 ? 'cursor-not-allowed bg-[#E6E6E6] text-[#7F7F80]' : 'cursor-pointer bg-[#2671D9] text-[#FFFFFF]']"
-              class="w-[73px] h-[25px] rounded mt-[12px] inline-flex items-center justify-center text-[8.75px] font-sans font-semibold"
-            >
-              <div class="flex items-center">
-                <svg class="mr-1" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    :fill="!fileUploaded5 ? '#7F7F80' : '#FFFFFF'"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M3.87337 1.13053C3.01762 1.13053 2.32389 1.82426 2.32389 2.68001C2.32389 2.77881 2.33309 2.87512 2.35059 2.96824C2.38432 3.14782 2.27992 3.32463 2.10638 3.38182C1.59703 3.54968 1.23014 4.02951 1.23014 4.59407C1.23014 5.29881 1.80145 5.87012 2.50618 5.87012H6.60775C7.16147 5.87012 7.61035 5.42124 7.61035 4.86751C7.61035 4.43975 7.3423 4.07368 6.96375 3.92985C6.77894 3.85963 6.68377 3.65491 6.74921 3.46836C6.77555 3.39326 6.79004 3.31216 6.79004 3.22689C6.79004 2.82418 6.46358 2.49772 6.06087 2.49772C5.98167 2.49772 5.9061 2.51022 5.83562 2.53308C5.74043 2.56395 5.63673 2.55433 5.54884 2.50649C5.46095 2.45864 5.39658 2.37677 5.37084 2.28007C5.19455 1.61791 4.59041 1.13053 3.87337 1.13053ZM1.59473 2.68001C1.59473 1.42155 2.61491 0.401367 3.87337 0.401367C4.80935 0.401367 5.61285 0.965434 5.96369 1.77176C5.99584 1.76963 6.02825 1.76855 6.06087 1.76855C6.86629 1.76855 7.51921 2.42147 7.51921 3.22689C7.51921 3.28171 7.51616 3.33591 7.51023 3.3893C8.00728 3.69338 8.33952 4.24132 8.33952 4.86751C8.33952 5.82394 7.56418 6.59928 6.60775 6.59928H2.50618C1.39874 6.59928 0.500977 5.70152 0.500977 4.59407C0.500977 3.81305 0.947312 3.13701 1.59815 2.80588C1.59588 2.76418 1.59473 2.72222 1.59473 2.68001ZM4.16245 2.42221C4.30483 2.27983 4.53567 2.27983 4.67805 2.42221L5.7718 3.51596C5.91418 3.65834 5.91418 3.88918 5.7718 4.03156C5.62942 4.17394 5.39858 4.17394 5.2562 4.03156L4.78483 3.56019L4.78483 5.14095C4.78483 5.3423 4.6216 5.50553 4.42025 5.50553C4.21889 5.50553 4.05566 5.3423 4.05566 5.14095L4.05566 3.56019L3.5843 4.03156C3.44192 4.17394 3.21108 4.17394 3.0687 4.03156C2.92632 3.88918 2.92632 3.65834 3.0687 3.51596L4.16245 2.42221Z"
-                  />
-                </svg>
-                <span>Upload</span>
-              </div>
-              <input type="file" @change="handleFileUpload6" class="hidden" :disabled="!fileUploaded5" />
-            </label>
-          </div>
-          <div v-else class="flex items-center ml-4 mt-[10px]">
+          <div class="flex items-center ml-4 mt-[10px]">
             <div class="flex items-center">
               <div>
                 <div class="font-sans text-[#333333] text-[12px] font-normal">Dokumen Surat Pesanan</div>
                 <div class="mt-[12px] ml-[38px]">
-                  <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">{{ fileName6 }}</p>
-                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize6 }} MB</p>
+                  <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">suratpesanan.pdf</p>
+                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">2 MB</p>
                 </div>
               </div>
               <svg class="w-[30px] h-[30px] absolute mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -317,37 +200,17 @@
           <path d="M21.1221 24.75L14.3405 31.8317L7.55898 24.75" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M14.3408 1L14.3408 30.64" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-        <div :class="[!fileUploaded6 ? 'bg-[#FFFFFF]' : boxClass7]" class="flex flex-col w-[289px] h-[130px] rounded-lg mt-[400px] ml-5 absolute border-[1px] border-[#DEDEDE]">
-          <div :class="!fileUploaded6 ? 'bg-[#E0E0E0]' : headerClass7" class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg">
-            <div :class="!fileUploaded6 ? 'text-[#333333]' : 'text-[#FFFFFF]'" class="font-sans text-[14px] font-semibold">{{ fileUploaded7 ? "PKS" : "PKS" }}</div>
+        <div class="flex flex-col w-[289px] h-[130px] rounded-lg mt-[400px] ml-5 absolute border-[1px] border-[#DEDEDE]">
+          <div class="w-full h-[40px] p-4 flex justify-between items-center rounded-t-lg bg-[#0EA976]">
+            <div class="font-sans text-[14px] font-semibold text-white">PKS</div>
           </div>
-          <div v-if="!fileUploaded7" class="flex flex-col ml-4 mt-[10px]">
-            <p :class="!fileUploaded6 ? 'text-[#7F7F80]' : 'text-[#333333]'" class="font-sans text-[12px] font-normal">Dokumen PKS</p>
-            <label
-              :class="[!fileUploaded6 ? 'cursor-not-allowed bg-[#E6E6E6] text-[#7F7F80]' : 'cursor-pointer bg-[#2671D9] text-[#FFFFFF]']"
-              class="w-[73px] h-[25px] rounded mt-[12px] inline-flex items-center justify-center text-[8.75px] font-sans font-semibold"
-            >
-              <div class="flex items-center">
-                <svg class="mr-1" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    :fill="!fileUploaded6 ? '#7F7F80' : '#FFFFFF'"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M3.87337 1.13053C3.01762 1.13053 2.32389 1.82426 2.32389 2.68001C2.32389 2.77881 2.33309 2.87512 2.35059 2.96824C2.38432 3.14782 2.27992 3.32463 2.10638 3.38182C1.59703 3.54968 1.23014 4.02951 1.23014 4.59407C1.23014 5.29881 1.80145 5.87012 2.50618 5.87012H6.60775C7.16147 5.87012 7.61035 5.42124 7.61035 4.86751C7.61035 4.43975 7.3423 4.07368 6.96375 3.92985C6.77894 3.85963 6.68377 3.65491 6.74921 3.46836C6.77555 3.39326 6.79004 3.31216 6.79004 3.22689C6.79004 2.82418 6.46358 2.49772 6.06087 2.49772C5.98167 2.49772 5.9061 2.51022 5.83562 2.53308C5.74043 2.56395 5.63673 2.55433 5.54884 2.50649C5.46095 2.45864 5.39658 2.37677 5.37084 2.28007C5.19455 1.61791 4.59041 1.13053 3.87337 1.13053ZM1.59473 2.68001C1.59473 1.42155 2.61491 0.401367 3.87337 0.401367C4.80935 0.401367 5.61285 0.965434 5.96369 1.77176C5.99584 1.76963 6.02825 1.76855 6.06087 1.76855C6.86629 1.76855 7.51921 2.42147 7.51921 3.22689C7.51921 3.28171 7.51616 3.33591 7.51023 3.3893C8.00728 3.69338 8.33952 4.24132 8.33952 4.86751C8.33952 5.82394 7.56418 6.59928 6.60775 6.59928H2.50618C1.39874 6.59928 0.500977 5.70152 0.500977 4.59407C0.500977 3.81305 0.947312 3.13701 1.59815 2.80588C1.59588 2.76418 1.59473 2.72222 1.59473 2.68001ZM4.16245 2.42221C4.30483 2.27983 4.53567 2.27983 4.67805 2.42221L5.7718 3.51596C5.91418 3.65834 5.91418 3.88918 5.7718 4.03156C5.62942 4.17394 5.39858 4.17394 5.2562 4.03156L4.78483 3.56019L4.78483 5.14095C4.78483 5.3423 4.6216 5.50553 4.42025 5.50553C4.21889 5.50553 4.05566 5.3423 4.05566 5.14095L4.05566 3.56019L3.5843 4.03156C3.44192 4.17394 3.21108 4.17394 3.0687 4.03156C2.92632 3.88918 2.92632 3.65834 3.0687 3.51596L4.16245 2.42221Z"
-                  />
-                </svg>
-                <span>Upload</span>
-              </div>
-              <input type="file" @change="handleFileUpload7" class="hidden" :disabled="!fileUploaded6" />
-            </label>
-          </div>
-          <div v-else class="flex items-center ml-4 mt-[10px]">
+          <div class="flex items-center ml-4 mt-[10px]">
             <div class="flex items-center">
               <div>
                 <div class="font-sans text-[#333333] text-[12px] font-normal">Dokumen PKS</div>
                 <div class="mt-[12px] ml-[38px]">
-                  <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">{{ fileName7 }}</p>
-                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">{{ fileSize7 }} MB</p>
+                  <p class="w-[200px] h[-12px] text-[#333333] text-[9.06px]">dokumenpks.pdf</p>
+                  <p class="w-[200px] h-[11px] text-[#9E9E9E] text-[7.77px]">2 MB</p>
                 </div>
               </div>
               <svg class="w-[30px] h-[30px] absolute mt-[30px]" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -365,11 +228,6 @@
             </div>
           </div>
         </div>
-        <button @click="closePopup" class="absolute mt-[518px] ml-[915px] flex">
-          <div class="flex items-center justify-center w-[83px] h-[40px] rounded-lg bg-[#E6E6E6] border-[#FFFFFF] border-[1px]">
-            <span class="text-[14px] font-sans font-semibold text-[#7F7F80] ml-3 mt-[9px] mr-3 mb-[9px]">Kirim</span>
-          </div>
-        </button>
       </div>
     </div>
   </div>

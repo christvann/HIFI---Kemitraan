@@ -21,15 +21,15 @@
     <div class="flex flex-col w-full gap-[8px]">
       <!-- Dashboard -->
       <button
-        :class="['flex text-[14px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', isActive('Dashboard') ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-[#DBEAFE]']"
-        @click="navigateTo('Dashboard')"
+        :class="['flex text-[14px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', isActive('DashboardStaff') ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-[#DBEAFE]']"
+        @click="navigateTo('DashboardStaff')"
       >
-        <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg" :class="['ml-[5px] mr-3', isActive('Dashboard') ? 'filter-white' : '']">
+        <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg" :class="['ml-[5px] mr-3', isActive('DashboardStaff') ? 'filter-white' : '']">
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
             d="M0.9375 1.25C0.9375 0.835786 1.27329 0.5 1.6875 0.5H16.3125C16.7267 0.5 17.0625 0.835786 17.0625 1.25C17.0625 1.66421 16.7267 2 16.3125 2H15.9375V9.6875C15.9375 11.0337 14.8462 12.125 13.5 12.125H12.8531L13.649 14.5128C13.78 14.9058 13.5676 15.3305 13.1747 15.4615C12.7817 15.5925 12.357 15.3801 12.226 14.9872L12.0219 14.375H5.97807L5.77401 14.9872C5.64303 15.3801 5.21829 15.5925 4.82533 15.4615C4.43237 15.3305 4.22 14.9058 4.35099 14.5128L5.14693 12.125H4.5C3.15381 12.125 2.0625 11.0337 2.0625 9.6875V2H1.6875C1.27329 2 0.9375 1.66421 0.9375 1.25ZM3.5625 2V9.6875C3.5625 10.2053 3.98223 10.625 4.5 10.625H13.5C14.0178 10.625 14.4375 10.2053 14.4375 9.6875V2H3.5625ZM6.72807 12.125L6.47807 12.875H11.5219L11.2719 12.125H6.72807ZM11.25 3.3125C11.6642 3.3125 12 3.64829 12 4.0625V8.5625C12 8.97671 11.6642 9.3125 11.25 9.3125C10.8358 9.3125 10.5 8.97671 10.5 8.5625V4.0625C10.5 3.64829 10.8358 3.3125 11.25 3.3125ZM9 5C9.41421 5 9.75 5.33579 9.75 5.75V8.5625C9.75 8.97671 9.41421 9.3125 9 9.3125C8.58579 9.3125 8.25 8.97671 8.25 8.5625V5.75C8.25 5.33579 8.58579 5 9 5ZM6.75 6.6875C7.16421 6.6875 7.5 7.02329 7.5 7.4375V8.5625C7.5 8.97671 7.16421 9.3125 6.75 9.3125C6.33579 9.3125 6 8.97671 6 8.5625V7.4375C6 7.02329 6.33579 6.6875 6.75 6.6875Z"
-            :fill="isActive('Dashboard') ? '#FFFFFF' : '#2671D9'"
+            :fill="isActive('DashboardStaff') ? '#FFFFFF' : '#2671D9'"
           />
         </svg>
         Dashboard
@@ -60,13 +60,13 @@
       </button>
       <!-- Proses -->
       <button
-        :class="['flex text-[14px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', isActive('Proses') ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-[#DBEAFE]']"
-        @click="navigateTo('Proses')"
+        :class="['flex text-[14px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', isActive('ProsesStaff') ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-[#DBEAFE]']"
+        @click="navigateTo('ProsesStaff')"
       >
         <svg class="ml-[5px] mr-[16px]" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M14.8006 1.08937L4.18235 9.93824M6.6839 12.4509L9.10754 14.8634C9.25638 15.016 9.44247 15.127 9.64741 15.1856C9.85234 15.2441 10.069 15.2482 10.276 15.1973C10.4841 15.1488 10.6762 15.0476 10.8339 14.9033C10.9915 14.7591 11.1094 14.5768 11.1762 14.3738L15.1555 2.44474C15.2388 2.22131 15.2561 1.97867 15.2054 1.7457C15.1546 1.51273 15.038 1.29923 14.8695 1.13064C14.7009 0.962042 14.4874 0.845444 14.2544 0.794725C14.0214 0.744005 13.7788 0.761301 13.5554 0.844552L1.62628 4.82499C1.41633 4.89654 1.2293 5.02287 1.08453 5.19092C0.939758 5.35897 0.842504 5.56264 0.802823 5.78087C0.761837 5.97949 0.770889 6.18519 0.829164 6.37944C0.88744 6.57369 0.993109 6.7504 1.13666 6.89366L4.18235 9.93935L4.0822 13.7963L6.6839 12.4509Z"
-            :stroke="isActive('Proses') ? '#FFFFFF' : '#2671D9'"
+            :stroke="isActive('ProsesStaff') ? '#FFFFFF' : '#2671D9'"
             stroke-width="1.3"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -76,18 +76,18 @@
       </button>
       <!-- Selesai -->
       <button
-        :class="['flex text-[14px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', isActive('Selesai') ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-[#DBEAFE]']"
-        @click="navigateTo('Selesai')"
+        :class="['flex text-[14px] font-sans font-semibold items-center justify p-2 rounded-lg transition-colors', isActive('SelesaiStaff') ? 'bg-[#2671D9] text-[#FFFFFF]' : 'text-[#333333] hover:bg-[#DBEAFE]']"
+        @click="navigateTo('SelesaiStaff')"
       >
         <svg class="ml-[5px] mr-[14px]" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M9.27759 6.66H13.2151H9.27759Z" fill="white" />
-          <path d="M9.27759 6.66H13.2151" :stroke="isActive('Selesai') ? '#FFFFFF' : '#2671D9'" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M4.78491 6.66L5.34741 7.2225L7.03491 5.535" :stroke="isActive('Selesai') ? '#FFFFFF' : '#2671D9'" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M9.27759 11.91H13.2151" :stroke="isActive('Selesai') ? '#FFFFFF' : '#2671D9'" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M4.78491 11.91L5.34741 12.4725L7.03491 10.785" :stroke="isActive('Selesai') ? '#FFFFFF' : '#2671D9'" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M9.27759 6.66H13.2151" :stroke="isActive('SelesaiStaff') ? '#FFFFFF' : '#2671D9'" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M4.78491 6.66L5.34741 7.2225L7.03491 5.535" :stroke="isActive('SelesaiStaff') ? '#FFFFFF' : '#2671D9'" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M9.27759 11.91H13.2151" :stroke="isActive('SelesaiStaff') ? '#FFFFFF' : '#2671D9'" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M4.78491 11.91L5.34741 12.4725L7.03491 10.785" :stroke="isActive('SelesaiStaff') ? '#FFFFFF' : '#2671D9'" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
           <path
             d="M6.75 16.5H11.25C15 16.5 16.5 15 16.5 11.25V6.75C16.5 3 15 1.5 11.25 1.5H6.75C3 1.5 1.5 3 1.5 6.75V11.25C1.5 15 3 16.5 6.75 16.5Z"
-            :stroke="isActive('Selesai') ? '#FFFFFF' : '#2671D9'"
+            :stroke="isActive('SelesaiStaff') ? '#FFFFFF' : '#2671D9'"
             stroke-width="1.3"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -101,10 +101,10 @@
 
 <script>
 export default {
-  name: "SidebarKemitraan, DashboardButton",
+  name: "SidebarStaff, DashboardButton",
   data() {
     return {
-      selectedMenu: "Dashboard",
+      selectedMenu: "DashboardStaff",
     };
   },
   methods: {
@@ -114,17 +114,17 @@ export default {
     navigateTo(menu) {
       this.selectedMenu = menu;
       switch (menu) {
-        case "Dashboard":
-          this.$router.push("/dashboard");
+        case "DashboardStaff":
+          this.$router.push("/dashboardstaff");
           break;
         case "MasukStaff":
           this.$router.push("/masukstaff");
           break;
-        case "Proses":
-          this.$router.push("/proses");
+        case "ProsesStaff":
+          this.$router.push("/prosesstaff");
           break;
-        case "Selesai":
-          this.$router.push("/selesai");
+        case "SelesaiStaff":
+          this.$router.push("/selesaistaff");
           break;
         default:
           break;
@@ -134,14 +134,14 @@ export default {
       const routePath = this.$route.path;
 
       switch (menu) {
-        case "Dashboard":
-          return routePath === "/dashboard";
+        case "DashboardStaff":
+          return routePath === "/dashboardstaff";
         case "MasukStaff":
           return routePath.startsWith("/masukstaff");
-        case "Proses":
-          return routePath.startsWith("/proses");
-        case "Selesai":
-          return routePath.startsWith("/selesai");
+        case "ProsesStaff":
+          return routePath.startsWith("/prosesstaff");
+        case "SelesaiStaff":
+          return routePath.startsWith("/selesaistaff");
         default:
           return false;
       }

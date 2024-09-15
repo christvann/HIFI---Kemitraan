@@ -98,8 +98,10 @@
           </div>
           <div class="relative w-[480px] h-[112px] bg-[#FFFFFF] mt-8">
             <button @click="navigateToDetail" class="w-[480px] h-[48px] bg-[#2671D9] rounded-md text-[#FFFFFF] font-sans font-medium text-[14px]">Login</button>
-            <button class="w-[480px] h-[48px] mt-4 bg-[#FFFFFF] rounded-md border-[#2671D9] text-[#2671D9] font-sans font-medium text-[14px] flex items-center justify-center hover:bg-[#f0f8ff] transition duration-200 ease-in-out">
-              Login dengan SSO
+            <button class="absolute flex mt-4">
+              <div class="flex items-center justify-center w-[480px] h-[48px] rounded-lg bg-[#FFFFFF] border-[#2671D9] border-[1px] hover:bg-[#DBEAFE] cursor-pointer transition-all">
+                <span class="text-[14px] font-sans font-medium text-[#2671D9] ml-3 mt-[9px] mr-3 mb-[9px] group-hover:text-[#333333]">Login dengan SSO</span>
+              </div>
             </button>
           </div>
         </div>

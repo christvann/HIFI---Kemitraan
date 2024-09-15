@@ -2,10 +2,10 @@
   <div class="">
     <div class="background">
       <div class="flex">
-        <SidebarKemitraan />
+        <SidebarStaff />
         <div class="flex-grow">
           <MainBar />
-          <DetailPengajuanMoU />
+          <DetailPengajuanPKSstaff />
         </div>
       </div>
     </div>
@@ -14,22 +14,22 @@
 
 <script>
 import MainBar from "@/components/MainBar.vue";
-import SidebarKemitraan from "@/components/SidebarKemitraan.vue";
-import DetailPengajuanMoU from "@/components/DetailPengajuanMoU.vue";
+import SidebarStaff from "@/components/SidebarStaff.vue";
+import DetailPengajuanPKSstaff from "@/components/DetailPengajuanPKSstaff.vue";
 
 export default {
   components: {
-    SidebarKemitraan,
+    SidebarStaff,
     MainBar,
-    DetailPengajuanMoU,
+    DetailPengajuanPKSstaff,
   },
 };
 </script>
 
 <style>
 .background {
-  width: Fixed (1,366px) px;
-  height: Hug (1,416px) px;
+  width: Fixed (1, 366px) px;
+  height: Hug (1, 416px) px;
   left: 3733px;
   gap: 0px;
   opacity: 0px;

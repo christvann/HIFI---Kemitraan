@@ -73,11 +73,6 @@ const routes = [
     component: ApprovalMitra
   },
   {
-    name: 'ApprovalMitra',
-    path: '/approval',
-    component: ApprovalMitra
-  },
-  {
     name: 'ApprovalStopclock',
     path: '/approval/approvalstopclock',
     component: ApprovalStopclock

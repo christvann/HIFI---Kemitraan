@@ -13,14 +13,14 @@
       </div>
     </div>
     <div class="w-[480px] h-[496px] bg-[#FFFFFF] ml-[120px]">
-      <svg width="251" height="44" viewBox="0 0 79 11" class="ml-[114.5px]" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <rect width="77" height="13" fill="url(#pattern0_1974_2101)" />
+      <svg class="ml-[114.5px]" width="252" height="45" viewBox="0 0 252 45" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <rect x="0.5" y="0.5" width="251" height="44" fill="url(#pattern0_2285_24014)" />
         <defs>
-          <pattern id="pattern0_1974_2101" patternContentUnits="objectBoundingBox" width="1" height="1">
-            <use xlink:href="#image0_1974_2101" transform="matrix(0.00398406 0 0 0.0235979 0 -0.0191542)" />
+          <pattern id="pattern0_2285_24014" patternContentUnits="objectBoundingBox" width="1" height="1">
+            <use xlink:href="#image0_2285_24014" transform="scale(0.00398406 0.0227273)" />
           </pattern>
           <image
-            id="image0_1974_2101"
+            id="image0_2285_24014"
             width="251"
             height="44"
             xlink:href="data:image/png;base64,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"
@@ -32,14 +32,14 @@
         <div class="w-[480px] h-[168px] bg-[#FFFFFF] mt-8">
           <div class="flex flex-col w-[480px] h-[72px] bg-[#FFFFFF]">
             <div class="flex">
-              <h1 class="w-[80px] h-[24px] text-[16px] font-sans text-[#4D5E80] font-medium">Username</h1>
+              <h1 class="w-[75px] h-[24px] text-[16px] font-sans text-[#4D5E80] font-medium">Username</h1>
               <span class="w-2 h-6 text-[#FF5656] font-bold">*</span>
             </div>
             <input type="text" placeholder="Masukkan username" class="w-[480px] h-[40px] rounded-md bg-[#FFFFFF] border border-[#E5E7E9] mt-2 pl-4 font-sans font-normal text-[14px] text-[#7F7F80] outline-none" />
           </div>
           <div class="flex flex-col w-[480px] h-[72px] bg-[#FFFFFF] mt-6">
             <div class="flex items-center">
-              <h1 class="w-[80px] h-[24px] text-[16px] font-sans text-[#4D5E80] font-medium">Password</h1>
+              <h1 class="w-[70px] h-[24px] text-[16px] font-sans text-[#4D5E80] font-medium">Password</h1>
               <h2 class="text-[#FF5656] font-bold">*</h2>
             </div>
             <div class="relative mt-2">
@@ -49,6 +49,24 @@
                 class="w-[480px] h-[40px] rounded-md bg-[#FFFFFF] border border-[#E5E7E9] pl-4 pr-10 font-sans font-normal text-[14px] text-[#7F7F80] outline-none"
               />
               <svg
+                v-if="showPassword"
+                @click="togglePasswordVisibility"
+                width="16"
+                height="17"
+                viewBox="0 0 16 11"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute right-3 top-1/2 transform -translate-y-1/2 w-6 h-6 text-[#2671D9] cursor-pointer"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M8.001 1.66683C5.20328 1.66683 2.82762 3.48132 1.98995 5.99954C1.98946 6.00101 1.98946 6.00282 1.98995 6.0043C2.82867 8.52069 5.20341 10.3335 7.99983 10.3335C10.7975 10.3335 13.1732 8.519 14.0109 6.00079C14.0114 5.99931 14.0114 5.9975 14.0109 5.99603C13.1722 3.47963 10.7974 1.66683 8.001 1.66683ZM0.724778 5.57869C1.73826 2.53197 4.61202 0.333496 8.001 0.333496C11.3884 0.333496 14.2611 2.52993 15.2758 5.57443C15.3674 5.84932 15.3675 6.1467 15.276 6.42164C14.2626 9.46836 11.3888 11.6668 7.99983 11.6668C4.61243 11.6668 1.73976 9.4704 0.725028 6.42589C0.633409 6.15101 0.633322 5.85362 0.724778 5.57869ZM8.00046 4.66683C7.26408 4.66683 6.66712 5.26378 6.66712 6.00016C6.66712 6.73654 7.26408 7.3335 8.00046 7.3335C8.73684 7.3335 9.33379 6.73654 9.33379 6.00016C9.33379 5.26378 8.73684 4.66683 8.00046 4.66683ZM5.33379 6.00016C5.33379 4.5274 6.5277 3.3335 8.00046 3.3335C9.47321 3.3335 10.6671 4.5274 10.6671 6.00016C10.6671 7.47292 9.47321 8.66683 8.00046 8.66683C6.5277 8.66683 5.33379 7.47292 5.33379 6.00016Z"
+                  fill="#2671D9"
+                />
+              </svg>
+              <svg
+                v-else
                 @click="togglePasswordVisibility"
                 width="16"
                 height="17"
@@ -98,7 +116,7 @@
           </div>
           <div class="relative w-[480px] h-[112px] bg-[#FFFFFF] mt-8">
             <button @click="navigateToDetail" class="w-[480px] h-[48px] bg-[#2671D9] rounded-md text-[#FFFFFF] font-sans font-medium text-[14px]">Login</button>
-            <button class="absolute flex mt-4">
+            <button @click="navigateToDetail" class="absolute flex mt-4">
               <div class="flex items-center justify-center w-[480px] h-[48px] rounded-lg bg-[#FFFFFF] border-[#2671D9] border-[1px] hover:bg-[#DBEAFE] cursor-pointer transition-all">
                 <span class="text-[14px] font-sans font-medium text-[#2671D9] ml-3 mt-[9px] mr-3 mb-[9px] group-hover:text-[#333333]">Login dengan SSO</span>
               </div>

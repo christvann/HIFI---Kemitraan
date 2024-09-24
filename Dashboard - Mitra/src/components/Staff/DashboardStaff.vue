@@ -248,7 +248,7 @@
         </div>
         <div class="flex flex-wrap">
           <div v-if="selectedSubOptions.length" class="flex mt-2 ml-4 w-[1046px] h-[44px] border-[1px] rounded-lg">
-            <div v-for="(subOption, index) in selectedSubOptions" :key="index" class="flex items-center w-relative h-[24px] bg-[#E9F1FB] border-[#BAD1F3] text-[#2671D9] text-3 rounded-xl px-2 py-1 mt-[10px] ml-4">
+            <div v-for="(subOption, index) in selectedSubOptions" :key="index" class="flex items-center w-relative h-[24px] bg-[#E9F1FB] border-[#BAD1F3] border-[1px] text-[#2671D9] text-3 rounded-xl px-2 py-1 mt-[10px] ml-4">
               <span>{{ subOption }}</span>
               <button @click="removeSubOption(subOption)" class="ml-1">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -15,7 +15,7 @@
       <h1 class="items-start justify-center px-2 ml-2 text-[#9C9C9C]">Surat Masuk Pengajuan Mitra</h1>
       <div class="flex items-start">
         <div class="w-[320px] h-[40px] rounded-lg bg-[#FFFFFF] border border-[#E5E7E9] mt-6 ml-4 flex justify-between items-center">
-          <input type="text" placeholder="Cari sesuatu disini ..." class="font-sans text-[14px] text-[#7F7F80] font-extralight ml-4 outline-none w-full" />
+          <input type="text" placeholder="Cari sesuatu disini ..." v-model="searchQuery" class="font-sans text-[14px] text-[#7F7F80] font-extralight ml-4 outline-none w-full" />
           <button class="bg-[#2671D9] w-[40px] h-full flex items-center justify-center rounded-r-lg">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -62,7 +62,11 @@
       </div>
       <div class="flex flex-wrap">
         <div v-if="selectedSubOptions.length" class="flex mt-2 ml-4 w-[1046px] h-[44px] border-[1px] rounded-lg">
-          <div v-for="(subOption, index) in selectedSubOptions" :key="index" class="flex items-center w-relative h-[24px] bg-[#E9F1FB] border-[#BAD1F3] border-[1px] text-[#2671D9] text-3 rounded-xl px-2 py-1 mt-[10px] ml-4">
+          <div
+            v-for="(subOption, index) in selectedSubOptions"
+            :key="index"
+            class="flex items-center w-relative h-[24px] bg-[#E9F1FB] border-[#BAD1F3] border-[1px] font-semibold text-[#2671D9] text-[12px] rounded-xl px-2 py-1 mt-[10px] ml-4"
+          >
             <span>{{ subOption }}</span>
             <button @click="removeSubOption(subOption)" class="ml-1">
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -184,7 +188,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="(item, index) in filteredTableData" :key="index" class="bg-[#FFFFFF] border border-[#E5E7E9] text-[12px] text-[#4D5E80] font-sans font-semibold">
+                <tr v-for="(item, index) in filteredTableData" :key="`${index}-${item.judul}`" class="bg-[#FFFFFF] border border-[#E5E7E9] text-[12px] text-[#4D5E80] font-sans font-semibold">
                   <td class="p-2 border border-[#E5E7E9]">{{ index + 1 }}</td>
                   <td class="p-2 border border-[#E5E7E9]">{{ item.judul }}</td>
                   <td class="p-2 border border-[#E5E7E9]">{{ item.nomor }}</td>
@@ -277,6 +281,8 @@ export default {
       totalPages: 10,
       displayOptions: [6, 10, 15, 20],
       actionDropdownIndex: null, // Untuk menandai dropdown yang sedang terbuka
+      searchQuery: "",
+      
       tableData: [
         { judul: "Lorem ipsum dolor sit amet", nomor: 90224, tipe: "MoU", user: "Sales", status: "Masuk" },
         { judul: "Lorem ipsum dolor sit amet", nomor: 90224, tipe: "PKS", user: "Produk", status: "Masuk" },
@@ -292,12 +298,21 @@ export default {
       return Array.from({ length: this.totalPages }, (_, i) => i + 1);
     },
     filteredTableData() {
-      if (!this.selectedSubOptions.length) {
-        return this.tableData;
+      let filteredData = this.tableData;
+      // Filter berdasarkan opsi terpilih (selectedSubOptions)
+      if (this.selectedSubOptions.length) {
+        filteredData = filteredData.filter((item) => {
+          return this.selectedSubOptions.includes(item.tipe) || this.selectedSubOptions.includes(item.status);
+        });
       }
-      return this.tableData.filter((item) => {
-        return this.selectedSubOptions.includes(item.status) || this.selectedSubOptions.includes(item.tipe);
-      });
+      // Filter berdasarkan input pencarian (searchQuery)
+      if (this.searchQuery) {
+        const query = this.searchQuery.toLowerCase();
+        filteredData = filteredData.filter((item) => {
+          return item.judul.toLowerCase().includes(query);
+        });
+      }
+      return filteredData;
     },
   },
   methods: {

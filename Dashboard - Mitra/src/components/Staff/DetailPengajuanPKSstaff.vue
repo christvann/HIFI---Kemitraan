@@ -434,7 +434,7 @@
                     </div>
                   </div>
                   <button
-                    @click="closePopup"
+                    @click="handleKirimClick"
                     :class="{ 'bg-[#2671D9] text-[#FFFFFF] rounded-lg border-[#FFFFFF] border-[1px]': allFilesUploaded, 'bg-[#E6E6E6] text-[#7F7F80] rounded-lg border-[#FFFFFF] border-[1px]': !allFilesUploaded }"
                     :disabled="!allFilesUploaded"
                     class="absolute mt-[518px] ml-[915px] flex"
@@ -1155,14 +1155,9 @@
         </div>
         <div class="w-[1046px] h-[1px] bg-[#E5E7E9] items-center transform ml-4 mt-6"></div>
         <div class="flex flex-row w-[1046px] h-auto ml-4 py-9">
-          <button class="absolute bottom-[12px] right-[123px] mt-4 flex">
-            <div class="flex items-center justify-center w-[101px] h-[40px] rounded-lg bg-[#FFFFFF] border-[#2671D9] border-[1px] hover:bg-[#DBEAFE] cursor-pointer transition-all">
-              <span class="text-[14px] font-sans font-semibold text-[#2671D9] ml-3 mt-[9px] mr-3 mb-[9px]">Stop Clock</span>
-            </div>
-          </button>
-          <button @click="showPenyelesaianPKSPopup = true" class="absolute bottom-[12px] right-[24px] flex">
-            <div class="flex items-center justify-center w-[83px] h-[40px] rounded-lg bg-[#E6E6E6] border-[#FFFFFF] border-[1px]">
-              <span class="text-[14px] font-sans font-semibold text-[#7F7F80] ml-3 mt-[9px] mr-3 mb-[9px]">Selesai</span>
+          <button @click="showPenyelesaianPKSPopup = true" :class="{ 'bg-[#2671D9] rounded-lg border-[1px] text-[#FFFFFF]': kirimClicked, 'bg-[#E6E6E6] rounded-lg border-[1px] text-[#7F7F80]': !kirimClicked }" :disabled="!kirimClicked" class="absolute bottom-[12px] right-[24px] flex">
+            <div class="flex items-center justify-center w-[83px] h-[40px] rounded-lg border-[#FFFFFF] border-[1px]">
+              <span class="text-[14px] font-sans font-semibold ml-3 mt-[9px] mr-3 mb-[9px]">Selesai</span>
             </div>
           </button>
         </div>
@@ -1319,6 +1314,7 @@ export default {
         Proposal: { fileName: "", fileSize: "" },
         Evaluasi: { fileName: "", fileSize: "" },
       },
+      kirimClicked: false,
       isDropdownArrowOpen: false,
       isDropdownArrowOpen1: false,
       isDropdownArrowOpen2: false,
@@ -1389,6 +1385,10 @@ export default {
     },
   },
   methods: {
+    handleKirimClick() {
+      this.closePopup();
+      this.kirimClicked = true;
+    },
     closePopup() {
       this.showProgressPKSPopupStaff = false;
     },

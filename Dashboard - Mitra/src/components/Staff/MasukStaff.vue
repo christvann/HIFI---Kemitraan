@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex w-[1132px] h-[54px] rounded-lg bg-[#FFFFFF] border-collapse">
+    <div class="flex w-auto h-[54px] rounded-lg bg-[#FFFFFF] border-collapse">
       <h1 class="w-[51px] h-[22px] font-sans text-[#7F7F80] text-[14px] font-semibold ml-6 mt-4 mb-4">Masuk</h1>
     </div>
   </div>
@@ -78,7 +78,7 @@
       </div>
       <div>
         <div class="flex">
-          <div class="flex w-[1046px] h-[480px] rounded-lg bg-[#FFFFFF] border-[1px] border-[#E5E7E9] mt-4 ml-4 overflow-auto">
+          <div class="flex w-full h-[480px] rounded-lg bg-[#FFFFFF] border-[1px] border-[#E5E7E9] mt-4 ml-4 mr-4 overflow-auto">
             <table class="table-auto w-full h-auto text-left border-collapse border border-[#E5E7E9]">
               <thead>
                 <tr class="bg-[#FFFFFF] text-[12px] font-sans text-[#4D5E80] font-semibold">
@@ -254,9 +254,7 @@
           </div>
         </div>
       </div>
-      <svg class="ml-4" width="1046" height="1" viewBox="0 0 1046 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <line y1="0.5" x2="1046" y2="0.5" stroke="#E5E7E9" />
-      </svg>
+      <div class="w-auto h-[1px] ml-4 mr-4 bg-[#E5E7E9]"></div>
     </div>
   </div>
 </template>

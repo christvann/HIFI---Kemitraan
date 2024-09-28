@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="w-[1132px] h-[54px] rounded-lg bg-[#FFFFFF] border-collapse"></div>
+    <div class="w-auto h-[54px] rounded-lg bg-[#FFFFFF] border-collapse"></div>
   </div>
   <div class="px-4 py-3">
     <div class="h-[1260px] w-auto rounded-lg bg-[#FFFFFF] border-collapse">
@@ -11,7 +11,7 @@
         <h1 class="font-sans text-[20px] text-[#333333] mt-2 ml-[5px] font-semibold">Dashboard</h1>
       </div>
       <h1 class="items-start justify-center px-2 ml-2 text-[#9C9C9C]">Dashboard Kemitraan</h1>
-      <div class="blue-box mt-3 ml-4 w-[1046px] h-[100px] relative">
+      <div class="blue-box mt-3 ml-4 mr-10 w-auto h-[100px] relative">
         <div class="flex items-start">
           <div>
             <div class="flex items-center">
@@ -36,7 +36,7 @@
       </div>
       <div>
         <div class="flex">
-          <div class="w-[676px] h-[416px] border-collapse rounded-lg bg-[#FFFFFF] border-[#E5E7E9] border-[1px] ml-4 mt-6">
+          <div class="w-auto h-[416px] border-collapse rounded-lg bg-[#FFFFFF] border-[#E5E7E9] border-[1px] ml-4 mt-6">
             <div class="flex items-center">
               <h1 class="text-[20px] font-sans font-semibold text-[#000000] ml-6 mt-6">Progress Kemitraan</h1>
               <span class="text-[16px] font-sans font-normal text-[#000000] ml-2 mt-6">(per Tahun)</span>
@@ -74,48 +74,8 @@
                 <line y1="0.5" x2="628" y2="0.5" stroke="#E5E7E9" />
               </svg>
             </div>
-            <div class="flex w-[600px] h-[236px] bg-[#FFFFFF] ml-[53px] mt-4">
-              <div class="justify-items-start">
-                <h1 class="text-[14px] font-sans font-semibold text-[#000000]">50</h1>
-                <h1 class="text-[14px] font-sans font-semibold text-[#000000] mt-[17.67px]">40</h1>
-                <h1 class="text-[14px] font-sans font-semibold text-[#000000] mt-[20px]">30</h1>
-                <h1 class="text-[14px] font-sans font-semibold text-[#000000] mt-[23px]">20</h1>
-                <h1 class="text-[14px] font-sans font-semibold text-[#000000] mt-[18.36px]">10</h1>
-                <h1 class="text-[14px] font-sans font-semibold text-[#000000] mt-[14px]">0</h1>
-              </div>
-              <div class="w-[575px] h-[209px] ml-2 rounded-sm border-[1px] border-[#BDBDBD] grid grid-flow-col justify-stretch relative">
-                <!-- Garis Titik-Titik Horizontal -->
-                <div class="absolute top-[40px] left-0 w-full border-t-[1px] border-dashed border-[#BDBDBD] mt-[10px]"></div>
-                <div class="absolute top-[80px] left-0 w-full border-t-[1px] border-dashed border-[#BDBDBD] mt-3"></div>
-                <div class="absolute top-[120px] left-0 w-full border-t-[1px] border-dashed border-[#BDBDBD] mt-[16px]"></div>
-                <div class="absolute top-[160px] left-0 w-full border-t-[1px] border-dashed border-[#BDBDBD] mt-[15px]"></div>
-                <div class="bg-[#FFFFFF] border-[1px] border-[#BDBDBD] border-dashed justify-center items-center">
-                  <div class="w-[60px] h-[74px] bg-[#7367F0] ml-[37.37px] mt-[136px]">
-                    <h1 class="w-[16px] h-[20px] text-[#FFFFFF] py-[27px] ml-[24px] font-sans font-medium text-[12px]">20</h1>
-                  </div>
-                </div>
-                <div class="bg-[#FFFFFF] border-[1px] border-[#BDBDBD] border-dashed justify-center items-center">
-                  <div class="w-[60px] h-[55px] bg-[#FFA229] ml-[37.37px] mt-[155px]">
-                    <h1 class="w-[16px] h-[20px] text-[#FFFFFF] py-[20px] ml-[24px] font-sans font-medium text-[12px]">15</h1>
-                  </div>
-                </div>
-                <div class="bg-[#FFFFFF] border-[1px] border-[#BDBDBD] border-dashed justify-center items-center">
-                  <div class="w-[60px] h-[26px] bg-[#FF5656] ml-[37.37px] mt-[184px]">
-                    <h1 class="w-[16px] h-[20px] text-[#FFFFFF] py-[5px] ml-[26px] font-sans font-medium text-[12px]">9</h1>
-                  </div>
-                </div>
-                <div class="bg-[#FFFFFF] border-[1px] border-[#BDBDBD] border-dashed justify-center items-center">
-                  <div class="w-[60px] h-[74px] bg-[#0EA976] ml-[37.37px] mt-[136px]">
-                    <h1 class="w-[16px] h-[20px] text-[#FFFFFF] py-[27px] ml-[24px] font-sans font-medium text-[12px]">20</h1>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="flex absolute top-[708px] ml-4">
-              <span class="w-[68px] h-[20px] ml-[98px] text-[10px] font-sans font-semibold text-[#000000]">Total Diproses</span>
-              <span class="w-[68px] h-[20px] ml-[78px] text-[10px] font-sans font-semibold text-[#000000]">Total Direvisi</span>
-              <span class="w-[68px] h-[20px] ml-[76px] text-[10px] font-sans font-semibold text-[#000000]">Total Ditolak</span>
-              <span class="w-[68px] h-[20px] ml-[76px] text-[10px] font-sans font-semibold text-[#000000]">Total Selesai</span>
+            <div class="chart-container ml-5 mt-4">
+              <canvas id="myBarChart"></canvas>
             </div>
           </div>
           <div class="flex flex-col relative justify-start w-[346px] h-[137px] ml-6 mt-6 mr-6 border-collapse rounded-lg bg-[#FFFFFF] border-[#E5E7E9] border-[1px] bg-wave">
@@ -125,76 +85,27 @@
                 <span class="block">Kemitraan</span>
               </h1>
             </div>
-            <div class="flex flex-col items-start w-[282px] h-[60px] mt-[50px]">
-              <h1 class="font-sans font-extralight text-[16px] text-[#7F7F80] ml-[30px]">Total NDA</h1>
-              <span class="text-[24px] font-sans font-bold text-[#333333] ml-[30px]">10</span>
-              <div class="flex absolute right-[85px]">
-                <svg width="59" height="60" class="absolute left-1" viewBox="0 0 59 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M5.33949 35.1994C2.73806 35.7593 1.03965 38.3349 1.98562 40.8221C3.58651 45.0312 6.10864 48.8391 9.38453 51.9445C13.8209 56.15 19.4241 58.8628 25.4311 59.7133C31.438 60.5639 37.5568 59.511 42.9542 56.698C48.3516 53.8849 52.7652 49.4485 55.594 43.9928C58.4229 38.5371 59.5294 32.3273 58.763 26.2091C57.9966 20.0908 55.3945 14.3615 51.3111 9.80121C47.2276 5.24097 41.8612 2.07147 35.9428 0.72434C31.6076 -0.2624 27.1306 -0.236281 22.8426 0.773755C20.2264 1.39 19.0496 4.27598 20.0612 6.76615C21.0899 9.29844 23.9977 10.4336 26.7027 10.0416C29.0624 9.69969 31.477 9.79132 33.8294 10.3268C37.8066 11.232 41.4128 13.3619 44.1569 16.4264C46.9009 19.4909 48.6496 23.341 49.1646 27.4525C49.6796 31.564 48.936 35.7369 47.035 39.4032C45.134 43.0694 42.1681 46.0507 38.541 47.941C34.914 49.8314 30.8022 50.539 26.7655 49.9674C22.7288 49.3958 18.9635 47.5728 15.9822 44.7467C14.1799 43.0382 12.7171 41.0133 11.6556 38.783C10.501 36.357 7.96609 34.6341 5.33949 35.1994Z"
-                    fill="#E0E0E0"
-                  />
-                  <path
-                    d="M46.9955 12.2077C48.8624 10.3092 48.8827 7.22479 46.7341 5.652C42.1362 2.2862 36.6518 0.317012 30.9262 0.0351221C23.6042 -0.325365 16.4125 2.09937 10.7526 6.83683C5.0926 11.5743 1.36984 18.2851 0.309712 25.6615C-0.611118 32.0687 0.534243 38.5794 3.53145 44.234C4.38331 45.8412 6.11219 46.7381 7.93114 46.7381C12.0075 46.7381 14.6694 42.3793 13.067 38.631C11.2457 34.3707 9.53284 29.5363 9.88518 27.0847C10.5975 22.1281 13.0991 17.6187 16.9024 14.4353C20.7056 11.2519 25.5382 9.62257 30.4582 9.8648C33.722 10.0255 36.8692 11.0021 39.635 12.6754C41.968 14.0868 45.0837 14.152 46.9955 12.2077Z"
-                    fill="#0EA976"
-                  />
-                  <path
-                    d="M19.9588 26.7273V34H18.858V27.8281H18.8153L17.0753 28.9645V27.9134L18.8899 26.7273H19.9588ZM24.9581 34.1207C24.397 34.1184 23.9176 33.9704 23.5199 33.6768C23.1222 33.3833 22.8179 32.956 22.6072 32.3949C22.3965 31.8338 22.2912 31.1579 22.2912 30.3672C22.2912 29.5788 22.3965 28.9053 22.6072 28.3466C22.8203 27.7879 23.1257 27.3617 23.5234 27.0682C23.9235 26.7746 24.4018 26.6278 24.9581 26.6278C25.5144 26.6278 25.9915 26.7758 26.3892 27.0717C26.7869 27.3653 27.0911 27.7914 27.3018 28.3501C27.5149 28.9065 27.6214 29.5788 27.6214 30.3672C27.6214 31.1603 27.5161 31.8374 27.3054 32.3984C27.0947 32.9571 26.7905 33.3845 26.3928 33.6804C25.995 33.974 25.5168 34.1207 24.9581 34.1207ZM24.9581 33.1726C25.4505 33.1726 25.8352 32.9323 26.1122 32.4517C26.3916 31.9711 26.5312 31.2763 26.5312 30.3672C26.5312 29.7635 26.4673 29.2533 26.3395 28.8366C26.214 28.4176 26.0329 28.1004 25.7962 27.8849C25.5618 27.6671 25.2824 27.5582 24.9581 27.5582C24.468 27.5582 24.0833 27.7997 23.804 28.2827C23.5246 28.7656 23.3838 29.4605 23.3814 30.3672C23.3814 30.9732 23.4441 31.4858 23.5696 31.9048C23.6974 32.3215 23.8786 32.6375 24.1129 32.853C24.3473 33.0661 24.629 33.1726 24.9581 33.1726Z"
-                    fill="black"
-                  />
-                  <path
-                    d="M31.1705 27.4091L29.2955 34.375H28.6818L30.5568 27.4091H31.1705ZM34.3857 33.5795C34.147 33.5758 33.9084 33.5303 33.6697 33.4432C33.4311 33.3561 33.2133 33.2093 33.0163 33.0028C32.8194 32.7945 32.6612 32.5133 32.5419 32.1591C32.4226 31.803 32.3629 31.3561 32.3629 30.8182C32.3629 30.303 32.4112 29.8466 32.5078 29.4489C32.6044 29.0492 32.7446 28.7131 32.9283 28.4403C33.112 28.1657 33.3336 27.9574 33.593 27.8153C33.8544 27.6733 34.1489 27.6023 34.4766 27.6023C34.8023 27.6023 35.0921 27.6676 35.3459 27.7983C35.6016 27.9271 35.8099 28.107 35.9709 28.3381C36.1319 28.5691 36.236 28.8352 36.2834 29.1364H35.5902C35.5258 28.875 35.4008 28.6581 35.2152 28.4858C35.0296 28.3134 34.7834 28.2273 34.4766 28.2273C34.0258 28.2273 33.6707 28.4233 33.4112 28.8153C33.1536 29.2074 33.0239 29.7576 33.022 30.4659H33.0675C33.1735 30.3049 33.2995 30.1676 33.4453 30.054C33.593 29.9384 33.7559 29.8494 33.9339 29.7869C34.112 29.7244 34.3004 29.6932 34.4993 29.6932C34.8326 29.6932 35.1375 29.7765 35.4141 29.9432C35.6906 30.108 35.9122 30.3362 36.0788 30.6278C36.2455 30.9176 36.3288 31.25 36.3288 31.625C36.3288 31.9848 36.2483 32.3144 36.0874 32.6136C35.9264 32.911 35.7 33.1477 35.4084 33.3239C35.1186 33.4981 34.7777 33.5833 34.3857 33.5795ZM34.3857 32.9545C34.6243 32.9545 34.8383 32.8949 35.0277 32.7756C35.219 32.6562 35.3696 32.4962 35.4794 32.2955C35.5911 32.0947 35.647 31.8712 35.647 31.625C35.647 31.3845 35.593 31.1657 35.4851 30.9688C35.379 30.7699 35.2322 30.6117 35.0447 30.4943C34.8591 30.3769 34.647 30.3182 34.4084 30.3182C34.2285 30.3182 34.0608 30.3542 33.9055 30.4261C33.7502 30.4962 33.6139 30.5928 33.4964 30.7159C33.3809 30.839 33.29 30.9801 33.2237 31.1392C33.1574 31.2964 33.1243 31.4621 33.1243 31.6364C33.1243 31.8674 33.1783 32.0833 33.2862 32.2841C33.3961 32.4848 33.5457 32.6468 33.7351 32.7699C33.9264 32.893 34.1432 32.9545 34.3857 32.9545ZM37.8097 32.3068V31.7273L40.3665 27.6818H40.7869V28.5795H40.5028L38.571 31.6364V31.6818H42.0142V32.3068H37.8097ZM40.5483 33.5V32.1307V31.8608V27.6818H41.2188V33.5H40.5483Z"
-                    fill="#9C9C9C"
-                  />
-                </svg>
+            <div class="ml-8 mt-[50px]">
+              <div class="chart-item">
+                <div>
+                  <p class="font-sans text-[16px] text-[#7F7F80] font-medium">Total NDA</p>
+                  <h2 id="totalNDA" class="font-sans text-[24px] text-[#333333] font-bold">10</h2>
+                </div>
+                <canvas id="ndaChart" class="doughnut-chart"></canvas>
               </div>
-            </div>
-            <div class="flex flex-col items-start w-[282px] h-[60px] mt-6">
-              <h1 class="font-sans font-extralight text-[16px] text-[#7F7F80] ml-[30px]">Total MoU</h1>
-              <span class="text-[24px] font-sans font-bold text-[#333333] ml-[30px]">24</span>
-              <div class="flex absolute right-[85px]">
-                <svg width="59" height="60" class="absolute left-1" viewBox="0 0 59 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M-0.00113803 30C-0.00113661 13.4315 13.2065 -2.7584e-07 29.4989 1.17952e-06C45.7914 2.63489e-06 58.999 13.4315 58.999 30C58.999 46.5685 45.7914 60 29.4989 60C13.2065 60 -0.00113945 46.5685 -0.00113803 30ZM49.323 30C49.323 18.8659 40.4475 9.84 29.4989 9.84C18.5504 9.84 9.67489 18.8659 9.67489 30C9.67489 41.1341 18.5504 50.16 29.4989 50.16C40.4475 50.16 49.323 41.1341 49.323 30Z"
-                    fill="#E0E0E0"
-                  />
-                  <path
-                    d="M42.9567 50.9261C44.4351 53.225 47.5442 53.8929 49.5347 52.0198C51.7956 49.8925 53.7224 47.411 55.2375 44.6601C57.5603 40.4426 58.8466 35.7167 58.9868 30.8848C59.127 26.0529 58.117 21.2582 56.0427 16.9087C54.6889 14.0699 52.9078 11.4757 50.7724 9.21542C48.8963 7.22952 45.7545 7.71268 44.1446 9.91998C42.5709 12.0777 43.079 15.07 44.7655 17.1406C45.7756 18.3807 46.6395 19.7438 47.3355 21.2032C48.7294 24.1258 49.4081 27.3477 49.3139 30.5946C49.2196 33.8414 48.3553 37.017 46.7944 39.851C46.0171 41.2624 45.0785 42.5682 44.0018 43.7432C42.195 45.7149 41.5101 48.6767 42.9567 50.9261Z"
-                    fill="#FFA229"
-                  />
-                  <path
-                    d="M16.1996 33V32.2045L18.6605 29.6548C18.9233 29.3778 19.1399 29.1352 19.3104 28.9268C19.4832 28.7161 19.6122 28.5161 19.6974 28.3267C19.7827 28.1373 19.8253 27.9361 19.8253 27.723C19.8253 27.4815 19.7685 27.2732 19.6548 27.098C19.5412 26.9205 19.3861 26.7843 19.1896 26.6896C18.9931 26.5926 18.7718 26.544 18.5256 26.544C18.2652 26.544 18.0379 26.5973 17.8438 26.7038C17.6496 26.8104 17.5005 26.9607 17.3963 27.1548C17.2921 27.349 17.2401 27.5762 17.2401 27.8366H16.1925C16.1925 27.3939 16.2943 27.0069 16.4979 26.6754C16.7015 26.344 16.9808 26.0871 17.3359 25.9048C17.6911 25.7202 18.0947 25.6278 18.5469 25.6278C19.0038 25.6278 19.4063 25.719 19.7543 25.9013C20.1046 26.0812 20.3781 26.3274 20.5746 26.6399C20.7711 26.95 20.8693 27.3004 20.8693 27.6911C20.8693 27.9609 20.8184 28.2249 20.7166 28.483C20.6172 28.741 20.4432 29.0286 20.1946 29.3459C19.946 29.6607 19.6004 30.0431 19.1577 30.4929L17.7124 32.0057V32.0589H20.9865V33H16.1996ZM22.5234 31.5795V30.6918L25.6662 25.7273H26.3658V27.0341H25.9219L23.674 30.5923V30.6491H27.9815V31.5795H22.5234ZM25.9716 33V31.3097L25.9787 30.9048V25.7273H27.0192V33H25.9716Z"
-                    fill="black"
-                  />
-                  <path
-                    d="M32.1705 26.4091L30.2955 33.375H29.6818L31.5568 26.4091H32.1705ZM35.3857 32.5795C35.147 32.5758 34.9084 32.5303 34.6697 32.4432C34.4311 32.3561 34.2133 32.2093 34.0163 32.0028C33.8194 31.7945 33.6612 31.5133 33.5419 31.1591C33.4226 30.803 33.3629 30.3561 33.3629 29.8182C33.3629 29.303 33.4112 28.8466 33.5078 28.4489C33.6044 28.0492 33.7446 27.7131 33.9283 27.4403C34.112 27.1657 34.3336 26.9574 34.593 26.8153C34.8544 26.6733 35.1489 26.6023 35.4766 26.6023C35.8023 26.6023 36.0921 26.6676 36.3459 26.7983C36.6016 26.9271 36.8099 27.107 36.9709 27.3381C37.1319 27.5691 37.236 27.8352 37.2834 28.1364H36.5902C36.5258 27.875 36.4008 27.6581 36.2152 27.4858C36.0296 27.3134 35.7834 27.2273 35.4766 27.2273C35.0258 27.2273 34.6707 27.4233 34.4112 27.8153C34.1536 28.2074 34.0239 28.7576 34.022 29.4659H34.0675C34.1735 29.3049 34.2995 29.1676 34.4453 29.054C34.593 28.9384 34.7559 28.8494 34.9339 28.7869C35.112 28.7244 35.3004 28.6932 35.4993 28.6932C35.8326 28.6932 36.1375 28.7765 36.4141 28.9432C36.6906 29.108 36.9122 29.3362 37.0788 29.6278C37.2455 29.9176 37.3288 30.25 37.3288 30.625C37.3288 30.9848 37.2483 31.3144 37.0874 31.6136C36.9264 31.911 36.7 32.1477 36.4084 32.3239C36.1186 32.4981 35.7777 32.5833 35.3857 32.5795ZM35.3857 31.9545C35.6243 31.9545 35.8383 31.8949 36.0277 31.7756C36.219 31.6562 36.3696 31.4962 36.4794 31.2955C36.5911 31.0947 36.647 30.8712 36.647 30.625C36.647 30.3845 36.593 30.1657 36.4851 29.9688C36.379 29.7699 36.2322 29.6117 36.0447 29.4943C35.8591 29.3769 35.647 29.3182 35.4084 29.3182C35.2285 29.3182 35.0608 29.3542 34.9055 29.4261C34.7502 29.4962 34.6139 29.5928 34.4964 29.7159C34.3809 29.839 34.29 29.9801 34.2237 30.1392C34.1574 30.2964 34.1243 30.4621 34.1243 30.6364C34.1243 30.8674 34.1783 31.0833 34.2862 31.2841C34.3961 31.4848 34.5457 31.6468 34.7351 31.7699C34.9264 31.893 35.1432 31.9545 35.3857 31.9545ZM38.8097 31.3068V30.7273L41.3665 26.6818H41.7869V27.5795H41.5028L39.571 30.6364V30.6818H43.0142V31.3068H38.8097ZM41.5483 32.5V31.1307V30.8608V26.6818H42.2188V32.5H41.5483Z"
-                    fill="#9C9C9C"
-                  />
-                </svg>
+              <div class="chart-item mt-6">
+                <div>
+                  <p class="font-sans text-[16px] text-[#7F7F80] font-medium">Total MoU</p>
+                  <h2 id="totalMoU" class="font-sans text-[24px] text-[#333333] font-bold">24</h2>
+                </div>
+                <canvas id="mouChart" class="doughnut-chart"></canvas>
               </div>
-            </div>
-            <div class="flex flex-col items-start w-[282px] h-[60px] mt-6">
-              <h1 class="font-sans font-extralight text-[16px] text-[#7F7F80] ml-[30px]">Total PKS</h1>
-              <span class="text-[24px] font-sans font-bold text-[#333333] ml-[30px]">30</span>
-              <div class="flex absolute right-[85px]">
-                <svg width="59" height="60" class="absolute left-1" viewBox="0 0 59 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M-0.00113803 30C-0.00113661 13.4315 13.2065 -2.7584e-07 29.4989 1.17952e-06C45.7914 2.63489e-06 58.999 13.4315 58.999 30C58.999 46.5685 45.7914 60 29.4989 60C13.2065 60 -0.00113945 46.5685 -0.00113803 30ZM49.323 30C49.323 18.8659 40.4475 9.84 29.4989 9.84C18.5504 9.84 9.67489 18.8659 9.67489 30C9.67489 41.1341 18.5504 50.16 29.4989 50.16C40.4475 50.16 49.323 41.1341 49.323 30Z"
-                    fill="#E0E0E0"
-                  />
-                  <path
-                    d="M6.10616 22.2173C3.54861 21.3665 0.747116 22.7672 0.343413 25.4322C-0.449354 30.6655 0.130087 36.0503 2.06519 41.0285C4.59426 47.5348 9.27988 52.9377 15.3116 56.3025C21.3433 59.6673 28.3417 60.7825 35.0964 59.4551C40.2872 58.4351 45.0831 56.022 49.0065 52.5051C50.9864 50.7303 50.6648 47.6671 48.6236 45.9632C46.5342 44.2191 43.4458 44.5878 41.2688 46.2213C38.9103 47.9909 36.1782 49.2193 33.2604 49.7927C28.7216 50.6846 24.0189 49.9352 19.9658 47.6742C15.9127 45.4132 12.7642 41.7827 11.0648 37.4107C9.94863 34.5393 9.50366 31.4667 9.7369 28.4299C9.94043 25.78 8.62805 23.0563 6.10616 22.2173Z"
-                    fill="#FF51AF"
-                  />
-                  <path
-                    d="M18.7315 34.0994C18.2438 34.0994 17.8082 34.0154 17.4247 33.8473C17.0436 33.6792 16.7417 33.446 16.5192 33.1477C16.299 32.8471 16.1806 32.4991 16.1641 32.1037H17.2791C17.2933 32.3191 17.3655 32.5062 17.4957 32.6648C17.6283 32.821 17.8011 32.9418 18.0142 33.027C18.2273 33.1122 18.464 33.1548 18.7244 33.1548C19.0109 33.1548 19.2642 33.1051 19.4844 33.0057C19.7069 32.9062 19.8809 32.7678 20.0064 32.5902C20.1319 32.4103 20.1946 32.2031 20.1946 31.9688C20.1946 31.7249 20.1319 31.5107 20.0064 31.326C19.8833 31.139 19.7022 30.9922 19.4631 30.8857C19.2263 30.7791 18.9399 30.7259 18.6037 30.7259H17.9893V29.831H18.6037C18.8736 29.831 19.1103 29.7824 19.3139 29.6854C19.5199 29.5883 19.6809 29.4534 19.7969 29.2805C19.9129 29.1054 19.9709 28.9006 19.9709 28.6662C19.9709 28.4413 19.92 28.246 19.8182 28.0803C19.7188 27.9122 19.5767 27.7808 19.392 27.6861C19.2098 27.5914 18.9943 27.544 18.7457 27.544C18.509 27.544 18.2876 27.5878 18.0817 27.6754C17.8781 27.7607 17.7124 27.8838 17.5845 28.0447C17.4567 28.2034 17.388 28.3939 17.3786 28.6165H16.3168C16.3286 28.2235 16.4446 27.8778 16.6648 27.5795C16.8873 27.2812 17.1809 27.0481 17.5455 26.88C17.91 26.7119 18.3149 26.6278 18.7599 26.6278C19.2263 26.6278 19.6288 26.719 19.9673 26.9013C20.3082 27.0812 20.571 27.3215 20.7557 27.6222C20.9427 27.9228 21.035 28.2519 21.0327 28.6094C21.035 29.0166 20.9214 29.3622 20.6918 29.6463C20.4645 29.9304 20.1615 30.121 19.7827 30.218V30.2749C20.2656 30.3482 20.6397 30.54 20.9048 30.8501C21.1723 31.1603 21.3049 31.545 21.3026 32.0043C21.3049 32.4044 21.1937 32.763 20.9688 33.0803C20.7462 33.3975 20.442 33.6473 20.0561 33.8295C19.6702 34.0095 19.2287 34.0994 18.7315 34.0994ZM25.6768 34.1207C25.1158 34.1184 24.6364 33.9704 24.2386 33.6768C23.8409 33.3833 23.5367 32.956 23.326 32.3949C23.1153 31.8338 23.0099 31.1579 23.0099 30.3672C23.0099 29.5788 23.1153 28.9053 23.326 28.3466C23.5391 27.7879 23.8445 27.3617 24.2422 27.0682C24.6423 26.7746 25.1205 26.6278 25.6768 26.6278C26.2332 26.6278 26.7102 26.7758 27.108 27.0717C27.5057 27.3653 27.8099 27.7914 28.0206 28.3501C28.2337 28.9065 28.3402 29.5788 28.3402 30.3672C28.3402 31.1603 28.2348 31.8374 28.0241 32.3984C27.8134 32.9571 27.5092 33.3845 27.1115 33.6804C26.7138 33.974 26.2356 34.1207 25.6768 34.1207ZM25.6768 33.1726C26.1693 33.1726 26.554 32.9323 26.831 32.4517C27.1103 31.9711 27.25 31.2763 27.25 30.3672C27.25 29.7635 27.1861 29.2533 27.0582 28.8366C26.9328 28.4176 26.7517 28.1004 26.5149 27.8849C26.2805 27.6671 26.0012 27.5582 25.6768 27.5582C25.1868 27.5582 24.8021 27.7997 24.5227 28.2827C24.2434 28.7656 24.1025 29.4605 24.1001 30.3672C24.1001 30.9732 24.1629 31.4858 24.2884 31.9048C24.4162 32.3215 24.5973 32.6375 24.8317 32.853C25.0661 33.0661 25.3478 33.1726 25.6768 33.1726Z"
-                    fill="black"
-                  />
-                  <path
-                    d="M32.1705 27.4091L30.2955 34.375H29.6818L31.5568 27.4091H32.1705ZM35.3857 33.5795C35.147 33.5758 34.9084 33.5303 34.6697 33.4432C34.4311 33.3561 34.2133 33.2093 34.0163 33.0028C33.8194 32.7945 33.6612 32.5133 33.5419 32.1591C33.4226 31.803 33.3629 31.3561 33.3629 30.8182C33.3629 30.303 33.4112 29.8466 33.5078 29.4489C33.6044 29.0492 33.7446 28.7131 33.9283 28.4403C34.112 28.1657 34.3336 27.9574 34.593 27.8153C34.8544 27.6733 35.1489 27.6023 35.4766 27.6023C35.8023 27.6023 36.0921 27.6676 36.3459 27.7983C36.6016 27.9271 36.8099 28.107 36.9709 28.3381C37.1319 28.5691 37.236 28.8352 37.2834 29.1364H36.5902C36.5258 28.875 36.4008 28.6581 36.2152 28.4858C36.0296 28.3134 35.7834 28.2273 35.4766 28.2273C35.0258 28.2273 34.6707 28.4233 34.4112 28.8153C34.1536 29.2074 34.0239 29.7576 34.022 30.4659H34.0675C34.1735 30.3049 34.2995 30.1676 34.4453 30.054C34.593 29.9384 34.7559 29.8494 34.9339 29.7869C35.112 29.7244 35.3004 29.6932 35.4993 29.6932C35.8326 29.6932 36.1375 29.7765 36.4141 29.9432C36.6906 30.108 36.9122 30.3362 37.0788 30.6278C37.2455 30.9176 37.3288 31.25 37.3288 31.625C37.3288 31.9848 37.2483 32.3144 37.0874 32.6136C36.9264 32.911 36.7 33.1477 36.4084 33.3239C36.1186 33.4981 35.7777 33.5833 35.3857 33.5795ZM35.3857 32.9545C35.6243 32.9545 35.8383 32.8949 36.0277 32.7756C36.219 32.6562 36.3696 32.4962 36.4794 32.2955C36.5911 32.0947 36.647 31.8712 36.647 31.625C36.647 31.3845 36.593 31.1657 36.4851 30.9688C36.379 30.7699 36.2322 30.6117 36.0447 30.4943C35.8591 30.3769 35.647 30.3182 35.4084 30.3182C35.2285 30.3182 35.0608 30.3542 34.9055 30.4261C34.7502 30.4962 34.6139 30.5928 34.4964 30.7159C34.3809 30.839 34.29 30.9801 34.2237 31.1392C34.1574 31.2964 34.1243 31.4621 34.1243 31.6364C34.1243 31.8674 34.1783 32.0833 34.2862 32.2841C34.3961 32.4848 34.5457 32.6468 34.7351 32.7699C34.9264 32.893 35.1432 32.9545 35.3857 32.9545ZM38.8097 32.3068V31.7273L41.3665 27.6818H41.7869V28.5795H41.5028L39.571 31.6364V31.6818H43.0142V32.3068H38.8097ZM41.5483 33.5V32.1307V31.8608V27.6818H42.2188V33.5H41.5483Z"
-                    fill="#9C9C9C"
-                  />
-                </svg>
+              <div class="chart-item mt-6">
+                <div>
+                  <p class="font-sans text-[16px] text-[#7F7F80] font-medium">Total PKS</p>
+                  <h2 id="totalPKS" class="font-sans text-[24px] text-[#333333] font-bold">30</h2>
+                </div>
+                <canvas id="pksChart" class="doughnut-chart"></canvas>
               </div>
             </div>
           </div>
@@ -264,7 +175,7 @@
         </div>
       </div>
       <div class="flex">
-        <div class="flex w-[1046px] h-[480px] rounded-lg bg-[#FFFFFF] border-[1px] border-[#E5E7E9] mt-4 ml-4 overflow-auto">
+        <div class="flex w-full h-[480px] rounded-lg bg-[#FFFFFF] border-[1px] border-[#E5E7E9] mt-4 ml-4 mr-10 overflow-auto">
           <table class="table-auto w-full text-left border-collapse border border-[#E5E7E9]">
             <thead>
               <tr class="bg-[#FFFFFF] text-[12px] font-sans text-[#4D5E80] font-semibold">
@@ -388,7 +299,166 @@
 </template>
 
 <script>
+import { onMounted } from "vue";
+import { Chart, DoughnutController, ArcElement, BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from "chart.js";
+import ChartDataLabels from "chartjs-plugin-datalabels";
+
+Chart.register(DoughnutController, ArcElement, BarController, BarElement, CategoryScale, LinearScale, Tooltip, Legend, ChartDataLabels);
+
 export default {
+  name: "DashBoardStaff",
+  setup() {
+    onMounted(() => {
+      const totalData = 64; // Total data untuk ketiga chart
+      // Doughnut Chart NDA
+      const ndaValue = parseInt(document.getElementById("totalNDA").innerText, 10);
+      const ndaCtx = document.getElementById("ndaChart").getContext("2d");
+      new Chart(ndaCtx, {
+        type: "doughnut",
+        data: {
+          labels: ["NDA"],
+          datasets: [
+            {
+              data: [ndaValue, totalData - ndaValue],
+              backgroundColor: ["#0EA976", "#E0E0E0"],
+              cutout: "55%", // Ketebalan chart
+            },
+          ],
+        },
+        options: getDoughnutOptions(ndaValue, totalData),
+      });
+      // Doughnut Chart MoU
+      const mouValue = parseInt(document.getElementById("totalMoU").innerText, 10);
+      const mouCtx = document.getElementById("mouChart").getContext("2d");
+      new Chart(mouCtx, {
+        type: "doughnut",
+        data: {
+          labels: ["MoU"],
+          datasets: [
+            {
+              data: [mouValue, totalData - mouValue],
+              backgroundColor: ["#FFA229", "#E0E0E0"],
+              cutout: "55%", // Ketebalan chart
+            },
+          ],
+        },
+        options: getDoughnutOptions(mouValue, totalData),
+      });
+      // Doughnut Chart PKS
+      const pksValue = parseInt(document.getElementById("totalPKS").innerText, 10);
+      const pksCtx = document.getElementById("pksChart").getContext("2d");
+      new Chart(pksCtx, {
+        type: "doughnut",
+        data: {
+          labels: ["PKS"],
+          datasets: [
+            {
+              data: [pksValue, totalData - pksValue],
+              backgroundColor: ["#FF51AF", "#E0E0E0"],
+              cutout: "55%", // Ketebalan chart
+            },
+          ],
+        },
+        options: getDoughnutOptions(pksValue, totalData),
+      });
+      function getDoughnutOptions(value, total) {
+        return {
+          plugins: {
+            legend: {
+              display: false,
+            },
+            afterDraw: (chart) => {
+              const { ctx, width, height } = chart;
+              ctx.restore();
+              const fontSize = (height / 114).toFixed(2);
+              ctx.font = `${fontSize}em sans-serif`;
+              ctx.textBaseline = "middle";
+              const text = `${value}/${total}`;
+              const textX = Math.round((width - ctx.measureText(text).width) / 2);
+              const textY = height / 2;
+              ctx.fillText(text, textX, textY);
+              ctx.save();
+            },
+          },
+          responsive: false,
+          maintainAspectRatio: false,
+        };
+      }
+      const ctx = document.getElementById("myBarChart").getContext("2d");
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Total Diproses", "Total Direvisi", "Total Ditolak", "Total Selesai"],
+          datasets: [
+            {
+              label: "Jumlah",
+              data: [20, 15, 9, 20],
+              backgroundColor: ["#7367F0", "#FFA229", "#FF5656", "#0EA976"],
+              borderColor: "#FFFFFF",
+              borderWidth: 1,
+              borderRadius: 5,
+              barThickness: 60, // Mengatur width batang chart
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 50,
+              ticks: {
+                stepSize: 10,
+                color: "#000000",
+                font: {
+                  size: 14,
+                },
+              },
+              grid: {
+                color: "#BDBDBD",
+                borderDash: [5, 5],
+              },
+            },
+            x: {
+              ticks: {
+                color: "#000000",
+                font: {
+                  size: 10,
+                  weight: "semibold",
+                },
+              },
+              grid: {
+                color: "#BDBDBD",
+                borderDash: [5, 5],
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              display: false,
+            },
+            tooltip: {
+              enabled: true,
+            },
+            datalabels: {
+              color: "#FFFFFF",
+              anchor: "center",
+              align: "center",
+              offset: 0,
+              font: {
+                weight: "bold",
+                size: 12,
+              },
+              formatter: function (value) {
+                return value;
+              },
+            },
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+        },
+      });
+    });
+  },
   data() {
     return {
       showDatePicker: false,
@@ -499,6 +569,26 @@ export default {
 </script>
 
 <style>
+.doughnut-chart {
+  width: 70px !important;
+  height: 60px !important;
+  margin-left: 10px;
+}
+.chart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 282px;
+  margin-bottom: 10px;
+}
+.chart-container {
+  width: 628px;
+  height: 236px;
+}
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
 .blue-box {
   background-color: #2671d9;
   padding: 20px;

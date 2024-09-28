@@ -941,13 +941,17 @@
             <div class="flex items-center">
               <h1 class="font-sans text-[#4D5E80] text-[16px] font-semibold">Catatan Approval</h1>
             </div>
-            <textarea type="text" placeholder="Masukkan catatan approval" class="w-full h-[88px] text-[#000000] font-sans text-[14px] focus:border-[#9C9C9C] focus:outline-none border-[1px] border-[#E5E7E9] rounded-lg p-2 mt-2 bg-[#FFFFFF]">
-            </textarea>
+            <textarea type="text" placeholder="Masukkan catatan approval" class="w-full h-[88px] text-black font-sans text-sm focus:border-gray-400 focus:outline-none border border-gray-300 rounded-lg p-2 mt-2 bg-white"></textarea>
           </div>
         </div>
         <div class="w-[1046px] h-[1px] bg-[#E5E7E9] items-center transform ml-4 mt-6"></div>
         <div class="flex flex-row w-[1046px] h-auto ml-4 py-9">
-          <button @click="showPenyelesaianMoUPopup = true" :class="{ 'bg-[#2671D9] rounded-lg border-[1px] text-[#FFFFFF]': kirimClicked, 'bg-[#E6E6E6] rounded-lg border-[1px] text-[#7F7F80]': !kirimClicked }" :disabled="!kirimClicked" class="absolute bottom-[12px] right-[24px] flex">
+          <button
+            @click="showPenyelesaianMoUPopup = true"
+            :class="{ 'bg-[#2671D9] rounded-lg border-[1px] text-[#FFFFFF]': kirimClicked, 'bg-[#E6E6E6] rounded-lg border-[1px] text-[#7F7F80]': !kirimClicked }"
+            :disabled="!kirimClicked"
+            class="absolute bottom-[12px] right-[24px] flex"
+          >
             <div class="flex items-center justify-center w-[83px] h-[40px] rounded-lg border-[#FFFFFF] border-[1px]">
               <span class="text-[14px] font-sans font-semibold ml-3 mt-[9px] mr-3 mb-[9px]">Selesai</span>
             </div>

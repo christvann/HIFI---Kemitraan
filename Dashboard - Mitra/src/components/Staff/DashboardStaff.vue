@@ -321,7 +321,7 @@ export default {
             {
               data: [ndaValue, totalData - ndaValue],
               backgroundColor: ["#0EA976", "#E0E0E0"],
-              cutout: "55%", // Ketebalan chart
+              cutout: "58%", // Ketebalan chart
             },
           ],
         },
@@ -338,7 +338,7 @@ export default {
             {
               data: [mouValue, totalData - mouValue],
               backgroundColor: ["#FFA229", "#E0E0E0"],
-              cutout: "55%", // Ketebalan chart
+              cutout: "58%", // Ketebalan chart
             },
           ],
         },
@@ -355,7 +355,7 @@ export default {
             {
               data: [pksValue, totalData - pksValue],
               backgroundColor: ["#FF51AF", "#E0E0E0"],
-              cutout: "55%", // Ketebalan chart
+              cutout: "58%", // Ketebalan chart
             },
           ],
         },
@@ -370,7 +370,7 @@ export default {
             afterDraw: (chart) => {
               const { ctx, width, height } = chart;
               ctx.restore();
-              const fontSize = (height / 114).toFixed(2);
+              const fontSize = (height / 500).toFixed(2);
               ctx.font = `${fontSize}em sans-serif`;
               ctx.textBaseline = "middle";
               const text = `${value}/${total}`;

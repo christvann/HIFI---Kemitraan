@@ -322,7 +322,6 @@ export default {
       selectedSubOptions: [],
       filterOptions: [
         { name: "Tipe", subOptions: ["PKS", "NDA", "MoU"] },
-        { name: "Status", subOptions: ["Selesai"] },
         { name: "Status Perjanjian", subOptions: ["Aktif", "Tidak Aktif"] },
       ],
 
@@ -358,7 +357,7 @@ export default {
       // Filter berdasarkan opsi terpilih (selectedSubOptions)
       if (this.selectedSubOptions.length) {
         filteredData = filteredData.filter((item) => {
-          return this.selectedSubOptions.includes(item.tipe) || this.selectedSubOptions.includes(item.status) || this.selectedSubOptions.includes(item.statusperjanjian);
+          return this.selectedSubOptions.includes(item.tipe) || this.selectedSubOptions.includes(item.statusperjanjian);
         });
       }
       // Filter berdasarkan input pencarian (searchQuery)

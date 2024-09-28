@@ -83,7 +83,7 @@
       </div>
       <div class="ApprovalSelesai">
         <div class="flex">
-          <div class="flex w-[1046px] h-[480px] rounded-lg bg-[#FFFFFF] border-[1px] border-[#E5E7E9] mt-4 ml-4 overflow-auto">
+          <div class="flex w-full h-[480px] rounded-lg bg-[#FFFFFF] border-[1px] border-[#E5E7E9] mt-4 ml-4 mr-4 overflow-auto">
             <table class="table-auto w-full text-left border-collapse border border-[#E5E7E9]">
               <thead>
                 <tr class="bg-[#FFFFFF] text-[12px] font-sans text-[#4D5E80] font-semibold">
@@ -197,7 +197,7 @@
                   <td class="p-2 border border-[#E5E7E9]">{{ item.judul }}</td>
                   <td class="p-2 border border-[#E5E7E9]">{{ item.nomor }}</td>
                   <td class="p-2 border border-[#E5E7E9]">{{ item.tipe }}</td>
-                  <td class="p-2 border border-[#E5E7E9]">{{ item.user }}</td>
+                  <td class="p-2 border border-[#E5E7E9]">{{ item.pelaksana }}</td>
                   <td class="p-2 border border-[#E5E7E9]">
                     <span class="w-[55px] h-[24px] px-4 py-1 rounded-full font-sans text-[12px] text-[#0EA976] bg-[#E2FCF3] border-[1px] border-[#8ADFC3]">
                       {{ item.status }}
@@ -248,9 +248,7 @@
           <button class="pagination-btn" :disabled="currentPage === totalPages" @click="nextPage">›</button>
         </div>
       </div>
-      <svg class="ml-4" width="1046" height="1" viewBox="0 0 1046 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <line y1="0.5" x2="1046" y2="0.5" stroke="#E5E7E9" />
-      </svg>
+      <div class="w-auto h-[1px] ml-4 mr-4 bg-[#E5E7E9]"></div>
     </div>
   </div>
 </template>

@@ -356,17 +356,12 @@
                     </svg>
                   </div>
                   <div class="relative w-full">
-                    <!-- Input file yang tersembunyi -->
-                    <input type="file" id="fileInputKKB" class="hidden" @change="handleFileChange('KKB', $event)" ref="fileInputKKB" />
-                    <!-- Tombol yang menampilkan nama file dan ukuran -->
-                    <button class="ml-4 block text-left p-2 bg-[#FFFFFF] w-full" @click="openFileDialog('KKB')">
+                    <input type="file" id="fileInputKKB" class="hidden" ref="fileInputKKB" />
+                    <button class="ml-4 block text-left p-2 bg-[#FFFFFF] w-full">
                       <div class="flex justify-between items-center">
                         <div class="overflow-hidden">
                           <span class="block text-sm font-semibold text-[#333333] font-sans text-[14px] truncate">
                             {{ fileDetails.KKB.fileName || "namadokumen.pdf" }}
-                          </span>
-                          <span class="block text-xs">
-                            {{ fileDetails.KKB.fileSize || "" }}
                           </span>
                         </div>
                       </div>
@@ -392,17 +387,12 @@
                     </svg>
                   </div>
                   <div class="relative w-full">
-                    <!-- Input file yang tersembunyi -->
-                    <input type="file" id="fileInputKKR" class="hidden" @change="handleFileChange('KKR', $event)" ref="fileInputKKR" />
-                    <!-- Tombol yang menampilkan nama file dan ukuran -->
-                    <button class="ml-4 block text-left p-2 bg-[#FFFFFF] w-full" @click="openFileDialog('KKR')">
+                    <input type="file" id="fileInputKKR" class="hidden" ref="fileInputKKR" />
+                    <button class="ml-4 block text-left p-2 bg-[#FFFFFF] w-full">
                       <div class="flex justify-between items-center">
                         <div class="overflow-hidden">
                           <span class="block text-sm font-semibold text-[#333333] font-sans text-[14px] truncate">
                             {{ fileDetails.KKR.fileName || "namadokumen.pdf" }}
-                          </span>
-                          <span class="block text-xs">
-                            {{ fileDetails.KKR.fileSize || "" }}
                           </span>
                         </div>
                       </div>
@@ -428,17 +418,12 @@
                     </svg>
                   </div>
                   <div class="relative w-full">
-                    <!-- Input file yang tersembunyi -->
-                    <input type="file" id="fileInputKKF" class="hidden" @change="handleFileChange('KKF', $event)" ref="fileInputKKF" />
-                    <!-- Tombol yang menampilkan nama file dan ukuran -->
-                    <button class="ml-4 block text-left p-2 bg-[#FFFFFF] w-full" @click="openFileDialog('KKF')">
+                    <input type="file" id="fileInputKKF" class="hidden" ref="fileInputKKF" />
+                    <button class="ml-4 block text-left p-2 bg-[#FFFFFF] w-full">
                       <div class="flex justify-between items-center">
                         <div class="overflow-hidden">
                           <span class="block text-sm font-semibold text-[#333333] font-sans text-[14px] truncate">
                             {{ fileDetails.KKF.fileName || "namadokumen.pdf" }}
-                          </span>
-                          <span class="block text-xs">
-                            {{ fileDetails.KKF.fileSize || "" }}
                           </span>
                         </div>
                       </div>
@@ -464,17 +449,12 @@
                     </svg>
                   </div>
                   <div class="relative w-full">
-                    <!-- Input file yang tersembunyi -->
-                    <input type="file" id="fileInputKKO" class="hidden" @change="handleFileChange('KKO', $event)" ref="fileInputKKO" />
-                    <!-- Tombol yang menampilkan nama file dan ukuran -->
-                    <button class="ml-4 block text-left p-2 bg-[#FFFFFF] w-full" @click="openFileDialog('KKO')">
+                    <input type="file" id="fileInputKKO" class="hidden" ref="fileInputKKO" />
+                    <button class="ml-4 block text-left p-2 bg-[#FFFFFF] w-full">
                       <div class="flex justify-between items-center">
                         <div class="overflow-hidden">
                           <span class="block text-sm font-semibold text-[#333333] font-sans text-[14px] truncate">
                             {{ fileDetails.KKO.fileName || "namadokumen.pdf" }}
-                          </span>
-                          <span class="block text-xs">
-                            {{ fileDetails.KKO.fileSize || "" }}
                           </span>
                         </div>
                       </div>
@@ -500,17 +480,12 @@
                     </svg>
                   </div>
                   <div class="relative w-full">
-                    <!-- Input file yang tersembunyi -->
-                    <input type="file" id="fileInputProposalMitra" class="hidden" @change="handleFileChange('ProposalMitra', $event)" ref="fileInputProposalMitra" />
-                    <!-- Tombol yang menampilkan nama file dan ukuran -->
-                    <button class="ml-4 block text-left p-2 bg-[#FFFFFF] w-full" @click="openFileDialog('ProposalMitra')">
+                    <input type="file" id="fileInputProposalMitra" class="hidden" ref="fileInputProposalMitra" />
+                    <button class="ml-4 block text-left p-2 bg-[#FFFFFF] w-full">
                       <div class="flex justify-between items-center">
                         <div class="overflow-hidden">
                           <span class="block text-sm font-semibold text-[#333333] font-sans text-[14px] truncate">
                             {{ fileDetails.ProposalMitra?.fileName || "namadokumen.pdf" }}
-                          </span>
-                          <span class="block text-xs">
-                            {{ fileDetails.ProposalMitra?.fileSize || "" }}
                           </span>
                         </div>
                       </div>
@@ -536,17 +511,12 @@
                     </svg>
                   </div>
                   <div class="relative w-full">
-                    <!-- Input file yang tersembunyi -->
-                    <input type="file" id="fileInputDokumenSuratMenyurat" class="hidden" @change="handleFileChange('DokumenSuratMenyurat', $event)" ref="fileInputDokumenSuratMenyurat" />
-                    <!-- Tombol yang menampilkan nama file dan ukuran -->
-                    <button class="ml-4 block text-left p-2 bg-[#FFFFFF] w-full" @click="openFileDialog('DokumenSuratMenyurat')">
+                    <input type="file" id="fileInputDokumenSuratMenyurat" class="hidden" ref="fileInputDokumenSuratMenyurat" />
+                    <button class="ml-4 block text-left p-2 bg-[#FFFFFF] w-full">
                       <div class="flex justify-between items-center">
                         <div class="overflow-hidden">
                           <span class="block text-sm font-semibold text-[#333333] font-sans text-[14px] truncate">
                             {{ fileDetails.DokumenSuratMenyurat?.fileName || "namadokumen.pdf" }}
-                          </span>
-                          <span class="block text-xs">
-                            {{ fileDetails.DokumenSuratMenyurat?.fileSize || "" }}
                           </span>
                         </div>
                       </div>
@@ -572,17 +542,12 @@
                     </svg>
                   </div>
                   <div class="relative w-full">
-                    <!-- Input file yang tersembunyi -->
-                    <input type="file" id="fileInputDokumenLainnya" class="hidden" @change="handleFileChange('DokumenLainnya', $event)" ref="fileInputDokumenLainnya" />
-                    <!-- Tombol yang menampilkan nama file dan ukuran -->
-                    <button class="ml-4 block text-left p-2 bg-[#FFFFFF] w-full" @click="openFileDialog('DokumenLainnya')">
+                    <input type="file" id="fileInputDokumenLainnya" class="hidden" ref="fileInputDokumenLainnya" />
+                    <button class="ml-4 block text-left p-2 bg-[#FFFFFF] w-full">
                       <div class="flex justify-between items-center">
                         <div class="overflow-hidden">
                           <span class="block text-sm font-semibold text-[#333333] font-sans text-[14px] truncate">
                             {{ fileDetails.DokumenLainnya?.fileName || "namadokumen.pdf" }}
-                          </span>
-                          <span class="block text-xs">
-                            {{ fileDetails.DokumenLainnya?.fileSize || "" }}
                           </span>
                         </div>
                       </div>
@@ -610,8 +575,7 @@
             <div class="flex items-center">
               <h1 class="font-sans text-[#4D5E80] text-[16px] font-semibold">Catatan Approval</h1>
             </div>
-            <textarea type="text" placeholder="Masukkan catatan approval" class="w-full h-[88px] text-[#000000] font-sans text-[14px] focus:border-[#9C9C9C] focus:outline-none border-[1px] border-[#E5E7E9] rounded-lg p-2 mt-2 bg-[#FFFFFF]">
-            </textarea>
+            <textarea type="text" placeholder="Masukkan catatan approval" class="w-full h-[88px] text-black font-sans text-sm focus:border-gray-400 focus:outline-none border border-gray-300 rounded-lg p-2 mt-2 bg-white"></textarea>
           </div>
         </div>
         <div class="flex flex-row w-[1046px] h-auto ml-4 py-9">
@@ -903,8 +867,6 @@ export default {
       showDropdown: false,
       showApprovalStopclockPopup: false, // Untuk menampilkan popup persetujuan pengajuan
       showDisetujuiPopup: false, // Untuk menampilkan popup pengajuan disetujui
-      fileName: "", // Nama file yang dipilih
-      fileSize: "", // Ukuran file yang dipilih
     };
   },
   methods: {
@@ -922,28 +884,6 @@ export default {
     },
     navigateToDetail() {
       this.$router.push("/approval/approvalstopclock");
-    },
-    removeFile(type) {
-      this.fileDetails[type] = { fileName: "", fileSize: "" };
-      this.$refs[`fileInput${type}`].value = ""; // Clear the file input
-    },
-    openFileDialog(section) {
-      const inputElement = this.$refs[`fileInput${section}`];
-      if (inputElement) {
-        inputElement.click();
-      } else {
-        console.error(`File input for section ${section} not found.`);
-      }
-    },
-    handleFileChange(section, event) {
-      const file = event.target.files[0];
-      if (file) {
-        this.fileDetails[section].fileName = file.name;
-        this.fileDetails[section].fileSize = `${(file.size / (1024 * 1024)).toFixed(2)} MB`;
-      } else {
-        this.fileDetails[section].fileName = "";
-        this.fileDetails[section].fileSize = "";
-      }
     },
     closeApprovalStopclockPopup() {
       this.showApprovalStopclockPopup = false;

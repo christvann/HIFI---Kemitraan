@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-between w-[1132px] h-[70px] bg-[#FFFFFF] border-b border-[#E5E7E9] bg-topographic">
+  <div class="flex items-center justify-between w-auto h-[70px] bg-[#FFFFFF] border-b border-[#E5E7E9] bg-topographic">
     <div class="text-[20px] font-sans text-[#2671D9] font-medium py-5 px-4">Selamat Datang di DIAMOND</div>
     <!-- Right Section: Notifications and User Info -->
     <div class="flex items-center space-x-4 pr-4">

@@ -468,10 +468,9 @@ export default {
       selectedOption: null,
       selectedSubOptions: [],
       filterOptions: [
-        { name: "Jumlah Pengajuan", subOptions: ["PKS", "NDA", "MoU"] },
-        { name: "Total Selesai", subOptions: ["Selesai", "Revisi"] },
-        { name: "Total Diproses", subOptions: ["PKS", "NDA", "MoU"] },
-        { name: "Total Stop Clock", subOptions: ["PKS", "NDA", "MoU"] },
+        { name: "Jumlah Pengajuan", subOptions: [">10", "5-10", "<5"] },
+        { name: "Total Selesai", subOptions: [">=5", "3-5", "<3"] },
+        { name: "Total Diproses", subOptions: [">3", "2-3", "<2"] },
       ],
 
       selectedValue: 8,
@@ -506,7 +505,32 @@ export default {
       // Filter berdasarkan opsi terpilih (selectedSubOptions)
       if (this.selectedSubOptions.length) {
         filteredData = filteredData.filter((item) => {
-          return this.selectedSubOptions.includes(item.tipe);
+          return this.selectedSubOptions.some((option) => {
+            // Filter untuk jumlahPengajuan
+            if (option === ">10") {
+              return item.jumlahPengajuan > 10;
+            } else if (option === "5-10") {
+              return item.jumlahPengajuan >= 5 && item.jumlahPengajuan <= 10;
+            } else if (option === "<5") {
+              return item.jumlahPengajuan < 5;
+            }
+            // Filter untuk totalSelesai
+            if (option === ">=5") {
+              return item.totalSelesai >= 5;
+            } else if (option === "3-5") {
+              return item.totalSelesai >= 3 && item.totalSelesai <= 5;
+            } else if (option === "<3") {
+              return item.totalSelesai < 3;
+            }
+            // Filter untuk totalDiproses
+            if (option === ">3") {
+              return item.totalDiproses > 3;
+            } else if (option === "2-3") {
+              return item.totalDiproses >= 2 && item.totalDiproses <= 3;
+            } else if (option === "<2") {
+              return item.totalDiproses < 2;
+            }
+          });
         });
       }
       // Filter berdasarkan input pencarian (searchQuery)

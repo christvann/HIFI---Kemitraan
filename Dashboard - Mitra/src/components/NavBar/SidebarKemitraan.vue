@@ -19,7 +19,6 @@
     </div>
     <!-- Line -->
     <div class="w-[216px] h-0 border items-center border-[#E5E7E9] mt-[23px] mb-6"></div>
-    <!-- Menu Items -->
     <div class="flex flex-col w-full gap-[8px]">
       <!-- Dashboard -->
       <button

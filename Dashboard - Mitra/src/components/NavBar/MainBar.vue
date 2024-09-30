@@ -1,7 +1,6 @@
 <template>
   <div class="flex items-center justify-between w-auto h-[70px] bg-[#FFFFFF] border-b border-[#E5E7E9] bg-topographic">
     <div class="text-[20px] font-sans text-[#2671D9] font-medium py-5 px-4">Selamat Datang di DIAMOND</div>
-    <!-- Right Section: Notifications and User Info -->
     <div class="flex items-center space-x-4 pr-4">
       <div class="relative">
         <!-- Notification Button -->
@@ -30,7 +29,6 @@
       <div class="flex items-center space-x-2">
         <!-- User Avatar -->
         <div class="w-[24px] h-[24px] bg-[#C7E5D7] text-[10px] font-sans rounded-full font-bold text-[#333333] flex items-center justify-center">J</div>
-        <!-- User Name -->
         <div class="text-[16px] text-[#666666] font-semibold font-sans">John Doe</div>
         <!-- Dropdown Arrow -->
         <div class="relative">
@@ -85,8 +83,8 @@ export default {
 <style scoped>
 .relative .absolute {
   right: 0;
-  top: 100%; /* Makes the dropdown appear directly below the button */
-  margin-top: 8px; /* Adjust spacing between button and dropdown */
+  top: 100%; 
+  margin-top: 8px; 
 }
 .bg-topographic {
   background-image: url("/src/assets/image/topographic.png");

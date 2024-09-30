@@ -11,7 +11,7 @@
         <h1 class="font-sans text-[20px] text-[#333333] mt-2 ml-[5px] font-semibold">Dashboard</h1>
       </div>
       <h1 class="items-start justify-center px-2 ml-2 text-[#9C9C9C]">Dashboard Kemitraan</h1>
-      <div class="blue-box mt-3 ml-4 mr-10 w-auto h-[100px] relative">
+      <div class="blue-box mt-3 ml-4 mr-4 w-[1046px] h-[100px] relative">
         <div class="flex items-start">
           <div>
             <div class="flex items-center">
@@ -78,7 +78,7 @@
               <canvas id="myBarChart" class="bar-chart"></canvas>
             </div>
           </div>
-          <div class="flex flex-col relative justify-start w-[346px] h-[137px] ml-6 mt-6 mr-6 border-collapse rounded-lg bg-[#FFFFFF] border-[#E5E7E9] border-[1px] bg-wave">
+          <div class="flex flex-col justify-start w-[346px] h-[137px] ml-6 mt-6 mr-6 border-collapse rounded-lg bg-[#FFFFFF] border-[#E5E7E9] border-[1px] bg-wave">
             <div class="flex items-start p-6">
               <h1 class="font-sans text-[20px] font-semibold text-[#FFFFFF]">
                 <span class="block">Total Dokumen</span>
@@ -175,7 +175,7 @@
         </div>
       </div>
       <div class="flex">
-        <div class="flex w-full h-[480px] rounded-lg bg-[#FFFFFF] border-[1px] border-[#E5E7E9] mt-4 ml-4 mr-10 overflow-auto">
+        <div class="flex w-[1046px] h-[480px] rounded-lg bg-[#FFFFFF] border-[1px] border-[#E5E7E9] mt-4 ml-4 mr-4 overflow-auto">
           <table class="table-auto w-full text-left border-collapse border border-[#E5E7E9]">
             <thead>
               <tr class="bg-[#FFFFFF] text-[12px] font-sans text-[#4D5E80] font-semibold">
@@ -309,8 +309,8 @@ export default {
   name: "DashBoardMitra",
   setup() {
     onMounted(() => {
-      const totalData = 64; // Total data untuk ketiga chart
       // Doughnut Chart NDA
+      const totalData = 64; // Total data untuk ketiga chart
       const ndaValue = parseInt(document.getElementById("totalNDA").innerText, 10);
       const ndaCtx = document.getElementById("ndaChart").getContext("2d");
       new Chart(ndaCtx, {

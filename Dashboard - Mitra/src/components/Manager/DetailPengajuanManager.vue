@@ -23,7 +23,7 @@
           <h1 class="font-sans text-[20px] text-[#333333] mt-2 ml-[5px] font-semibold">Detail Pengajuan</h1>
         </div>
         <h1 class="items-start justify-center px-2 ml-2 text-[#9C9C9C]">#no_pengajuan</h1>
-        <button @click="showDisposePopup = true" class="absolute top-[12px] right-[20px]">
+        <button @click="showDisposePopup = true" class="absolute top-[12px] right-[24px]">
           <div class="flex items-center justify-center w-[81px] h-[40px] rounded-lg bg-[#2671D9] border-[1px] border-[#E5E7E9]">
             <span class="w-[57px] h-[22px] text-[14px] font-sans font-medium text-[#FFFFFF] ml-3 mt-[9px] mr-3 mb-[9px]">Dispose</span>
           </div>
@@ -445,7 +445,7 @@
                     </svg>
                   </div>
                   <div class="relative w-full">
-                    <input type="file" id="fileInputKKF" class="hidden" ref="fileInputKKF"/>
+                    <input type="file" id="fileInputKKF" class="hidden" ref="fileInputKKF" />
                     <button class="ml-4 block text-left p-2 bg-[#FFFFFF] w-full">
                       <div class="flex justify-between items-center">
                         <div class="overflow-hidden">
@@ -598,7 +598,7 @@
               </div>
             </div>
           </div>
-          <div class="flex flex-col w-[511px] h-auto ml-4">
+          <div class="flex flex-col w-[511px] h-auto ml-6">
             <div class="flex items-center">
               <h1 class="font-sans text-[#4D5E80] text-[16px] font-semibold">Approval</h1>
             </div>
@@ -641,7 +641,7 @@ export default {
   },
   computed: {
     isStaffSelected() {
-      return this.staffKemitraan.trim() !== "" ;
+      return this.staffKemitraan.trim() !== "";
     },
   },
   methods: {
@@ -677,7 +677,7 @@ export default {
 .fade-leave-active {
   transition: opacity 0.1s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+.fade-enter, .fade-leave-to {
   opacity: 0;
 }
 .rotate-180 {

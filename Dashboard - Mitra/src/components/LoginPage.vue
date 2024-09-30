@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center justify-center w-[1366px] h-[1024px] bg-[#FFFFFF] shadow-xl">
     <div class="relative">
-      <img src="../assets/image/loginbg.png" class="w-full h-auto" alt="Background Image" />
+      <img src="../assets/image/loginbg.png" class="w-full h-auto" alt="Background Image"/>
       <div class="absolute mt-[675px] inset-0 flex items-center justify-center">
         <div class="custom-bg w-[588px] h-[156px] rounded-md text-center flex flex-col items-center justify-center">
           <h1 class="text-[#E9EAEC] font-sans font-semibold text-[26px]">

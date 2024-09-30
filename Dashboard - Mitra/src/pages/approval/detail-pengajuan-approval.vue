@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import DetailPengajuanApproval from "@/components/DetailPengajuanApproval.vue";
-import MainBar from "@/components/MainBar.vue";
-import SidebarKemitraan from "@/components/SidebarKemitraan.vue";
+import DetailPengajuanApproval from "@/components/Manager/DetailPengajuanApproval.vue";
+import MainBar from "@/components/NavBar/MainBar.vue";
+import SidebarKemitraan from "@/components/NavBar/SidebarKemitraan.vue";
 
 export default {
   components: {

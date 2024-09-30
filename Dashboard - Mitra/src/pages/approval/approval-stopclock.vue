@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import MainBar from "@/components/MainBar.vue";
-import SidebarKemitraan from "@/components/SidebarKemitraan.vue";
-import ApprovalStopclock from "@/components/ApprovalStopclock.vue";
+import MainBar from "@/components/NavBar/MainBar.vue";
+import SidebarKemitraan from "@/components/NavBar/SidebarKemitraan.vue";
+import ApprovalStopclock from "@/components/Manager/ApprovalStopclock.vue";
 
 export default {
   components: {

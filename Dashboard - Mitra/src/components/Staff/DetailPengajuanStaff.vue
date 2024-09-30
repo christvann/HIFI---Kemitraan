@@ -568,7 +568,7 @@
               </div>
             </div>
           </div>
-          <div class="flex flex-col w-[511px] h-auto ml-4">
+          <div class="flex flex-col w-[511px] h-auto ml-6">
             <div class="flex items-center">
               <h1 class="font-sans text-[#4D5E80] text-[16px] font-semibold">Approval</h1>
             </div>
@@ -582,22 +582,22 @@
           </div>
         </div>
         <div class="flex flex-row w-[1046px] h-auto ml-4 py-7">
-          <button class="absolute bottom-[12px] right-[391px] flex">
+          <button class="absolute bottom-[12px] right-[390px] flex">
             <div class="flex items-center justify-center w-[114px] h-[40px] rounded-lg bg-[#FFFFFF] border-[#2671D9] border-[1px] hover:bg-[#DBEAFE] cursor-pointer transition-all">
               <span class="text-[14px] font-sans font-medium text-[#2671D9] ml-3 mt-[9px] mr-3 mb-[9px]">Revisi Mayor</span>
             </div>
           </button>
-          <button class="absolute bottom-[12px] right-[260px] flex">
+          <button class="absolute bottom-[12px] right-[255px] flex">
             <div class="flex items-center justify-center w-[114px] h-[40px] rounded-lg bg-[#FFFFFF] border-[#2671D9] border-[1px] hover:bg-[#DBEAFE] cursor-pointer transition-all">
               <span class="text-[14px] font-sans font-medium text-[#2671D9] ml-3 mt-[9px] mr-3 mb-[9px]">Revisi Minor</span>
             </div>
           </button>
-          <button class="absolute bottom-[12px] right-[120px] flex">
+          <button class="absolute bottom-[12px] right-[115px] flex">
             <div class="flex items-center justify-center w-[125px] h-[40px] rounded-lg bg-[#FFFFFF] border-[#C53830] border-[1px] hover:bg-[#FEE2E2] cursor-pointer transition-all">
               <span class="text-[14px] font-sans font-medium text-[#C53830] ml-3 mt-[9px] mr-3 mb-[9px]">Reject ke User</span>
             </div>
           </button>
-          <button @click="showPengajuanDiterimaPopup = true" class="absolute bottom-[12px] right-[30px] flex">
+          <button @click="showPengajuanDiterimaPopup = true" class="absolute bottom-[12px] right-[25px] flex">
             <div class="flex items-center justify-center w-[72px] h-[40px] rounded-lg bg-[#2671D9] border-[#FFFFFF] border-[1px]">
               <span class="text-[14px] font-sans font-medium text-[#FFFFFF] ml-3 mt-[9px] mr-3 mb-[9px]">Terima</span>
             </div>

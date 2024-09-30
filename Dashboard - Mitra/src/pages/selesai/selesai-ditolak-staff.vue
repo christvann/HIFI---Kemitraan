@@ -13,9 +13,9 @@
   </template>
   
   <script>
-  import MainBar from "@/components/MainBar.vue";
-  import SidebarStaff from "@/components/SidebarStaff.vue";
-  import SelesaiDitolakStaff from "@/components/SelesaiDitolakStaff.vue";
+  import MainBar from "@/components/NavBar/MainBar.vue";
+  import SidebarStaff from "@/components/NavBar/SidebarStaff.vue";
+  import SelesaiDitolakStaff from "@/components/Staff/SelesaiDitolakStaff.vue";
   
   export default {
     components: {

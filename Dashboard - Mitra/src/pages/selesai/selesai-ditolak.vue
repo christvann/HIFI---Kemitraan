@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import MainBar from "@/components/MainBar.vue";
-import SidebarKemitraan from "@/components/SidebarKemitraan.vue";
-import SelesaiDitolak from "@/components/SelesaiDitolak.vue";
+import MainBar from "@/components/NavBar/MainBar.vue";
+import SidebarKemitraan from "@/components/NavBar/SidebarKemitraan.vue";
+import SelesaiDitolak from "@/components/Manager/SelesaiDitolak.vue";
 
 export default {
   components: {

@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import LoginPage from '@/pages/login-page.vue';
 import HomePage from '@/pages/home-page.vue';
-import DashboardView from '../pages/dashboard-view.vue';
-import DashboardStaff from '@/pages/dashboard-staff.vue';
+import DashboardView from '../pages/dashboard/dashboard-view.vue';
+import DashboardStaff from '@/pages/dashboard/dashboard-staff.vue';
 import MasukManager from '../pages/masuk/masuk-manager.vue';
 import DetailPengajuanManager from '../pages/detail-pengajuan/detail-pengajuan-manager.vue';
 import MasukStaff from '@/pages/masuk/masuk-staff.vue';

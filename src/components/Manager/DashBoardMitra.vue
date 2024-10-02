@@ -330,7 +330,7 @@ export default {
   setup() {
     onMounted(() => {
       // Data for the bar chart
-      const barChartData = [10, 15, 9, 20, 20];
+      const barChartData = [20, 15, 9, 20, 20];
       // Calculate the total data
       const totalData = barChartData.reduce((acc, value) => acc + value, 0);
       // Update the totalData element's text

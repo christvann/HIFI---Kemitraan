@@ -12,7 +12,7 @@
           fill="#7F7F80"
         />
       </svg>
-      <span class="w-[119px] h-[22px] font-sans text-[#7F7F80] text-[14px] font-semibold mt-4">Detail Pengajuan</span>
+      <span class="w-[119px] h-[22px] font-sans text-[#7F7F80] text-[14px] font-semibold ml-1 mt-[17px]">Detail Pengajuan</span>
     </div>
     <div class="px-6 py-3">
       <div class="relative h-auto w-[1086px] rounded-lg bg-[#FFFFFF] border-collapse mx-auto">

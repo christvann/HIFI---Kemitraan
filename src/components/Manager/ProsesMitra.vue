@@ -257,7 +257,7 @@
                         />
                       </svg>
                     </button>
-                    <div v-if="actionDropdownIndex === index" class="absolute right-0 mt-2 w-[160px] h-[40px] flex items-center rounded-lg bg-[#FFFFFF] border border-[#E5E7E9] hover:bg-[#f1f1f1] shadow-lg z-10">
+                    <div v-if="actionDropdownIndex === index" class="absolute right-0 mt-2 w-[160px] h-[40px] flex items-center rounded-lg bg-[#FFFFFF] border border-[#E5E7E9] hover:bg-[#DBEAFE] shadow-lg z-10">
                       <svg width="16" height="12" class="ml-4" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           fill-rule="evenodd"

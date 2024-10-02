@@ -2,7 +2,7 @@
   <div>
     <div class="flex w-auto h-[54px] rounded-lg bg-[#FFFFFF] border-collapse">
       <button @click="navigateToDetail">
-        <h1 class="w-[51px] h-[22px] font-sans text-[#2671D9] text-[14px] font-semibold ml-6 mr-1 mt-4 mb-4">Approval</h1>
+        <h1 class="w-[51px] h-[22px] font-sans text-[#2671D9] text-[14px] font-semibold ml-6 mr-2 mt-4 mb-4">Approval</h1>
       </button>
       <svg width="8" height="12" class="mt-[21px] ml-2 mr-2" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -12,7 +12,7 @@
           fill="#7F7F80"
         />
       </svg>
-      <span class="w-[119px] h-[22px] font-sans text-[#7F7F80] text-[14px] font-semibold mt-4">Detail Pengajuan</span>
+      <span class="w-[119px] h-[22px] font-sans text-[#7F7F80] text-[14px] font-semibold ml-1 mt-[17px]">Detail Pengajuan</span>
     </div>
     <div class="px-4 py-3">
       <div class="relative h-auto w-[1086px] rounded-lg bg-[#FFFFFF] border-collapse mx-auto">

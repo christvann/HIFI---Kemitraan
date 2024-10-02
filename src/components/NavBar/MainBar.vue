@@ -133,7 +133,7 @@
                       <p class="mt-2 text-[14px] font-semibold">User</p>
                       <p class="mt-2 text-[14px] text-[#9C9C9C] flex">
                         <span class="w-[66px]">Username</span>
-                        <span>: Jane Doe</span>
+                        <span>: Fulan</span>
                       </p>
                       <p class="mt-2 text-[14px] text-[#9C9C9C] flex">
                         <span class="w-[66px]">NIP</span>

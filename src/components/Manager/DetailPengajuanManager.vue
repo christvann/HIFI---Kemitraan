@@ -24,7 +24,7 @@
         </div>
         <h1 class="items-start justify-center px-2 ml-2 text-[#9C9C9C]">#no_pengajuan</h1>
         <button @click="showDisposePopup = true" class="absolute top-[12px] right-[24px]">
-          <div class="flex items-center justify-center w-[81px] h-[40px] rounded-lg bg-[#2671D9] border-[1px] border-[#E5E7E9]">
+          <div class="flex items-center justify-center w-[81px] h-[40px] rounded-lg bg-[#2671D9] hover:bg-[#1E5BB7] border-[1px] border-[#E5E7E9]">
             <span class="w-[57px] h-[22px] text-[14px] font-sans font-medium text-[#FFFFFF] ml-3 mt-[9px] mr-3 mb-[9px]">Dispose</span>
           </div>
         </button>
@@ -42,7 +42,7 @@
               <div class="relative">
                 <input type="text" id="staffKemitraan" placeholder="Cari Staff Kemitraan" class="mt-1 text-[14px] font-sans text-[#9C9C9C] p-2 w-full border rounded-lg" v-model="staffKemitraan" />
                 <span class="absolute right-3 top-3 text-[#9C9C9C]">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-[2px]" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M12.9 14.32a8 8 0 111.414-1.415l3.705 3.704a1 1 0 01-1.414 1.415l-3.705-3.704zM8 14a6 6 0 100-12 6 6 0 000 12z" clip-rule="evenodd" />
                   </svg>
                 </span>
@@ -50,7 +50,7 @@
             </div>
             <div class="flex justify-end mr-6">
               <button @click="closePopup" class="mr-6 text-[#FF5656] font-sans text-[14px] font-semibold">Batal</button>
-              <button @click="navigateToStaff" :disabled="!isStaffSelected" :class="isStaffSelected ? 'bg-[#2671D9] text-white' : 'bg-[#E6E6E6] text-[#7F7F80]'" class="p-2 rounded-lg">Pilih</button>
+              <button @click="navigateToStaff" :disabled="!isStaffSelected" :class="isStaffSelected ? 'bg-[#2671D9] text-white hover:bg-[#1E5BB7]' : 'bg-[#E6E6E6] text-[#7F7F80]'" class="p-2 rounded-lg">Pilih</button>
             </div>
           </div>
         </div>
@@ -677,7 +677,8 @@ export default {
 .fade-leave-active {
   transition: opacity 0.1s;
 }
-.fade-enter, .fade-leave-to {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 .rotate-180 {

@@ -585,7 +585,7 @@
             </div>
           </button>
           <button @click="showApprovalPopup = true" class="absolute bottom-[12px] right-[24px] flex">
-            <div class="flex items-center justify-center w-[83px] h-[40px] rounded-lg bg-[#2671D9] border-[#FFFFFF] border-[1px]">
+            <div class="flex items-center justify-center w-[83px] h-[40px] rounded-lg bg-[#2671D9] hover:bg-[#1E5BB7] border-[#FFFFFF] border-[1px]">
               <span class="text-[14px] font-sans text-[#FFFFFF] font-semibold ml-3 mt-[9px] mr-3 mb-[9px]">Approve</span>
             </div>
           </button>
@@ -710,7 +710,7 @@
               </svg>
               <h2 class="text-[20px] font-sans font-semibold text-[#333333] mt-2 mb-2">Setujui Pengajuan</h2>
               <p class="text-[16px] font-sans text-[#333333] font-normal mb-6 text-center">Apakah Anda yakin ingin menyetujui pengajuan ini? Proses pengajuan kemitraan akan diselesaikan.</p>
-              <button @click="approvePengajuan" class="bg-[#2671D9] text-[#FFFFFF] text-[14px] font-semibold p-2 rounded-lg w-full mb-2">Setujui</button>
+              <button @click="approvePengajuan" class="bg-[#2671D9] hover:bg-[#1E5BB7] text-[#FFFFFF] text-[14px] font-semibold p-2 rounded-lg w-full mb-2">Setujui</button>
               <button @click="closeApprovalPopup" class="absolute flex mt-[395px]">
                 <div class="flex items-center justify-center w-[296px] h-[40px] rounded-lg bg-[#FFFFFF] border-[#2671D9] border-[1px] hover:bg-[#DBEAFE] cursor-pointer transition-all">
                   <span class="text-[14px] font-sans font-medium text-[#2671D9] ml-3 mt-[9px] mr-3 mb-[9px]">Batal</span>
@@ -840,7 +840,7 @@
               </svg>
               <h2 class="text-[20px] font-sans font-semibold text-[#333333] mt-2 mb-2">Pengajuan Telah Disetujui</h2>
               <p class="text-[16px] font-sans text-[#333333] font-normal mb-6 text-center">Anda telah berhasil menyetujui pengajuan ini. Proses pengajuan kemitraan telah selesai. Silakan cek pengajuan pada menu Selesai.</p>
-              <button @click="closeDisetujuiPopup" class="bg-[#2671D9] text-[#FFFFFF] text-[14px] p-2 rounded-lg w-full">Selesai</button>
+              <button @click="closeDisetujuiPopup" class="bg-[#2671D9] hover:bg-[#1E5BB7] text-[#FFFFFF] text-[14px] p-2 rounded-lg w-full">Selesai</button>
             </div>
           </div>
         </div>

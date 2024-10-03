@@ -82,7 +82,7 @@
                     </div>
                     <div v-if="!fileUploaded1" class="flex flex-col ml-4 mt-[10px]">
                       <p class="font-sans text-[#333333] text-[12px] font-normal">Dokumen Surat Penawaran</p>
-                      <label class="bg-[#2671D9] text-white w-[73px] h-[25px] rounded mt-[12px] cursor-pointer inline-flex items-center justify-center text-[8.75px] font-sans font-semibold">
+                      <label class="bg-[#2671D9] hover:bg-[#1E5BB7] text-white w-[73px] h-[25px] rounded mt-[12px] cursor-pointer inline-flex items-center justify-center text-[8.75px] font-sans font-semibold">
                         <div class="flex items-center">
                           <svg class="mr-1" width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -132,7 +132,7 @@
                     <div v-if="!fileUploaded2" class="flex flex-col ml-4 mt-[10px]">
                       <p :class="!fileUploaded1 ? 'text-[#7F7F80]' : 'text-[#333333]'" class="font-sans text-[12px] font-normal">Dokumen Proposal</p>
                       <label
-                        :class="[!fileUploaded1 ? 'cursor-not-allowed bg-[#E6E6E6] text-[#7F7F80]' : 'cursor-pointer bg-[#2671D9] text-[#FFFFFF]']"
+                        :class="[!fileUploaded1 ? 'cursor-not-allowed bg-[#E6E6E6] text-[#7F7F80]' : 'cursor-pointer bg-[#2671D9] hover:bg-[#1E5BB7] text-[#FFFFFF]']"
                         class="w-[73px] h-[25px] rounded mt-[12px] inline-flex items-center justify-center text-[8.75px] font-sans font-semibold"
                       >
                         <div class="flex items-center">
@@ -184,7 +184,7 @@
                     <div v-if="!fileUploaded3" class="flex flex-col ml-4 mt-[10px]">
                       <p :class="!fileUploaded2 ? 'text-[#7F7F80]' : 'text-[#333333]'" class="font-sans text-[12px] font-normal">Dokumen Evaluasi</p>
                       <label
-                        :class="[!fileUploaded2 ? 'cursor-not-allowed bg-[#E6E6E6] text-[#7F7F80]' : 'cursor-pointer bg-[#2671D9] text-[#FFFFFF]']"
+                        :class="[!fileUploaded2 ? 'cursor-not-allowed bg-[#E6E6E6] text-[#7F7F80]' : 'cursor-pointer bg-[#2671D9] hover:bg-[#1E5BB7] text-[#FFFFFF]']"
                         class="w-[73px] h-[25px] rounded mt-[12px] inline-flex items-center justify-center text-[8.75px] font-sans font-semibold"
                       >
                         <div class="flex items-center">
@@ -236,7 +236,7 @@
                     <div v-if="!fileUploaded4" class="flex flex-col ml-4 mt-[10px]">
                       <p :class="!fileUploaded3 ? 'text-[#7F7F80]' : 'text-[#333333]'" class="font-sans text-[12px] font-normal">Dokumen Negosiasi</p>
                       <label
-                        :class="[!fileUploaded3 ? 'cursor-not-allowed bg-[#E6E6E6] text-[#7F7F80]' : 'cursor-pointer bg-[#2671D9] text-[#FFFFFF]']"
+                        :class="[!fileUploaded3 ? 'cursor-not-allowed bg-[#E6E6E6] text-[#7F7F80]' : 'cursor-pointer bg-[#2671D9] hover:bg-[#1E5BB7] text-[#FFFFFF]']"
                         class="w-[73px] h-[25px] rounded mt-[12px] inline-flex items-center justify-center text-[8.75px] font-sans font-semibold"
                       >
                         <div class="flex items-center">
@@ -288,7 +288,7 @@
                     <div v-if="!fileUploaded5" class="flex flex-col ml-4 mt-[10px]">
                       <p :class="!fileUploaded4 ? 'text-[#7F7F80]' : 'text-[#333333]'" class="font-sans text-[12px] font-normal">Dokumen BAK Pemilihan Mitra</p>
                       <label
-                        :class="[!fileUploaded4 ? 'cursor-not-allowed bg-[#E6E6E6] text-[#7F7F80]' : 'cursor-pointer bg-[#2671D9] text-[#FFFFFF]']"
+                        :class="[!fileUploaded4 ? 'cursor-not-allowed bg-[#E6E6E6] text-[#7F7F80]' : 'cursor-pointer bg-[#2671D9] hover:bg-[#1E5BB7] text-[#FFFFFF]']"
                         class="w-[73px] h-[25px] rounded mt-[12px] inline-flex items-center justify-center text-[8.75px] font-sans font-semibold"
                       >
                         <div class="flex items-center">
@@ -340,7 +340,7 @@
                     <div v-if="!fileUploaded6" class="flex flex-col ml-4 mt-[10px]">
                       <p :class="!fileUploaded5 ? 'text-[#7F7F80]' : 'text-[#333333]'" class="font-sans text-[12px] font-normal">Dokumen Surat Pesanan</p>
                       <label
-                        :class="[!fileUploaded5 ? 'cursor-not-allowed bg-[#E6E6E6] text-[#7F7F80]' : 'cursor-pointer bg-[#2671D9] text-[#FFFFFF]']"
+                        :class="[!fileUploaded5 ? 'cursor-not-allowed bg-[#E6E6E6] text-[#7F7F80]' : 'cursor-pointer bg-[#2671D9] hover:bg-[#1E5BB7] text-[#FFFFFF]']"
                         class="w-[73px] h-[25px] rounded mt-[12px] inline-flex items-center justify-center text-[8.75px] font-sans font-semibold"
                       >
                         <div class="flex items-center">
@@ -392,7 +392,7 @@
                     <div v-if="!fileUploaded7" class="flex flex-col ml-4 mt-[10px]">
                       <p :class="!fileUploaded6 ? 'text-[#7F7F80]' : 'text-[#333333]'" class="font-sans text-[12px] font-normal">Dokumen PKS</p>
                       <label
-                        :class="[!fileUploaded6 ? 'cursor-not-allowed bg-[#E6E6E6] text-[#7F7F80]' : 'cursor-pointer bg-[#2671D9] text-[#FFFFFF]']"
+                        :class="[!fileUploaded6 ? 'cursor-not-allowed bg-[#E6E6E6] text-[#7F7F80]' : 'cursor-pointer bg-[#2671D9] hover:bg-[#1E5BB7] text-[#FFFFFF]']"
                         class="w-[73px] h-[25px] rounded mt-[12px] inline-flex items-center justify-center text-[8.75px] font-sans font-semibold"
                       >
                         <div class="flex items-center">
@@ -435,7 +435,7 @@
                   </div>
                   <button
                     @click="handleKirimClick"
-                    :class="{ 'bg-[#2671D9] text-[#FFFFFF] rounded-lg border-[#FFFFFF] border-[1px]': allFilesUploaded, 'bg-[#E6E6E6] text-[#7F7F80] rounded-lg border-[#FFFFFF] border-[1px]': !allFilesUploaded }"
+                    :class="{ 'bg-[#2671D9] hover:bg-[#1E5BB7] text-[#FFFFFF] rounded-lg border-[#FFFFFF] border-[1px]': allFilesUploaded, 'bg-[#E6E6E6] text-[#7F7F80] rounded-lg border-[#FFFFFF] border-[1px]': !allFilesUploaded }"
                     :disabled="!allFilesUploaded"
                     class="absolute mt-[518px] ml-[915px] flex"
                   >
@@ -1154,7 +1154,7 @@
         </div>
         <div class="w-[1046px] h-[1px] bg-[#E5E7E9] items-center transform ml-4 mt-6"></div>
         <div class="flex flex-row w-[1046px] h-auto ml-4 py-9">
-          <button @click="showPenyelesaianPKSPopup = true" :class="{ 'bg-[#2671D9] rounded-lg border-[1px] text-[#FFFFFF]': kirimClicked, 'bg-[#E6E6E6] rounded-lg border-[1px] text-[#7F7F80]': !kirimClicked }" :disabled="!kirimClicked" class="absolute bottom-[12px] right-[24px] flex">
+          <button @click="showPenyelesaianPKSPopup = true" :class="{ 'bg-[#2671D9] hover:bg-[#1E5BB7] rounded-lg border-[1px] text-[#FFFFFF]': kirimClicked, 'bg-[#E6E6E6] rounded-lg border-[1px] text-[#7F7F80]': !kirimClicked }" :disabled="!kirimClicked" class="absolute bottom-[12px] right-[24px] flex">
             <div class="flex items-center justify-center w-[83px] h-[40px] rounded-lg border-[#FFFFFF] border-[1px]">
               <span class="text-[14px] font-sans font-semibold ml-3 mt-[9px] mr-3 mb-[9px]">Selesai</span>
             </div>
@@ -1253,7 +1253,7 @@
                 </span>
               </div>
               <button @click="Progress" :disabled="!isFormComplete" class="absolute mt-[450px] ml-[378px] flex">
-                <div :class="{ 'bg-[#2671D9] text-[#FFFFFF]': isFormComplete, 'bg-[#E6E6E6] text-[#7F7F80]': !isFormComplete }" class="flex items-center justify-center w-[78px] h-[40px] rounded-lg border-[1px]">
+                <div :class="{ 'bg-[#2671D9] hover:bg-[#1E5BB7] text-[#FFFFFF]': isFormComplete, 'bg-[#E6E6E6] text-[#7F7F80]': !isFormComplete }" class="flex items-center justify-center w-[78px] h-[40px] rounded-lg border-[1px]">
                   <span class="text-[14px] font-sans ml-3 mt-[9px] mr-3 mb-[9px] font-semibold">Kirim</span>
                 </div>
               </button>
@@ -1267,7 +1267,7 @@
             <img src="@/assets/image/pengajuanditerima.png" class="w-[200px] h-[160px] mb-4" />
             <h2 class="text-[20px] font-sans font-semibold text-[#333333] mb-2">Progress Kemitraan Selesai</h2>
             <p class="text-[16px] font-sans text-[#333333] font-normal mb-6 text-center">Progress kemitraan PKS telah selesai. Selanjutnya akan dilakukan proses approval oleh atasan.</p>
-            <button @click="closeDisetujuiPopup" class="bg-[#2671D9] text-[#FFFFFF] text-[14px] p-2 rounded-lg w-full">Selesai</button>
+            <button @click="closeDisetujuiPopup" class="bg-[#2671D9] hover:bg-[#1E5BB7] text-[#FFFFFF] text-[14px] p-2 rounded-lg w-full">Selesai</button>
           </div>
         </div>
       </div>

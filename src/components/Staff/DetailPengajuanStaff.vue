@@ -598,7 +598,7 @@
             </div>
           </button>
           <button @click="showPengajuanDiterimaPopup = true" class="absolute bottom-[12px] right-[25px] flex">
-            <div class="flex items-center justify-center w-[72px] h-[40px] rounded-lg bg-[#2671D9] border-[#FFFFFF] border-[1px]">
+            <div class="flex items-center justify-center w-[72px] h-[40px] rounded-lg bg-[#2671D9] hover:bg-[#1E5BB7] border-[#FFFFFF] border-[1px]">
               <span class="text-[14px] font-sans font-medium text-[#FFFFFF] ml-3 mt-[9px] mr-3 mb-[9px]">Terima</span>
             </div>
           </button>
@@ -723,7 +723,7 @@
               </svg>
               <h2 class="text-[20px] font-sans font-semibold text-[#333333] mt-2 mb-2">Pengajuan Diterima</h2>
               <p class="text-[16px] font-sans text-[#333333] font-normal mb-6 text-center">Pengajuan akan dilanjutkan ke proses selanjutnya.</p>
-              <button @click="closePopup" class="bg-[#2671D9] text-[#FFFFFF] text-[14px] p-2 rounded-lg w-full">Lanjutkan</button>
+              <button @click="closePopup" class="bg-[#2671D9] hover:bg-[#1E5BB7] text-[#FFFFFF] text-[14px] p-2 rounded-lg w-full">Lanjutkan</button>
             </div>
           </div>
         </div>

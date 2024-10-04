@@ -3,7 +3,7 @@
     <div class="w-auto h-[54px] rounded-lg bg-[#FFFFFF] border-collapse"></div>
   </div>
   <div class="px-4 py-3">
-    <div class="h-[1260px] w-[1086px] rounded-lg bg-[#FFFFFF] border-collapse mx-auto">
+    <div class="h-auto w-[1086px] rounded-lg bg-[#FFFFFF] border-collapse mx-auto">
       <div class="flex">
         <svg class="ml-4 mt-[10px]" width="6" height="28" viewBox="0 0 6 28" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="6" height="28" fill="#1F5AAD" />
@@ -31,6 +31,52 @@
             <rect width="247.935" height="123.968" rx="50" transform="matrix(0.82137 0.570396 -0.82137 0.570396 130.625 0)" fill="#91BEF7" />
             <rect x="74.8809" y="-21" width="288" height="100" rx="50" fill="white" fill-opacity="0.3" />
             <rect x="0.693295" y="-0.350537" width="208.276" height="139.666" rx="49.5" transform="matrix(0.409185 -0.912452 0.977404 0.211378 0.752225 50.3112)" stroke="white" stroke-opacity="0.3" />
+          </svg>
+        </div>
+      </div>
+      <div class="flex flex-row">
+        <div class="w-[338px] h-[88px] border-[1px] rounded-lg border-[#0EA976] bg-[#0EA976] mt-6 ml-4 flex items-center justify-between px-4">
+          <div>
+            <h1 class="text-[16px] font-sans text-[#FFFFFF]">Pengajuan H+7 Due Date</h1>
+            <span class="text-[24px] font-sans font-medium text-[#FFFFFF]">10</span>
+          </div>
+          <svg width="39" height="40" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="19.5176" cy="20.0001" rx="19.4824" ry="19.6417" fill="white" />
+            <path d="M10 20.96V23C10 28 12 30 17 30H23C28 30 30 28 30 23V17C30 12 28 10 23 10H17C12 10 10 12 10 17" stroke="#1D966E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M23 18.38L24.12 17.25" stroke="#1D966E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M15.8799 20L18.6199 22.75L21.1699 20.21" stroke="#1D966E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="w-[338px] h-[88px] border-[1px] rounded-lg border-[#FFA229] bg-[#FFA229] mt-6 ml-4 flex items-center justify-between px-4">
+          <div>
+            <h1 class="text-[16px] font-sans text-[#FFFFFF]">Pengajuan H-7 Due Date</h1>
+            <span class="text-[24px] font-sans font-medium text-[#FFFFFF]">4</span>
+          </div>
+          <svg width="39" height="40" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="19.5176" cy="20.0001" rx="19.4824" ry="19.6417" fill="white" />
+            <path d="M30 16C30 12 28 10 24 10H16C12 10 10 12 10 16V29C10 29.55 10.45 30 11 30H24C28 30 30 28 30 24V20" stroke="#FFA229" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M23.5098 19.7399L24.1598 19.0899C24.1998 19.0499 24.2398 19.0099 24.2798 18.9599C25.0898 18.0999 25.4098 17.0899 24.1598 15.8399C22.8398 14.5199 21.7998 14.9499 20.9098 15.8399L15.7198 21.0299C15.5198 21.2299 15.3298 21.6199 15.2898 21.8999L15.0098 23.8799C14.9098 24.5999 15.4098 25.0999 16.1298 24.9999L18.1098 24.7199C18.3898 24.6799 18.7798 24.4899 18.9798 24.2899L20.9198 22.3499"
+              stroke="#FFA229"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path d="M20.1699 16.5801C20.6099 18.1501 21.8399 19.3901 23.4199 19.8301" stroke="#FFA229" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="w-[338px] h-[88px] border-[1px] rounded-lg border-[#FF5656] bg-[#FF5656] mt-6 ml-4 flex items-center justify-between px-4">
+          <div>
+            <h1 class="text-[16px] font-sans text-[#FFFFFF]">Pengajuan Melewati Due Date</h1>
+            <span class="text-[24px] font-sans font-medium text-[#FFFFFF]">2</span>
+          </div>
+          <svg width="39" height="40" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="19.5176" cy="20.0001" rx="19.4824" ry="19.6417" fill="white" />
+            <path d="M21.4902 18.0099L22.3302 17.1699" stroke="#CA3131" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M16.6699 22.8301L19.4199 20.0801" stroke="#CA3131" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M22.3299 22.8299L16.6699 17.1699" stroke="#CA3131" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9.5 20.96V23C9.5 28 11.5 30 16.5 30H22.5C27.5 30 29.5 28 29.5 23V17C29.5 12 27.5 10 22.5 10H16.5C11.5 10 9.5 12 9.5 17" stroke="#CA3131" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </div>
       </div>
@@ -330,7 +376,7 @@ export default {
   setup() {
     onMounted(() => {
       // Data for the bar chart
-      const barChartData = [20, 15, 9, 20, 20];
+      const barChartData = [20, 15, 9, 20, 5];
       // Calculate the total data
       const totalData = barChartData.reduce((acc, value) => acc + value, 0);
       // Update the totalData element's text

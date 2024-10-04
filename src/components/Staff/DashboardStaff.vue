@@ -3,7 +3,7 @@
     <div class="w-auto h-[54px] rounded-lg bg-[#FFFFFF] border-collapse"></div>
   </div>
   <div class="px-4 py-3">
-    <div class="h-[1260px] w-[1086px] rounded-lg bg-[#FFFFFF] border-collapse mx-auto">
+    <div class="h-auto w-[1086px] rounded-lg bg-[#FFFFFF] border-collapse mx-auto">
       <div class="flex">
         <svg class="ml-4 mt-[10px]" width="6" height="28" viewBox="0 0 6 28" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="6" height="28" fill="#1F5AAD" />
@@ -32,6 +32,37 @@
             <rect x="74.8809" y="-21" width="288" height="100" rx="50" fill="white" fill-opacity="0.3" />
             <rect x="0.693295" y="-0.350537" width="208.276" height="139.666" rx="49.5" transform="matrix(0.409185 -0.912452 0.977404 0.211378 0.752225 50.3112)" stroke="white" stroke-opacity="0.3" />
           </svg>
+        </div>
+      </div>
+      <div class="flex w-[1046px] h-[85px] border-[1px] border-[#F08800] rounded-lg ml-4 mt-6 bg-[#FEF6EC] relative">
+        <div class="absolute left-0 top-0 w-[68px] h-[68px]">
+          <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.5">
+              <circle cx="26" cy="26" r="42" fill="#FFA229" />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M28.5257 10.5491C27.4033 8.60363 24.5954 8.60363 23.473 10.5491L6.31289 40.2933C5.1911 42.2378 6.59443 44.6675 8.83927 44.6675H43.1595C45.4043 44.6675 46.8076 42.2378 45.6858 40.2933L28.5257 10.5491ZM19.4308 8.21711C22.3491 3.15875 29.6497 3.15875 32.5679 8.21711L49.728 37.9613C52.6447 43.0168 48.996 49.3342 43.1595 49.3342H8.83927C3.00269 49.3342 -0.645972 43.0168 2.27069 37.9613L19.4308 8.21711ZM25.9994 20.1675C27.288 20.1675 28.3327 21.2122 28.3327 22.5008V31.2508C28.3327 32.5395 27.288 33.5842 25.9994 33.5842C24.7107 33.5842 23.666 32.5395 23.666 31.2508V22.5008C23.666 21.2122 24.7107 20.1675 25.9994 20.1675ZM23.666 38.2508C23.666 36.9622 24.7107 35.9175 25.9994 35.9175H26.0169C27.3055 35.9175 28.3502 36.9622 28.3502 38.2508V38.2683C28.3502 39.557 27.3055 40.6017 26.0169 40.6017H25.9994C24.7107 40.6017 23.666 39.557 23.666 38.2683V38.2508Z"
+                fill="white"
+              />
+            </g>
+          </svg>
+        </div>
+        <div class="flex flex-col w-[1014px] h-[49px] mt-4 ml-4 z-10">
+          <div class="flex w-[1014px] h-[22px] items-center">
+            <h1 class="w-[982px] h-[22px] font-sans font-medium text-[16px] text-[#333333]">Pengajuan mendekati due date</h1>
+            <svg width="12" height="12" class="ml-[10px]" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M0.292893 0.292893C0.683418 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L6 4.58579L10.2929 0.292894C10.6834 -0.0976307 11.3166 -0.0976307 11.7071 0.292894C12.0976 0.683418 12.0976 1.31658 11.7071 1.70711L7.41421 6L11.7071 10.2929C12.0976 10.6834 12.0976 11.3166 11.7071 11.7071C11.3166 12.0976 10.6834 12.0976 10.2929 11.7071L6 7.41421L1.70711 11.7071C1.31658 12.0976 0.683417 12.0976 0.292893 11.7071C-0.0976311 11.3166 -0.0976311 10.6834 0.292893 10.2929L4.58579 6L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893Z"
+                fill="#F08800"
+              />
+            </svg>
+          </div>
+          <div class="w-[1014px] h-[19px] justify-start items-center mt-2">
+            <h1 class="font-sans text-[14px] font-normal text-[#333333]">Ada <b>5</b> pengajuan yang mendekati due date. Silakan cek menu proses untuk melakukan upload dokumen kemitraan.</h1>
+          </div>
         </div>
       </div>
       <div>
@@ -330,7 +361,7 @@ export default {
   setup() {
     onMounted(() => {
       // Data for the bar chart
-      const barChartData = [20, 15, 9, 20, 20];
+      const barChartData = [20, 15, 9, 20, 5];
       // Calculate the total data
       const totalData = barChartData.reduce((acc, value) => acc + value, 0);
       // Update the totalData element's text
@@ -657,6 +688,14 @@ export default {
 </script>
 
 <style>
+.background-container {
+  width: 100vw; /* Full screen width */
+  height: 100vh; /* Full screen height */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 68 68" fill="none"><g opacity="0.5"><circle cx="26" cy="26" r="42" fill="#FFA229" /><path fill-rule="evenodd" clip-rule="evenodd" d="M28.5257 10.5491C27.4033 8.60363 24.5954 8.60363 23.473 10.5491L6.31289 40.2933C5.1911 42.2378 6.59443 44.6675 8.83927 44.6675H43.1595C45.4043 44.6675 46.8076 42.2378 45.6858 40.2933L28.5257 10.5491ZM19.4308 8.21711C22.3491 3.15875 29.6497 3.15875 32.5679 8.21711L49.728 37.9613C52.6447 43.0168 48.996 49.3342 43.1595 49.3342H8.83927C3.00269 49.3342 -0.645972 43.0168 2.27069 37.9613L19.4308 8.21711ZM25.9994 20.1675C27.288 20.1675 28.3327 21.2122 28.3327 22.5008V31.2508C28.3327 32.5395 27.288 33.5842 25.9994 33.5842C24.7107 33.5842 23.666 32.5395 23.666 31.2508V22.5008C23.666 21.2122 24.7107 20.1675 25.9994 20.1675ZM23.666 38.2508C23.666 36.9622 24.7107 35.9175 25.9994 35.9175H26.0169C27.3055 35.9175 28.3502 36.9622 28.3502 38.2508V38.2683C28.3502 39.557 27.3055 40.6017 26.0169 40.6017H25.9994C24.7107 40.6017 23.666 39.557 23.666 38.2683V38.2508Z" fill="white"/></g></svg>');
+  background-size: cover; /* Adjust background size */
+  background-position: center; /* Center the background */
+  background-repeat: no-repeat; /* Do not repeat the background */
+}
 .doughnut-chart {
   width: 70px !important;
   height: 60px !important;

@@ -34,7 +34,7 @@
           </svg>
         </div>
       </div>
-      <div class="flex w-[1046px] h-[85px] border-[1px] border-[#F08800] rounded-lg ml-4 mt-6 bg-[#FEF6EC] relative">
+      <div v-if="DuedatePopUp" class="flex w-[1046px] h-[85px] border-[1px] border-[#F08800] rounded-lg ml-4 mt-6 bg-[#FEF6EC] relative">
         <div class="absolute left-0 top-0 w-[68px] h-[68px]">
           <svg width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g opacity="0.5">
@@ -51,14 +51,7 @@
         <div class="flex flex-col w-[1014px] h-[49px] mt-4 ml-4 z-10">
           <div class="flex w-[1014px] h-[22px] items-center">
             <h1 class="w-[982px] h-[22px] font-sans font-medium text-[16px] text-[#333333]">Pengajuan mendekati due date</h1>
-            <svg width="12" height="12" class="ml-[10px]" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M0.292893 0.292893C0.683418 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L6 4.58579L10.2929 0.292894C10.6834 -0.0976307 11.3166 -0.0976307 11.7071 0.292894C12.0976 0.683418 12.0976 1.31658 11.7071 1.70711L7.41421 6L11.7071 10.2929C12.0976 10.6834 12.0976 11.3166 11.7071 11.7071C11.3166 12.0976 10.6834 12.0976 10.2929 11.7071L6 7.41421L1.70711 11.7071C1.31658 12.0976 0.683417 12.0976 0.292893 11.7071C-0.0976311 11.3166 -0.0976311 10.6834 0.292893 10.2929L4.58579 6L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893Z"
-                fill="#F08800"
-              />
-            </svg>
+            <button @click="closeDuedatePopUp" class="text-[#F08800] font-semibold text-[30px] ml-[10px]">&times;</button>
           </div>
           <div class="w-[1014px] h-[19px] justify-start items-center mt-2">
             <h1 class="font-sans text-[14px] font-normal text-[#333333]">Ada <b>5</b> pengajuan yang mendekati due date. Silakan cek menu proses untuk melakukan upload dokumen kemitraan.</h1>
@@ -519,6 +512,7 @@ export default {
   },
   data() {
     return {
+      DuedatePopUp: true,
       showDatePicker: false,
       selectedDate: null,
 
@@ -639,6 +633,9 @@ export default {
     },
   },
   methods: {
+    closeDuedatePopUp() {
+      this.DuedatePopUp = false;
+    },
     toggleDatePicker() {
       this.showDatePicker = !this.showDatePicker;
     },

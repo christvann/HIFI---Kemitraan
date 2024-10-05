@@ -37,8 +37,8 @@
       <div class="flex flex-row">
         <div class="w-[338px] h-[88px] border-[1px] rounded-lg border-[#0EA976] bg-[#0EA976] mt-6 ml-4 flex items-center justify-between px-4">
           <div>
-            <h1 class="text-[16px] font-sans text-[#FFFFFF]">Pengajuan H+7 Due Date</h1>
-            <span class="text-[24px] font-sans font-medium text-[#FFFFFF]">10</span>
+            <h1 class="text-[16px] font-sans font-normal text-[#FFFFFF]">Pengajuan H+7 Due Date</h1>
+            <span class="text-[24px] font-sans font-bold text-[#FFFFFF]">10</span>
           </div>
           <svg width="39" height="40" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="19.5176" cy="20.0001" rx="19.4824" ry="19.6417" fill="white" />
@@ -49,8 +49,8 @@
         </div>
         <div class="w-[338px] h-[88px] border-[1px] rounded-lg border-[#FFA229] bg-[#FFA229] mt-6 ml-4 flex items-center justify-between px-4">
           <div>
-            <h1 class="text-[16px] font-sans text-[#FFFFFF]">Pengajuan H-7 Due Date</h1>
-            <span class="text-[24px] font-sans font-medium text-[#FFFFFF]">4</span>
+            <h1 class="text-[16px] font-sans font-normal text-[#FFFFFF]">Pengajuan H-7 Due Date</h1>
+            <span class="text-[24px] font-sans font-bold text-[#FFFFFF]">4</span>
           </div>
           <svg width="39" height="40" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="19.5176" cy="20.0001" rx="19.4824" ry="19.6417" fill="white" />
@@ -68,8 +68,8 @@
         </div>
         <div class="w-[338px] h-[88px] border-[1px] rounded-lg border-[#FF5656] bg-[#FF5656] mt-6 ml-4 flex items-center justify-between px-4">
           <div>
-            <h1 class="text-[16px] font-sans text-[#FFFFFF]">Pengajuan Melewati Due Date</h1>
-            <span class="text-[24px] font-sans font-medium text-[#FFFFFF]">2</span>
+            <h1 class="text-[16px] font-sans font-normal text-[#FFFFFF]">Pengajuan Melewati Due Date</h1>
+            <span class="text-[24px] font-sans font-bold text-[#FFFFFF]">2</span>
           </div>
           <svg width="39" height="40" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="19.5176" cy="20.0001" rx="19.4824" ry="19.6417" fill="white" />

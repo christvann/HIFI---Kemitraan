@@ -27,7 +27,7 @@
             </svg>
           </button>
         </div>
-        <div class="filter-container">
+        <div class="filter-container" ref="filterContainer">
           <button @click="toggleDropdown" class="flex">
             <div class="flex items-center justify-center w-[90px] h-[40px] rounded-lg bg-[#FFFFFF] border border-[#E5E7E9] ml-2 mt-6 hover:bg-[#DBEAFE] cursor-pointer transition-all">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -265,8 +265,6 @@
 export default {
   data() {
     return {
-      showDatePicker: false,
-
       showDropdown: false,
       selectedOption: null,
       selectedSubOptions: [],
@@ -355,6 +353,11 @@ export default {
     },
     toggleDropdown() {
       this.showDropdown = !this.showDropdown;
+      if (this.showDropdown) {
+        document.addEventListener("click", this.handleClickOutside);
+      } else {
+        document.removeEventListener("click", this.handleClickOutside);
+      }
     },
     selectOption(option) {
       if (this.selectedOption === option) {
@@ -376,6 +379,14 @@ export default {
     prevPage() {
       if (this.currentPage > 1) {
         this.currentPage--;
+      }
+    },
+    handleClickOutside(event) {
+      const filterContainer = this.$refs.filterContainer;
+      if (filterContainer && !filterContainer.contains(event.target)) {
+        this.showDropdown = false;
+        this.selectedOption = null;
+        document.removeEventListener("click", this.handleClickOutside);
       }
     },
     nextPage() {

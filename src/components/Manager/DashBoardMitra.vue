@@ -87,8 +87,12 @@
               <h1 class="text-[20px] font-sans font-semibold text-[#000000] ml-6 mt-6">Progress Kemitraan</h1>
               <span class="text-[16px] font-sans font-normal text-[#000000] ml-2 mt-6">(per Tahun)</span>
               <!--Date-->
-              <div class="relative">
-                <div class="w-[120px] h-[40px] border rounded-lg bg-white border-[#E5E7E9] ml-[246px] mt-4 flex items-center justify-between px-4 hover:bg-[#DBEAFE] cursor-pointer transition-all" @click="toggleDatePicker">
+              <div ref="datePickerContainer" class="relative">
+                <div
+                  ref="datePickerButton"
+                  class="w-[120px] h-[40px] border rounded-lg bg-white border-[#E5E7E9] ml-[246px] mt-4 flex items-center justify-between px-4 hover:bg-[#DBEAFE] cursor-pointer transition-all"
+                  @click="toggleDatePicker"
+                >
                   <span class="text-[14px] font-sans font-light text-[#9C9C9C]">
                     {{ selectedDate ? formatDate(selectedDate) : "2024" }}
                   </span>
@@ -170,7 +174,7 @@
               </svg>
             </button>
           </div>
-          <div class="filter-container">
+          <div class="filter-container" ref="filterContainer">
             <button @click="toggleDropdown" class="flex">
               <div class="flex items-center justify-center w-[90px] h-[40px] rounded-lg bg-[#FFFFFF] border border-[#E5E7E9] ml-2 mt-6 hover:bg-[#DBEAFE] cursor-pointer transition-all">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -656,6 +660,11 @@ export default {
   methods: {
     toggleDatePicker() {
       this.showDatePicker = !this.showDatePicker;
+      if (this.showDatePicker) {
+        document.addEventListener("click", this.handleClickOutside);
+      } else {
+        document.removeEventListener("click", this.handleClickOutside);
+      }
     },
     formatDate(date) {
       const options = { year: "numeric", month: "2-digit", day: "2-digit" };
@@ -671,9 +680,15 @@ export default {
     },
     hideDatePicker() {
       this.showDatePicker = false;
+      document.removeEventListener("click", this.handleClickOutside);
     },
     toggleDropdown() {
       this.showDropdown = !this.showDropdown;
+      if (this.showDropdown) {
+        document.addEventListener("click", this.handleClickOutside);
+      } else {
+        document.removeEventListener("click", this.handleClickOutside);
+      }
     },
     selectOption(option) {
       if (this.selectedOption === option) {
@@ -698,11 +713,41 @@ export default {
         this.currentPage--;
       }
     },
+    handleClickOutside(event) {
+      const datePickerButton = this.$refs.datePickerButton;
+      const datePickerInput = this.$refs.datePickerInput;
+      const filterContainer = this.$refs.filterContainer;
+
+      if (datePickerButton && !datePickerButton.contains(event.target) && datePickerInput && !datePickerInput.contains(event.target)) {
+        this.hideDatePicker();
+      }
+      if (filterContainer && !filterContainer.contains(event.target)) {
+        this.showDropdown = false;
+        this.selectedOption = null;
+        document.removeEventListener("click", this.handleClickOutside);
+      }
+    },
   },
   watch: {
     selectedValue() {
       this.currentPage = 1; // Reset to first page on value change
     },
+    showDropdown(newVal) {
+      if (newVal) {
+        document.addEventListener("click", this.handleClickOutside);
+      } else {
+        document.removeEventListener("click", this.handleClickOutside);
+      }
+    },
+  },
+  mounted() {
+    document.addEventListener("click", this.handleClickOutside);
+    window.addEventListener("beforeunload", () => {
+      document.removeEventListener("click", this.handleClickOutside);
+    });
+  },
+  beforeUnmount() {
+    document.removeEventListener("click", this.handleClickOutside);
   },
 };
 </script>

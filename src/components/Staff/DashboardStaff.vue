@@ -66,7 +66,7 @@
               <span class="text-[16px] font-sans font-normal text-[#000000] ml-2 mt-6">(per Tahun)</span>
               <!--Date-->
               <div class="relative">
-                <div class="w-[120px] h-[40px] border rounded-lg bg-white border-[#E5E7E9] ml-[246px] mt-4 flex items-center justify-between px-4 hover:bg-[#DBEAFE] cursor-pointer transition-all" @click="toggleDatePicker">
+                <div @click="toggleDatePicker" class="w-[120px] h-[40px] border rounded-lg bg-white border-[#E5E7E9] ml-[246px] mt-4 flex items-center justify-between px-4 hover:bg-[#DBEAFE] cursor-pointer transition-all">
                   <span class="text-[14px] font-sans font-light text-[#9C9C9C]">
                     {{ selectedDate ? formatDate(selectedDate) : "2024" }}
                   </span>

@@ -223,7 +223,7 @@
                 <th class="p-2 border border-[#E5E7E9]">
                   <div class="flex items-center justify-between">
                     <span>PIC Kemitraan</span>
-                    <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg @click="sortTable('pic')" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         fill-rule="evenodd"
                         clip-rule="evenodd"
@@ -240,7 +240,7 @@
                 <th class="p-2 border border-[#E5E7E9]">
                   <div class="flex items-center justify-between">
                     <span>Jumlah Pengajuan</span>
-                    <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg @click="sortTable('jumlahPengajuan')" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         fill-rule="evenodd"
                         clip-rule="evenodd"
@@ -257,7 +257,7 @@
                 <th class="p-2 border border-[#E5E7E9]">
                   <div class="flex items-center justify-between">
                     <span>Total Selesai</span>
-                    <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg @click="sortTable('totalSelesai')" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         fill-rule="evenodd"
                         clip-rule="evenodd"
@@ -274,7 +274,7 @@
                 <th class="p-2 border border-[#E5E7E9]">
                   <div class="flex items-center justify-between">
                     <span>Total Diproses</span>
-                    <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg @click="sortTable('totalDiproses')" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         fill-rule="evenodd"
                         clip-rule="evenodd"
@@ -291,7 +291,7 @@
                 <th class="p-2 border border-[#E5E7E9]">
                   <div class="flex items-center justify-between">
                     <span>Total Stop Clock</span>
-                    <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg @click="sortTable('totalStopClock')" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         fill-rule="evenodd"
                         clip-rule="evenodd"
@@ -434,6 +434,7 @@ export default {
         };
       }
       // Bar Chart
+      let delayed;
       const ctx = document.getElementById("myBarChart").getContext("2d");
       new Chart(ctx, {
         type: "bar",
@@ -452,6 +453,18 @@ export default {
           ],
         },
         options: {
+          animation: {
+            onComplete: () => {
+              delayed = true;
+            },
+            delay: (context) => {
+              let delay = 0;
+              if (context.type === "data" && context.mode === "default" && !delayed) {
+                delay = context.dataIndex * 300 + context.datasetIndex * 100;
+              }
+              return delay;
+            },
+          },
           scales: {
             y: {
               beginAtZero: true,
@@ -467,6 +480,7 @@ export default {
                 color: "#BDBDBD",
                 borderDash: [5, 5],
               },
+              stacked: true,
             },
             x: {
               ticks: {
@@ -481,6 +495,7 @@ export default {
                 color: "#BDBDBD",
                 borderDash: [5, 5],
               },
+              stacked: true,
             },
           },
           plugins: {
@@ -558,6 +573,7 @@ export default {
         { pic: "Agung Ramadhan", jumlahPengajuan: 5, totalSelesai: 2, totalDiproses: 3, totalStopClock: 3 },
         { pic: "Putri Andini", jumlahPengajuan: 7, totalSelesai: 3, totalDiproses: 2, totalStopClock: 3 },
       ],
+      sortOrder: "asc",
     };
   },
   computed: {
@@ -633,6 +649,33 @@ export default {
     },
   },
   methods: {
+    sortTable(columnName) {
+      this.sortOrder = this.sortOrder === "asc" ? "desc" : "asc";
+
+      this.tableData.sort((a, b) => {
+        const aValue = a[columnName] != null ? a[columnName] : "";
+        const bValue = b[columnName] != null ? b[columnName] : "";
+
+        // Jika keduanya adalah angka, lakukan sorting numerik
+        if (!isNaN(aValue) && !isNaN(bValue)) {
+          if (this.sortOrder === "asc") {
+            return aValue - bValue; // Urutkan dari kecil ke besar
+          } else {
+            return bValue - aValue; // Urutkan dari besar ke kecil
+          }
+        }
+
+        // Jika bukan angka, lakukan sorting string
+        const aStr = aValue.toString().toLowerCase();
+        const bStr = bValue.toString().toLowerCase();
+
+        if (this.sortOrder === "asc") {
+          return aStr.localeCompare(bStr); // Urutkan A-Z
+        } else {
+          return bStr.localeCompare(aStr); // Urutkan Z-A
+        }
+      });
+    },
     closeDuedatePopUp() {
       this.DuedatePopUp = false;
     },

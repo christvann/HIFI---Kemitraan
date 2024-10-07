@@ -107,7 +107,7 @@
                   <th class="p-2 border border-[#E5E7E9]">
                     <div class="flex items-center justify-between">
                       <span>Judul</span>
-                      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg @click="sortTable('judul')" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           fill-rule="evenodd"
                           clip-rule="evenodd"
@@ -124,7 +124,7 @@
                   <th class="p-2 border border-[#E5E7E9]">
                     <div class="flex items-center justify-between">
                       <span>No</span>
-                      <svg class="ml-2" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg @click="sortTable('nomor')" class="ml-2" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           fill-rule="evenodd"
                           clip-rule="evenodd"
@@ -141,7 +141,7 @@
                   <th class="p-2 border border-[#E5E7E9]">
                     <div class="flex items-center justify-between">
                       <span>Tipe</span>
-                      <svg class="ml-2" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg @click="sortTable('tipe')" class="ml-2" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           fill-rule="evenodd"
                           clip-rule="evenodd"
@@ -158,7 +158,7 @@
                   <th class="p-2 border border-[#E5E7E9]">
                     <div class="flex items-center justify-between">
                       <span>User</span>
-                      <svg class="ml-2" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg @click="sortTable('user')" class="ml-2" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           fill-rule="evenodd"
                           clip-rule="evenodd"
@@ -175,7 +175,7 @@
                   <th class="p-2 border border-[#E5E7E9]">
                     <div class="flex items-center justify-between">
                       <span>Tanggal Selesai</span>
-                      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg @click="sortTable('tanggal')" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           fill-rule="evenodd"
                           clip-rule="evenodd"
@@ -192,7 +192,7 @@
                   <th class="p-2 border border-[#E5E7E9]">
                     <div class="flex items-center justify-between">
                       <span>Pejabat yang Bertanda Tangan</span>
-                      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg @click="sortTable('pejabat')" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           fill-rule="evenodd"
                           clip-rule="evenodd"
@@ -209,7 +209,7 @@
                   <th class="p-2 border border-[#E5E7E9]">
                     <div class="flex items-center justify-between">
                       <span>Hari Menuju Selesai</span>
-                      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg @click="sortTable('hari')" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           fill-rule="evenodd"
                           clip-rule="evenodd"
@@ -226,7 +226,7 @@
                   <th class="p-2 border border-[#E5E7E9]">
                     <div class="flex items-center justify-between">
                       <span>Status Perjanjian</span>
-                      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg @click="sortTable('statusperjanjian')" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           fill-rule="evenodd"
                           clip-rule="evenodd"
@@ -331,10 +331,10 @@ export default {
       searchQuery: "",
 
       tableData: [
-        { judul: "Lorem ipsum dolor", nomor: 90224, tipe: "MoU", user: "Sales", tanggal: "17/08/2024", pejabat: "Bonnie Beier", hari: "H-5", statusperjanjian: "Aktif", status: "Selesai" },
+        { judul: "Lorem ipsum dolor", nomor: 90124, tipe: "MoU", user: "Sales", tanggal: "17/08/2024", pejabat: "Bonnie Beier", hari: "H-5", statusperjanjian: "Aktif", status: "Selesai" },
         { judul: "Lorem ipsum dolor", nomor: 90224, tipe: "MoU", user: "Produk", tanggal: "17/08/2024", pejabat: "Victor Ullrich", hari: "H-5", statusperjanjian: "Tidak Aktif", status: "Selesai" },
         { judul: "Lorem ipsum dolor", nomor: 90224, tipe: "PKS", user: "Sales", tanggal: "17/08/2024", pejabat: "Maryann Sawayn", hari: "H-5", statusperjanjian: "Aktif", status: "Selesai" },
-        { judul: "Lorem ipsum dolor", nomor: 90224, tipe: "PKS", user: "Sales", tanggal: "17/08/2024", pejabat: "Susan Nienaw", hari: "H-5", statusperjanjian: "Aktif", status: "Selesai" },
+        { judul: "Lorem ipsum dolor", nomor: 90224, tipe: "PKS", user: "Sales", tanggal: "18/08/2024", pejabat: "Susan Nienaw", hari: "H-5", statusperjanjian: "Aktif", status: "Selesai" },
         { judul: "Lorem ipsum dolor", nomor: 90224, tipe: "MoU", user: "Produk", tanggal: "17/08/2024", pejabat: "Mathew Yundt", hari: "H-5", statusperjanjian: "Aktif", status: "Selesai" },
         { judul: "Lorem ipsum dolor", nomor: 90224, tipe: "PKS", user: "Sales", tanggal: "17/08/2024", pejabat: "Debbie Wunsch", hari: "H-5", statusperjanjian: "Tidak Aktif", status: "Selesai" },
         { judul: "Lorem ipsum dolor", nomor: 90224, tipe: "MoU", user: "Produk", tanggal: "17/08/2024", pejabat: "Boyd Hahn", hari: "H-5", statusperjanjian: "Tidak Aktif", status: "Selesai" },
@@ -357,6 +357,7 @@ export default {
         { judul: "Lorem ipsum dolor", nomor: 90224, tipe: "PKS", user: "Produk", tanggal: "17/08/2024", pejabat: "Rebecca Conn", hari: "H-5", statusperjanjian: "Tidak Aktif", status: "Selesai" },
         { judul: "Lorem ipsum dolor", nomor: 90224, tipe: "PKS", user: "Produk", tanggal: "17/08/2024", pejabat: "Rebecca Conn", hari: "H-5", statusperjanjian: "Tidak Aktif", status: "Selesai" },
       ],
+      sortOrder: "asc",
     };
   },
   computed: {
@@ -399,6 +400,33 @@ export default {
     },
   },
   methods: {
+    sortTable(columnName) {
+      this.sortOrder = this.sortOrder === "asc" ? "desc" : "asc";
+
+      this.tableData.sort((a, b) => {
+        const aValue = a[columnName] != null ? a[columnName] : "";
+        const bValue = b[columnName] != null ? b[columnName] : "";
+
+        // Jika keduanya adalah angka, lakukan sorting numerik
+        if (!isNaN(aValue) && !isNaN(bValue)) {
+          if (this.sortOrder === "asc") {
+            return aValue - bValue; // Urutkan dari kecil ke besar
+          } else {
+            return bValue - aValue; // Urutkan dari besar ke kecil
+          }
+        }
+
+        // Jika bukan angka, lakukan sorting string
+        const aStr = aValue.toString().toLowerCase();
+        const bStr = bValue.toString().toLowerCase();
+
+        if (this.sortOrder === "asc") {
+          return aStr.localeCompare(bStr); // Urutkan A-Z
+        } else {
+          return bStr.localeCompare(aStr); // Urutkan Z-A
+        }
+      });
+    },
     navigateToSelesai() {
       this.$router.push("/selesai");
     },

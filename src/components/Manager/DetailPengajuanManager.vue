@@ -49,7 +49,7 @@
               </div>
             </div>
             <div class="flex justify-end mr-6">
-              <button @click="closePopup" class="mr-6 text-[#FF5656] font-sans text-[14px] font-semibold">Batal</button>
+              <button @click="closePopup" class="w-[50px] h-[40px] mr-3 p-2 rounded-lg bg-[#FFFFFF] hover:bg-[#FEE2E2] text-[#FF5656] font-sans text-[14px] font-semibold transition-all">Batal</button>
               <button @click="navigateToStaff" :disabled="!isStaffSelected" :class="isStaffSelected ? 'bg-[#2671D9] text-white hover:bg-[#1E5BB7]' : 'bg-[#E6E6E6] text-[#7F7F80]'" class="p-2 rounded-lg">Pilih</button>
             </div>
           </div>

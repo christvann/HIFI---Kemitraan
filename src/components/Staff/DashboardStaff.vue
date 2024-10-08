@@ -82,6 +82,7 @@
                 <!-- Date Picker -->
                 <input
                   v-if="showDatePicker"
+                  ref="datePickerInput"
                   type="date"
                   class="custom-date-picker absolute top-[52px] mt-2 left-[246px] border border-[#E5E7E9] font-sans text-[10px] text-[#9C9C9C] rounded-lg p-2 w-[120px] hover:bg-[#DBEAFE] cursor-pointer transition-all"
                   @change="updateDate"
@@ -682,9 +683,9 @@ export default {
     toggleDatePicker() {
       this.showDatePicker = !this.showDatePicker;
       if (this.showDatePicker) {
-        document.addEventListener("click", this.handleClickOutside);
-      } else {
-        document.removeEventListener("click", this.handleClickOutside);
+        this.$nextTick(() => {
+          this.$refs.datePickerInput.focus();
+        });
       }
     },
     formatDate(date) {
@@ -692,16 +693,12 @@ export default {
       return new Date(date).toLocaleDateString("en-GB", options);
     },
     updateDate(event) {
-      //Untuk handle date
       this.selectedDate = event.target.value;
       this.hideDatePicker();
-      const selectedDate = event.target.value;
-      console.log(selectedDate);
-      this.showDatePicker = false;
+      console.log(this.selectedDate);
     },
     hideDatePicker() {
       this.showDatePicker = false;
-      document.removeEventListener("click", this.handleClickOutside);
     },
     toggleDropdown() {
       this.showDropdown = !this.showDropdown;
@@ -730,17 +727,22 @@ export default {
       }
     },
     handleClickOutside(event) {
+      const datePickerContainer = this.$refs.datePickerContainer;
       const datePickerButton = this.$refs.datePickerButton;
       const datePickerInput = this.$refs.datePickerInput;
       const filterContainer = this.$refs.filterContainer;
 
+      if (datePickerContainer && !datePickerContainer.contains(event.target)) {
+        this.hideDatePicker();
+      }
+
       if (datePickerButton && !datePickerButton.contains(event.target) && datePickerInput && !datePickerInput.contains(event.target)) {
         this.hideDatePicker();
       }
+
       if (filterContainer && !filterContainer.contains(event.target)) {
         this.showDropdown = false;
         this.selectedOption = null;
-        document.removeEventListener("click", this.handleClickOutside);
       }
     },
     nextPage() {

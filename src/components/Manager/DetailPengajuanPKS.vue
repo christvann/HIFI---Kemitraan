@@ -989,12 +989,12 @@
                 />
               </div>
               <div class="relative flex flex-col w-[454.5px] h-[72px] mt-4">
-                <div class="flex items-center">
+                <div ref="datePickerSelesaiContainer" class="flex items-center">
                   <h1 class="w-[122px] h-[24px] font-sans text-[16px] font-bold text-[#4D5E80]">Tanggal Selesai</h1>
                   <span class="text-[#FF5656] font-bold">*</span>
                 </div>
                 <input v-model="selectedDateSelesai" type="text" placeholder="mm/dd/yyyy" class="border rounded mt-2 p-2 pl-3 w-full cursor-pointer" @focus="toggleDatePickerSelesai" readonly />
-                <span class="absolute right-3 top-[45px] cursor-pointer" @click="toggleDatePickerSelesai">
+                <span ref="datePickerSelesaiButton" class="absolute right-3 top-[45px] cursor-pointer" @click="toggleDatePickerSelesai">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       fill-rule="evenodd"
@@ -1006,6 +1006,7 @@
                 </span>
                 <input
                   v-if="showDatePickerSelesai"
+                  ref="datePickerSelesaiInput"
                   type="date"
                   class="custom-date-picker absolute border border-[#E5E7E9] font-sans text-[10px] text-[#9C9C9C] rounded-lg p-2 w-[120px] z-10 hover:bg-[#DBEAFE] cursor-pointer transition-all"
                   style="top: 105%; right: 0"
@@ -1014,12 +1015,12 @@
                 />
               </div>
               <div class="relative flex flex-col w-[454.5px] h-[72px] mt-4">
-                <div class="flex items-center">
+                <div ref="datePickerPerjanjianContainer" class="flex items-center">
                   <h1 class="w-[190px] h-[24px] font-sans text-[16px] font-bold text-[#4D5E80]">Jangka Waktu Perjanjian</h1>
                   <span class="text-[#FF5656] font-bold">*</span>
                 </div>
                 <input v-model="jangkaWaktuPerjanjian" type="text" placeholder="mm/dd/yyyy" class="border rounded mt-2 p-2 pl-3 w-full cursor-pointer" @focus="toggleDatePickerPerjanjian" readonly />
-                <span class="absolute right-3 top-[45px] cursor-pointer" @click="toggleDatePickerPerjanjian">
+                <span ref="datePickerPerjanjianButton" class="absolute right-3 top-[45px] cursor-pointer" @click="toggleDatePickerPerjanjian">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       fill-rule="evenodd"
@@ -1031,6 +1032,7 @@
                 </span>
                 <input
                   v-if="showDatePickerPerjanjian"
+                  ref="datePickerPerjanjianInput"
                   type="date"
                   class="custom-date-picker absolute border border-[#E5E7E9] font-sans text-[10px] text-[#9C9C9C] rounded-lg p-2 w-[120px] z-10 hover:bg-[#DBEAFE] cursor-pointer transition-all"
                   style="top: 105%; right: 0"
@@ -1210,12 +1212,22 @@ export default {
     },
     toggleDatePickerSelesai() {
       this.showDatePickerSelesai = !this.showDatePickerSelesai;
+      if (this.showDatePickerSelesai) {
+        this.$nextTick(() => {
+          this.$refs.datePickerSelesaiInput.focus();
+        });
+      }
     },
     hideDatePickerSelesai() {
       this.showDatePickerSelesai = false;
     },
     toggleDatePickerPerjanjian() {
       this.showDatePickerPerjanjian = !this.showDatePickerPerjanjian;
+      if (this.showDatePickerPerjanjian) {
+        this.$nextTick(() => {
+          this.$refs.datePickerPerjanjianInput.focus();
+        });
+      }
     },
     hideDatePickerPerjanjian() {
       this.showDatePickerPerjanjian = false;
@@ -1241,6 +1253,30 @@ export default {
       const endDate = this.formatDateToDDMMYYYY(event.target.value);
       this.jangkaWaktuPerjanjian = `${this.selectedDateSelesai} s.d ${endDate}`;
       this.showDatePickerPerjanjian = false;
+    },
+    handleClickOutside(event) {
+      const datePickerSelesaiContainer = this.$refs.datePickerSelesaiContainer;
+      const datePickerSelesaiButton = this.$refs.datePickerSelesaiButton;
+      const datePickerSelesaiInput = this.$refs.datePickerSelesaiInput;
+      const datePickerPerjanjianContainer = this.$refs.datePickerPerjanjianContainer;
+      const datePickerPerjanjianButton = this.$refs.datePickerPerjanjianButton;
+      const datePickerPerjanjianInput = this.$refs.datePickerPerjanjianInput;
+
+      if (datePickerSelesaiContainer && !datePickerSelesaiContainer.contains(event.target)) {
+        this.hideDatePicker();
+      }
+
+      if (datePickerSelesaiButton && !datePickerSelesaiButton.contains(event.target) && datePickerSelesaiInput && !datePickerSelesaiInput.contains(event.target)) {
+        this.hideDatePicker();
+      }
+
+      if (datePickerPerjanjianContainer && !datePickerPerjanjianContainer.contains(event.target)) {
+        this.hideDatePicker();
+      }
+
+      if (datePickerPerjanjianButton && !datePickerPerjanjianButton.contains(event.target) && datePickerPerjanjianInput && !datePickerPerjanjianInput.contains(event.target)) {
+        this.hideDatePicker();
+      }
     },
     closePenyelesaianPKSPopup() {
       this.showPenyelesaianPKSPopup = false;

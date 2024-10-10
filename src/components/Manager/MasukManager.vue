@@ -260,7 +260,6 @@ export default {
       selectedSubOptions: [],
       filterOptions: [
         { name: "Tipe", subOptions: ["PKS", "NDA", "MoU"] },
-        { name: "Status", subOptions: ["Masuk"] },
       ],
 
       selectedValue: 8,
@@ -323,7 +322,7 @@ export default {
       // Filter berdasarkan opsi terpilih (selectedSubOptions)
       if (this.selectedSubOptions.length) {
         filteredData = filteredData.filter((item) => {
-          return this.selectedSubOptions.includes(item.tipe) || this.selectedSubOptions.includes(item.status);
+          return this.selectedSubOptions.includes(item.tipe);
         });
       }
       // Filter berdasarkan input pencarian (searchQuery)

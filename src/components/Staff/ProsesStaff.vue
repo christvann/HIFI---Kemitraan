@@ -231,11 +231,12 @@
                     <span
                       :class="[
                         'w-[55px] h-[24px] font-sans text-[12px] font-semibold',
-                        item.date === '15 Hari' ? 'text-[#0EA976]' : '',
+                        item.date <= '15 Hari' ? 'text-[#0EA976]' : '',
+                        item.date > '0 Hari' ? 'text-[#0EA976]' : '',
                         item.date === '7 Hari' ? 'text-[#F08800]' : '',
                         item.date === 'Stop Clock' ? 'text-[#2671D9]' : '',
                         item.date === '0 Hari' ? 'text-[#FF5656]' : '',
-                        item.date === '30 Hari' ? 'text-[#0EA976]' : '',
+                        item.date >= '30 Hari' ? 'text-[#0EA976]' : '',
                       ]"
                       >{{ item.date }}
                     </span>

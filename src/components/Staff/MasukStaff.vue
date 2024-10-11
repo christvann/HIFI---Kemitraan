@@ -333,7 +333,9 @@ export default {
       // Filter berdasarkan opsi terpilih (selectedSubOptions)
       if (this.selectedSubOptions.length) {
         filteredData = filteredData.filter((item) => {
-          return this.selectedSubOptions.includes(item.tipe) || this.selectedSubOptions.includes(item.status);
+          const isTipeMatched = this.selectedSubOptions.includes(item.tipe);
+          const isStatusMatched = this.selectedSubOptions.includes(item.status);
+          return isTipeMatched || isStatusMatched;
         });
       }
       // Filter berdasarkan input pencarian (searchQuery)

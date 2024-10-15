@@ -427,7 +427,7 @@ export default {
         const progressCircle = container.querySelector(".progress-circle");
         setTimeout(() => {
           progressCircle.style.transition = "stroke-dashoffset 1s ease-out"; // Set transition for the stroke-dashoffset
-          progressCircle.setAttribute("stroke-dashoffset", strokeDashoffset); 
+          progressCircle.setAttribute("stroke-dashoffset", strokeDashoffset);
         }, 0);
       };
 
@@ -745,7 +745,7 @@ export default {
   },
   watch: {
     selectedValue() {
-      this.currentPage = 1; // Reset to first page on value change
+      this.currentPage = 1; // Reset to first page
     },
     showDropdown(newVal) {
       if (newVal) {

@@ -386,7 +386,7 @@ export default {
       const totalData = barChartData.reduce((acc, value) => acc + value, 0);
       document.getElementById("totalData").innerText = totalData;
 
-      const createCircleChart = (elementId, value, color) => {
+      const createCircleChart = (elementId, value, color, label) => {
         const container = document.getElementById(elementId);
         const percentage = (value / totalData) * 100;
         const radius = 40;
@@ -397,43 +397,70 @@ export default {
         const strokeDashoffset = circumference - (percentage / 100) * circumference;
 
         container.innerHTML = `
-          <div class="chart-circle">
-            <svg viewBox="0 0 100 100">
-              <circle class="circle-bg"
-                stroke="#E5E5E5"
-                stroke-width="${strokeWidth}"
-                fill="transparent"
-                r="${normalizedRadius}"
-                cx="50"
-                cy="50"
-              />
-              <circle class="progress-circle"
-                stroke="${color}"
-                stroke-width="${strokeWidth}"
-                stroke-dasharray="${circumference} ${circumference}"
-                stroke-dashoffset="${initialDashoffset}"
-                fill="transparent"
-                r="${normalizedRadius}"
-                cx="50"
-                cy="50"
-              />
-            </svg>
-            <div class="chart-text">
-              <span class="value">${value}</span>
-              <span class="total">/${totalData}</span>
-            </div>
+      <div class="chart-circle" style="position: relative;">
+        <svg viewBox="0 0 100 100" class="chart-svg">
+          <circle class="circle-bg"
+            stroke="#E5E5E5"
+            stroke-width="${strokeWidth}"
+            fill="transparent"
+            r="${normalizedRadius}"
+            cx="50"
+            cy="50"
+          />
+          <circle class="progress-circle"
+            stroke="${color}"
+            stroke-width="${strokeWidth}"
+            stroke-dasharray="${circumference} ${circumference}"
+            stroke-dashoffset="${initialDashoffset}"
+            fill="transparent"
+            r="${normalizedRadius}"
+            cx="50"
+            cy="50"
+          />
+        </svg>
+        <div class="chart-text">
+          <span class="value">${value}</span>
+          <span class="total">/${totalData}</span>
+        </div>
+        <div class="chart-tooltip" style="display: none; position: absolute; padding: 5px; background: rgba(0, 0, 0, 0.85); color: #fff; border-radius: 5px; font-size: 10px; white-space: nowrap;">
+          <div style="font-weight: bold;">${label}</div>
+          <div style="display: flex; align-items: center; margin-top: 5px;">
+            <span style="display: inline-block; width: 10px; height: 10px; background-color: ${color}; margin-right: 5px;"></span>
+            <span>Jumlah: ${value}</span>
           </div>
-        `;
+        </div>
+      </div>
+    `;
+
         const progressCircle = container.querySelector(".progress-circle");
+        const tooltip = container.querySelector(".chart-tooltip");
+        const chartSvg = container.querySelector(".chart-svg");
+
         setTimeout(() => {
-          progressCircle.style.transition = "stroke-dashoffset 1s ease-out"; // Set transition for the stroke-dashoffset
+          progressCircle.style.transition = "stroke-dashoffset 1s ease-out";
           progressCircle.setAttribute("stroke-dashoffset", strokeDashoffset);
         }, 0);
+        chartSvg.addEventListener("mousemove", (e) => {
+          const rect = container.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          tooltip.style.display = "block";
+          tooltip.style.left = `${x + 10}px`;
+          tooltip.style.top = `${y - 40}px`;
+        });
+        chartSvg.addEventListener("mouseleave", () => {
+          tooltip.style.display = "none";
+          progressCircle.style.transform = "scale(1)";
+        });
+        chartSvg.addEventListener("mouseenter", () => {
+          tooltip.style.display = "block";
+          progressCircle.style.transform = "scale(1.1)";
+          progressCircle.style.transition = "transform 0.5s ease";
+        });
       };
-
-      createCircleChart("ndaDisplay", parseInt(document.getElementById("totalNDA").innerText, 10), "#0EA976");
-      createCircleChart("mouDisplay", parseInt(document.getElementById("totalMoU").innerText, 10), "#FFA229");
-      createCircleChart("pksDisplay", parseInt(document.getElementById("totalPKS").innerText, 10), "#FF51AF");
+      createCircleChart("ndaDisplay", parseInt(document.getElementById("totalNDA").innerText, 10), "#0EA976", "NDA");
+      createCircleChart("mouDisplay", parseInt(document.getElementById("totalMoU").innerText, 10), "#FFA229", "MoU");
+      createCircleChart("pksDisplay", parseInt(document.getElementById("totalPKS").innerText, 10), "#FF51AF", "PKS");
 
       // Bar Chart
       let delayed;
@@ -786,13 +813,12 @@ export default {
   height: 70px;
   font-family: sans-serif;
 }
-
 .chart-circle svg {
   transform: rotate(-90deg);
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
-
 .chart-text {
   position: absolute;
   top: 50%;
@@ -804,26 +830,22 @@ export default {
   justify-content: center;
   align-items: baseline;
 }
-
 .chart-text .value {
   font-size: 10px;
   font-weight: bold;
   color: #000000 !important;
 }
-
 .chart-text .total {
   font-size: 8px;
   font-weight: normal;
   color: #7f7f80 !important;
   margin-left: 1px;
 }
-
 .circle-bg {
   transition: stroke-width 0.35s;
 }
-
 .progress-circle {
-  transition: stroke-dashoffset 0.35s, stroke-width 0.35s;
+  transition: stroke-dashoffset 1s ease-out, transform 0.3s ease;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
   stroke-linecap: round;

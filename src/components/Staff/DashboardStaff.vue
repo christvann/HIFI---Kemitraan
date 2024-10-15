@@ -103,34 +103,34 @@
               <canvas id="myBarChart"></canvas>
             </div>
           </div>
-          <div class="flex flex-col relative justify-start w-[346px] h-[137px] ml-6 mt-6 mr-6 border-collapse rounded-lg bg-[#FFFFFF] border-[#E5E7E9] border-[1px] bg-wave">
+          <div class="flex flex-col justify-start w-[346px] h-[416px] ml-6 mt-6 mr-6 border-collapse rounded-lg bg-[#FFFFFF] border-[#E5E7E9] border-[1px] bg-wave">
             <div class="flex items-start p-6">
               <h1 class="font-sans text-[20px] font-semibold text-[#FFFFFF]">
                 <span class="block">Total Dokumen</span>
                 <span class="block">Kemitraan</span>
               </h1>
             </div>
-            <div class="ml-8 mt-[50px]">
-              <div class="chart-item">
+            <div class="flex flex-col items-center mt-12">
+              <div class="chart-item mb-6">
                 <div>
                   <p class="font-sans text-[16px] text-[#7F7F80] font-medium">Total NDA</p>
                   <h2 id="totalNDA" class="font-sans text-[24px] text-[#333333] font-bold">10</h2>
                 </div>
-                <canvas id="ndaChart" class="doughnut-chart"></canvas>
+                <div id="ndaDisplay"></div>
               </div>
-              <div class="chart-item mt-6">
+              <div class="chart-item mb-6">
                 <div>
                   <p class="font-sans text-[16px] text-[#7F7F80] font-medium">Total MoU</p>
                   <h2 id="totalMoU" class="font-sans text-[24px] text-[#333333] font-bold">24</h2>
                 </div>
-                <canvas id="mouChart" class="doughnut-chart"></canvas>
+                <div id="mouDisplay"></div>
               </div>
-              <div class="chart-item mt-6">
+              <div class="chart-item">
                 <div>
                   <p class="font-sans text-[16px] text-[#7F7F80] font-medium">Total PKS</p>
                   <h2 id="totalPKS" class="font-sans text-[24px] text-[#333333] font-bold">30</h2>
                 </div>
-                <canvas id="pksChart" class="doughnut-chart"></canvas>
+                <div id="pksDisplay"></div>
               </div>
             </div>
           </div>
@@ -358,82 +358,57 @@ export default {
       const barChartData = [20, 15, 9, 20, 5];
       // Calculate the total data
       const totalData = barChartData.reduce((acc, value) => acc + value, 0);
-      // Update the totalData element's text
       document.getElementById("totalData").innerText = totalData;
-      const ndaValue = parseInt(document.getElementById("totalNDA").innerText, 10);
-      const ndaCtx = document.getElementById("ndaChart").getContext("2d");
-      // Doughnut Chart NDA
-      new Chart(ndaCtx, {
-        type: "doughnut",
-        data: {
-          labels: ["NDA"],
-          datasets: [
-            {
-              data: [ndaValue, totalData - ndaValue],
-              backgroundColor: ["#0EA976", "#E0E0E0"],
-              cutout: "58%", // Ketebalan chart
-            },
-          ],
-        },
-        options: getDoughnutOptions(ndaValue, totalData),
-      });
-      // Doughnut Chart MoU
-      const mouValue = parseInt(document.getElementById("totalMoU").innerText, 10);
-      const mouCtx = document.getElementById("mouChart").getContext("2d");
-      new Chart(mouCtx, {
-        type: "doughnut",
-        data: {
-          labels: ["MoU"],
-          datasets: [
-            {
-              data: [mouValue, totalData - mouValue],
-              backgroundColor: ["#FFA229", "#E0E0E0"],
-              cutout: "58%", // Ketebalan chart
-            },
-          ],
-        },
-        options: getDoughnutOptions(mouValue, totalData),
-      });
-      // Doughnut Chart PKS
-      const pksValue = parseInt(document.getElementById("totalPKS").innerText, 10);
-      const pksCtx = document.getElementById("pksChart").getContext("2d");
-      new Chart(pksCtx, {
-        type: "doughnut",
-        data: {
-          labels: ["PKS"],
-          datasets: [
-            {
-              data: [pksValue, totalData - pksValue],
-              backgroundColor: ["#FF51AF", "#E0E0E0"],
-              cutout: "58%", // Ketebalan chart
-            },
-          ],
-        },
-        options: getDoughnutOptions(pksValue, totalData),
-      });
-      function getDoughnutOptions(value, total) {
-        return {
-          plugins: {
-            legend: {
-              display: false,
-            },
-            afterDraw: (chart) => {
-              const { ctx, width, height } = chart;
-              ctx.restore();
-              const fontSize = (height / 114).toFixed(2);
-              ctx.font = `${fontSize}em sans-serif`;
-              ctx.textBaseline = "middle";
-              const text = `${value}/${total}`;
-              const textX = Math.round((width - ctx.measureText(text).width) / 2);
-              const textY = height / 2;
-              ctx.fillText(text, textX, textY);
-              ctx.save();
-            },
-          },
-          responsive: false,
-          maintainAspectRatio: false,
-        };
-      }
+
+      const createCircleChart = (elementId, value, color) => {
+        const container = document.getElementById(elementId);
+        const percentage = (value / totalData) * 100;
+        const radius = 40;
+        const strokeWidth = 15;
+        const normalizedRadius = radius - strokeWidth / 2;
+        const circumference = normalizedRadius * 2 * Math.PI;
+        const initialDashoffset = circumference;
+        const strokeDashoffset = circumference - (percentage / 100) * circumference;
+
+        container.innerHTML = `
+          <div class="chart-circle">
+            <svg viewBox="0 0 100 100">
+              <circle class="circle-bg"
+                stroke="#E5E5E5"
+                stroke-width="${strokeWidth}"
+                fill="transparent"
+                r="${normalizedRadius}"
+                cx="50"
+                cy="50"
+              />
+              <circle class="progress-circle"
+                stroke="${color}"
+                stroke-width="${strokeWidth}"
+                stroke-dasharray="${circumference} ${circumference}"
+                stroke-dashoffset="${initialDashoffset}"
+                fill="transparent"
+                r="${normalizedRadius}"
+                cx="50"
+                cy="50"
+              />
+            </svg>
+            <div class="chart-text">
+              <span class="value">${value}</span>
+              <span class="total">/${totalData}</span>
+            </div>
+          </div>
+        `;
+        const progressCircle = container.querySelector(".progress-circle");
+        setTimeout(() => {
+          progressCircle.style.transition = "stroke-dashoffset 1s ease-out"; // Set transition for the stroke-dashoffset
+          progressCircle.setAttribute("stroke-dashoffset", strokeDashoffset); 
+        }, 0);
+      };
+
+      createCircleChart("ndaDisplay", parseInt(document.getElementById("totalNDA").innerText, 10), "#0EA976");
+      createCircleChart("mouDisplay", parseInt(document.getElementById("totalMoU").innerText, 10), "#FFA229");
+      createCircleChart("pksDisplay", parseInt(document.getElementById("totalPKS").innerText, 10), "#FF51AF");
+
       // Bar Chart
       let delayed;
       const ctx = document.getElementById("myBarChart").getContext("2d");
@@ -763,10 +738,53 @@ export default {
   background-position: center; /* Center the background */
   background-repeat: no-repeat; /* Do not repeat the background */
 }
-.doughnut-chart {
-  width: 70px !important;
-  height: 60px !important;
-  margin-left: 10px;
+.chart-circle {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  font-family: sans-serif;
+}
+
+.chart-circle svg {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.chart-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.chart-text .value {
+  font-size: 10px;
+  font-weight: bold;
+  color: #000000 !important;
+}
+
+.chart-text .total {
+  font-size: 8px;
+  font-weight: normal;
+  color: #7f7f80 !important;
+  margin-left: 1px;
+}
+
+.circle-bg {
+  transition: stroke-width 0.35s;
+}
+
+.progress-circle {
+  transition: stroke-dashoffset 0.35s, stroke-width 0.35s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  stroke-linecap: round;
 }
 .chart-item {
   display: flex;

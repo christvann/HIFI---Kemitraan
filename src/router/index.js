@@ -140,16 +140,12 @@ const routes = [
 ];
 
 function Router() {
-  return createRouter({
-    history: createWebHistory(),
-    routes,
+  const router = new createRouter({
+      history: createWebHistory(),
+      routes,
   });
+  return router;
 }
 const router = Router();
-
-router.beforeEach((to, from, next) => {
-  document.title = 'DIAMOND';
-  next();
-});
 
 export default router;

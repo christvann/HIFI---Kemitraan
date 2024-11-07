@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import LoginPage from '@/pages/login-page.vue';
 import HomePage from '@/pages/home-page.vue';
-import DashboardView from '../pages/dashboard/dashboard-view.vue';
+import DashboardView from '@/pages/dashboard/dashboard-view.vue';
 import DashboardStaff from '@/pages/dashboard/dashboard-staff.vue';
-import MasukManager from '../pages/masuk/masuk-manager.vue';
-import DetailPengajuanManager from '../pages/detail-pengajuan/detail-pengajuan-manager.vue';
+import MasukManager from '@/pages/masuk/masuk-manager.vue';
+import DetailPengajuanManager from '@/pages/detail-pengajuan/detail-pengajuan-manager.vue';
 import MasukStaff from '@/pages/masuk/masuk-staff.vue';
 import DetailPengajuanStaff from '@/pages/detail-pengajuan/detail-pengajuan-staff.vue';
 import ApprovalMitra from '@/pages/approval/approval-view.vue';
@@ -23,129 +23,34 @@ import SelesaiStaff from '@/pages/selesai/selesai-staff.vue';
 import SelesaiDitolakStaff from '@/pages/selesai/selesai-ditolak-staff.vue';
 
 const routes = [
-  {
-    name: 'LoginPage',
-    path: '/login',
-    component: LoginPage,
-  },
-  {
-    path: '/',
-    redirect: '/login',
-  },
-  {
-    name: 'Homepage',
-    path: '/homepage',
-    component: HomePage,
-  },
-  {
-    name: 'Dashboard',
-    path: '/dashboard',
-    component: DashboardView
-  },
-  {
-    name: 'DashboardStaff',
-    path: '/dashboardstaff',
-    component: DashboardStaff
-  },
-  {
-    name: 'MasukManager',
-    path: '/masukmanager',
-    component: MasukManager
-  },
-  {
-    name: 'DetailPengajuanManager',
-    path: '/masukmanager/detailpengajuanmanager',
-    component: DetailPengajuanManager
-  },
-  {
-    name: 'MasukStaff',
-    path: '/masukstaff',
-    component: MasukStaff
-  },
-  {
-    name: 'DetailPengajuanStaff',
-    path: '/masukstaff/detailpengajuanstaff',
-    component: DetailPengajuanStaff
-  },
-  {
-    name: 'ApprovalMitra',
-    path: '/approval',
-    component: ApprovalMitra
-  },
-  {
-    name: 'ApprovalStopclock',
-    path: '/approval/approvalstopclock',
-    component: ApprovalStopclock
-  },
-  {
-    name: 'DetailPengajuanApproval',
-    path: '/approval/detailpengajuanapproval',
-    component: DetailPengajuanApproval
-  },
-  {
-    name: 'DetailPengajuanApprovalStopclock',
-    path: '/approval/approvalstopclock/detailpengajuanapprovalstopclock',
-    component: DetailPengajuanApprovalStopclock
-  },
-  {
-    name: 'ProsesMitra',
-    path: '/proses',
-    component: ProsesMitra
-  },
-  {
-    name: 'ProsesStaff',
-    path: '/prosesstaff',
-    component: ProsesStaff
-  },
-  {
-    name: 'SelesaiMitra',
-    path: '/selesai',
-    component: SelesaiMitra
-  },
-  {
-    name: 'SelesaiStaff',
-    path: '/selesaistaff',
-    component: SelesaiStaff
-  },
-  {
-    name: 'Ditolak',
-    path: '/selesai/ditolak',
-    component: SelesaiDitolak
-  },
-  {
-    name: 'DitolakStaff',
-    path: '/selesaistaff/ditolakstaff',
-    component: SelesaiDitolakStaff
-  },
-  {
-    name: 'DetailPengajuanPKS',
-    path: '/proses/detailpengajuanpks',
-    component: DetailPengajuanPKS
-  },
-  {
-    name: 'DetailPengajuanPKSstaff',
-    path: '/prosesstaff/detailpengajuanpksstaff',
-    component: DetailPengajuanPKSstaff
-  },
-  {
-    name: 'DetailPengajuanMoU',
-    path: '/proses/detailpengajuanmou',
-    component: DetailPengajuanMoU
-  },
-  {
-    name: 'DetailPengajuanMoUStaff',
-    path: '/prosesstaff/detailpengajuanmoustaff',
-    component: DetailPengajuanMoUStaff
-  },
+  { name: 'LoginPage', path: '/login', component: LoginPage },
+  { path: '/', redirect: '/login' },
+  { name: 'Homepage', path: '/homepage', component: HomePage },
+  { name: 'Dashboard', path: '/dashboard', component: DashboardView },
+  { name: 'DashboardStaff', path: '/dashboardstaff', component: DashboardStaff },
+  { name: 'MasukManager', path: '/masukmanager', component: MasukManager },
+  { name: 'DetailPengajuanManager', path: '/masukmanager/detailpengajuanmanager', component: DetailPengajuanManager },
+  { name: 'MasukStaff', path: '/masukstaff', component: MasukStaff },
+  { name: 'DetailPengajuanStaff', path: '/masukstaff/detailpengajuanstaff', component: DetailPengajuanStaff },
+  { name: 'ApprovalMitra', path: '/approval', component: ApprovalMitra },
+  { name: 'ApprovalStopclock', path: '/approval/approvalstopclock', component: ApprovalStopclock },
+  { name: 'DetailPengajuanApproval', path: '/approval/detailpengajuanapproval', component: DetailPengajuanApproval },
+  { name: 'DetailPengajuanApprovalStopclock', path: '/approval/approvalstopclock/detailpengajuanapprovalstopclock', component: DetailPengajuanApprovalStopclock },
+  { name: 'ProsesMitra', path: '/proses', component: ProsesMitra },
+  { name: 'ProsesStaff', path: '/prosesstaff', component: ProsesStaff },
+  { name: 'SelesaiMitra', path: '/selesai', component: SelesaiMitra },
+  { name: 'SelesaiStaff', path: '/selesaistaff', component: SelesaiStaff },
+  { name: 'Ditolak', path: '/selesai/ditolak', component: SelesaiDitolak },
+  { name: 'DitolakStaff', path: '/selesaistaff/ditolakstaff', component: SelesaiDitolakStaff },
+  { name: 'DetailPengajuanPKS', path: '/proses/detailpengajuanpks', component: DetailPengajuanPKS },
+  { name: 'DetailPengajuanPKSstaff', path: '/prosesstaff/detailpengajuanpksstaff', component: DetailPengajuanPKSstaff },
+  { name: 'DetailPengajuanMoU', path: '/proses/detailpengajuanmou', component: DetailPengajuanMoU },
+  { name: 'DetailPengajuanMoUStaff', path: '/prosesstaff/detailpengajuanmoustaff', component: DetailPengajuanMoUStaff },
 ];
 
-function Router() {
-  const router = new createRouter({
-      history: createWebHistory(),
-      routes,
-  });
-  return router;
-}
-const router = Router();
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
 
 export default router;
